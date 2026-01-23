@@ -1,0 +1,13 @@
+/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/reader.dir
+/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/edit_cache.dir
+/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/rebuild_cache.dir
+/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/list_install_components.dir
+/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/install.dir
+/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/install/local.dir
+/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/install/strip.dir
+/home/assuero/Documentos/computaria/cpp/pdf-reader/build/scripts/CMakeFiles/edit_cache.dir
+/home/assuero/Documentos/computaria/cpp/pdf-reader/build/scripts/CMakeFiles/rebuild_cache.dir
+/home/assuero/Documentos/computaria/cpp/pdf-reader/build/scripts/CMakeFiles/list_install_components.dir
+/home/assuero/Documentos/computaria/cpp/pdf-reader/build/scripts/CMakeFiles/install.dir
+/home/assuero/Documentos/computaria/cpp/pdf-reader/build/scripts/CMakeFiles/install/local.dir
+/home/assuero/Documentos/computaria/cpp/pdf-reader/build/scripts/CMakeFiles/install/strip.dir
