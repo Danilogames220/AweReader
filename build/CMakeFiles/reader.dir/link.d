@@ -4,6 +4,7 @@ reader: \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o \
   CMakeFiles/reader.dir/scripts/main.cpp.o \
   CMakeFiles/reader.dir/scripts/global-variables.cpp.o \
+  CMakeFiles/reader.dir/scripts/reader/reader.cpp.o \
   /usr/lib/libgtkmm-4.0.so \
   /usr/lib/libpangomm-2.48.so \
   /usr/lib/libgiomm-2.68.so \
@@ -206,6 +207,8 @@ reader: \
 CMakeFiles/reader.dir/scripts/main.cpp.o:
 
 CMakeFiles/reader.dir/scripts/global-variables.cpp.o:
+
+CMakeFiles/reader.dir/scripts/reader/reader.cpp.o:
 
 /usr/lib/libgtkmm-4.0.so:
 

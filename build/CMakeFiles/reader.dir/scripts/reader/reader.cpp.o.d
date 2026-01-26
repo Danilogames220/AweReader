@@ -1,7 +1,8 @@
-CMakeFiles/reader.dir/scripts/main.cpp.o: \
- /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/main.cpp \
- /usr/include/stdc-predef.h /usr/include/gtkmm-4.0/gtkmm.h \
- /usr/include/glibmm-2.68/glibmm.h \
+CMakeFiles/reader.dir/scripts/reader/reader.cpp.o: \
+ /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/reader.cpp \
+ /usr/include/stdc-predef.h \
+ /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/reader.hpp \
+ /usr/include/gtkmm-4.0/gtkmm.h /usr/include/glibmm-2.68/glibmm.h \
  /usr/lib/glibmm-2.68/include/glibmmconfig.h \
  /usr/include/glibmm-2.68/glibmm/base64.h /usr/include/c++/15.2.1/string \
  /usr/include/c++/15.2.1/bits/requires_hosted.h \
@@ -1601,6 +1602,4 @@ CMakeFiles/reader.dir/scripts/main.cpp.o: \
  /usr/include/gtkmm-4.0/gtkmm/widgetpaintable.h \
  /usr/include/gtkmm-4.0/gtkmm/windowcontrols.h \
  /usr/include/gtkmm-4.0/gtkmm/windowhandle.h \
- /usr/include/c++/15.2.1/iostream \
- /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/./global-variables.hpp \
- /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/./reader/reader.hpp
+ /usr/include/c++/15.2.1/iostream

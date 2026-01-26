@@ -222,6 +222,30 @@ scripts/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/reader.dir/build.make CMakeFiles/reader.dir/scripts/main.cpp.s
 .PHONY : scripts/main.cpp.s
 
+scripts/reader/reader.o: scripts/reader/reader.cpp.o
+.PHONY : scripts/reader/reader.o
+
+# target to build an object file
+scripts/reader/reader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/reader.dir/build.make CMakeFiles/reader.dir/scripts/reader/reader.cpp.o
+.PHONY : scripts/reader/reader.cpp.o
+
+scripts/reader/reader.i: scripts/reader/reader.cpp.i
+.PHONY : scripts/reader/reader.i
+
+# target to preprocess a source file
+scripts/reader/reader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/reader.dir/build.make CMakeFiles/reader.dir/scripts/reader/reader.cpp.i
+.PHONY : scripts/reader/reader.cpp.i
+
+scripts/reader/reader.s: scripts/reader/reader.cpp.s
+.PHONY : scripts/reader/reader.s
+
+# target to generate assembly for a file
+scripts/reader/reader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/reader.dir/build.make CMakeFiles/reader.dir/scripts/reader/reader.cpp.s
+.PHONY : scripts/reader/reader.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -241,6 +265,9 @@ help:
 	@echo "... scripts/main.o"
 	@echo "... scripts/main.i"
 	@echo "... scripts/main.s"
+	@echo "... scripts/reader/reader.o"
+	@echo "... scripts/reader/reader.i"
+	@echo "... scripts/reader/reader.s"
 .PHONY : help
 
 
