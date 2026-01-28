@@ -107,12 +107,12 @@ scripts/clean:
 CMakeFiles/reader.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/reader.dir/build.make CMakeFiles/reader.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/reader.dir/build.make CMakeFiles/reader.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles --progress-num=1,2,3,4 "Built target reader"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target reader"
 .PHONY : CMakeFiles/reader.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/reader.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/reader.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles 0
 .PHONY : CMakeFiles/reader.dir/rule
@@ -124,7 +124,7 @@ reader: CMakeFiles/reader.dir/rule
 # codegen rule for target.
 CMakeFiles/reader.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/reader.dir/build.make CMakeFiles/reader.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles --progress-num=1,2,3,4 "Finished codegen for target reader"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles --progress-num=1,2,3,4,5 "Finished codegen for target reader"
 .PHONY : CMakeFiles/reader.dir/codegen
 
 # clean rule for target.

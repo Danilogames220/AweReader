@@ -5,6 +5,8 @@ reader: \
   CMakeFiles/reader.dir/scripts/main.cpp.o \
   CMakeFiles/reader.dir/scripts/global-variables.cpp.o \
   CMakeFiles/reader.dir/scripts/reader/reader.cpp.o \
+  CMakeFiles/reader.dir/scripts/reader/load-file.cpp.o \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libmupdf.so \
   /usr/lib/libgtkmm-4.0.so \
   /usr/lib/libpangomm-2.48.so \
   /usr/lib/libgiomm-2.68.so \
@@ -49,6 +51,20 @@ reader: \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/libgcc.a \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o \
+  /usr/lib32/libbrotlidec.so.1 \
+  /usr/lib/libbrotlidec.so.1 \
+  /usr/lib32/libbrotlienc.so.1 \
+  /usr/lib/libbrotlienc.so.1 \
+  /usr/lib32/libfreetype.so.6 \
+  /usr/lib/libfreetype.so.6 \
+  /usr/lib/libgumbo.so.3 \
+  /usr/lib/libjpeg.so.8 \
+  /usr/lib32/libz.so.1 \
+  /usr/lib/libz.so.1 \
+  /usr/lib/libjbig2dec.so.0 \
+  /usr/lib/libopenjp2.so.7 \
+  /usr/lib/libleptonica.so.6 \
+  /usr/lib/libtesseract.so.5 \
   /usr/lib32/libgmodule-2.0.so.0 \
   /usr/lib/libgmodule-2.0.so.0 \
   /usr/lib/ld-linux-x86-64.so.2 \
@@ -72,7 +88,6 @@ reader: \
   /usr/lib32/libpng16.so.16 \
   /usr/lib/libpng16.so.16 \
   /usr/lib/libtiff.so.6 \
-  /usr/lib/libjpeg.so.8 \
   /usr/lib/libxkbcommon.so.0 \
   /usr/lib32/libwayland-client.so.0 \
   /usr/lib/libwayland-client.so.0 \
@@ -91,12 +106,8 @@ reader: \
   /usr/lib/libcups.so.2 \
   /usr/lib/libcolord.so.2 \
   /usr/lib/libthai.so.0 \
-  /usr/lib32/libfreetype.so.6 \
-  /usr/lib/libfreetype.so.6 \
   /usr/lib/libgraphite2.so.3 \
   /usr/lib/libglycin-2.so.0 \
-  /usr/lib32/libz.so.1 \
-  /usr/lib/libz.so.1 \
   /usr/lib/libXrender.so.1 \
   /usr/lib32/libxcb.so.1 \
   /usr/lib/libxcb.so.1 \
@@ -111,6 +122,18 @@ reader: \
   /usr/lib/libffi.so.8 \
   /usr/lib32/libpcre2-8.so.0 \
   /usr/lib/libpcre2-8.so.0 \
+  /usr/lib32/libbrotlicommon.so.1 \
+  /usr/lib/libbrotlicommon.so.1 \
+  /usr/lib32/libbz2.so.1.0 \
+  /usr/lib/libbz2.so.1.0 \
+  /usr/lib/libgif.so.7 \
+  /usr/lib/libwebp.so.7 \
+  /usr/lib/libwebpmux.so.3 \
+  /usr/lib/libarchive.so.13 \
+  /usr/lib32/libcurl.so.4 \
+  /usr/lib/libcurl.so.4 \
+  /usr/lib32/libgomp.so.1 \
+  /usr/lib/libgomp.so.1 \
   /usr/lib32/libexpat.so.1 \
   /usr/lib/libexpat.so.1 \
   /usr/lib/libgsttag-1.0.so.0 \
@@ -145,7 +168,6 @@ reader: \
   /usr/lib/liblzma.so.5 \
   /usr/lib32/libzstd.so.1 \
   /usr/lib/libzstd.so.1 \
-  /usr/lib/libwebp.so.7 \
   /usr/lib/liblzo2.so.2 \
   /usr/lib/libavahi-common.so.3 \
   /usr/lib/libavahi-client.so.3 \
@@ -155,10 +177,6 @@ reader: \
   /usr/lib32/libudev.so.1 \
   /usr/lib/libudev.so.1 \
   /usr/lib/libdatrie.so.1 \
-  /usr/lib32/libbz2.so.1.0 \
-  /usr/lib/libbz2.so.1.0 \
-  /usr/lib32/libbrotlidec.so.1 \
-  /usr/lib/libbrotlidec.so.1 \
   /usr/lib/libseccomp.so.2 \
   /usr/lib32/libXau.so.6 \
   /usr/lib/libXau.so.6 \
@@ -166,6 +184,29 @@ reader: \
   /usr/lib/libXdmcp.so.6 \
   /usr/lib32/libblkid.so.1 \
   /usr/lib/libblkid.so.1 \
+  /usr/lib/libsharpyuv.so.0 \
+  /usr/lib32/libcrypto.so.3 \
+  /usr/lib/libcrypto.so.3 \
+  /usr/lib/libacl.so.1 \
+  /usr/lib/liblz4.so.1 \
+  /usr/lib32/libnghttp3.so.9 \
+  /usr/lib/libnghttp3.so.9 \
+  /usr/lib32/libngtcp2_crypto_ossl.so.0 \
+  /usr/lib/libngtcp2_crypto_ossl.so.0 \
+  /usr/lib32/libngtcp2.so.16 \
+  /usr/lib/libngtcp2.so.16 \
+  /usr/lib32/libnghttp2.so.14 \
+  /usr/lib/libnghttp2.so.14 \
+  /usr/lib32/libidn2.so.0 \
+  /usr/lib/libidn2.so.0 \
+  /usr/lib32/libssh2.so.1 \
+  /usr/lib/libssh2.so.1 \
+  /usr/lib32/libpsl.so.5 \
+  /usr/lib/libpsl.so.5 \
+  /usr/lib32/libssl.so.3 \
+  /usr/lib/libssl.so.3 \
+  /usr/lib32/libgssapi_krb5.so.2 \
+  /usr/lib/libgssapi_krb5.so.2 \
   /usr/lib/libgstaudio-1.0.so.0 \
   /usr/lib32/libelf.so.1 \
   /usr/lib/libelf.so.1 \
@@ -173,14 +214,11 @@ reader: \
   /usr/lib/libGLdispatch.so.0 \
   /usr/lib32/libicuuc.so.78 \
   /usr/lib/libicuuc.so.78 \
-  /usr/lib/libsharpyuv.so.0 \
   /usr/lib32/libdbus-1.so.3 \
   /usr/lib/libdbus-1.so.3 \
   /usr/lib/libleancrypto.so.1 \
   /usr/lib32/libp11-kit.so.0 \
   /usr/lib/libp11-kit.so.0 \
-  /usr/lib32/libidn2.so.0 \
-  /usr/lib/libidn2.so.0 \
   /usr/lib32/libunistring.so.5 \
   /usr/lib/libunistring.so.5 \
   /usr/lib32/libtasn1.so.6 \
@@ -191,8 +229,18 @@ reader: \
   /usr/lib/libnettle.so.8 \
   /usr/lib32/libgmp.so.10 \
   /usr/lib/libgmp.so.10 \
-  /usr/lib32/libbrotlicommon.so.1 \
-  /usr/lib/libbrotlicommon.so.1 \
+  /usr/lib32/libkrb5.so.3 \
+  /usr/lib/libkrb5.so.3 \
+  /usr/lib32/libk5crypto.so.3 \
+  /usr/lib/libk5crypto.so.3 \
+  /usr/lib32/libcom_err.so.2 \
+  /usr/lib/libcom_err.so.2 \
+  /usr/lib32/libkrb5support.so.0 \
+  /usr/lib/libkrb5support.so.0 \
+  /usr/lib32/libkeyutils.so.1 \
+  /usr/lib/libkeyutils.so.1 \
+  /usr/lib32/libresolv.so.2 \
+  /usr/lib/libresolv.so.2 \
   /usr/lib32/libicudata.so.78 \
   /usr/lib/libicudata.so.78 \
   /usr/lib32/libsystemd.so.0 \
@@ -209,6 +257,10 @@ CMakeFiles/reader.dir/scripts/main.cpp.o:
 CMakeFiles/reader.dir/scripts/global-variables.cpp.o:
 
 CMakeFiles/reader.dir/scripts/reader/reader.cpp.o:
+
+CMakeFiles/reader.dir/scripts/reader/load-file.cpp.o:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libmupdf.so:
 
 /usr/lib/libgtkmm-4.0.so:
 
@@ -298,6 +350,34 @@ CMakeFiles/reader.dir/scripts/reader/reader.cpp.o:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o:
 
+/usr/lib32/libbrotlidec.so.1:
+
+/usr/lib/libbrotlidec.so.1:
+
+/usr/lib32/libbrotlienc.so.1:
+
+/usr/lib/libbrotlienc.so.1:
+
+/usr/lib32/libfreetype.so.6:
+
+/usr/lib/libfreetype.so.6:
+
+/usr/lib/libgumbo.so.3:
+
+/usr/lib/libjpeg.so.8:
+
+/usr/lib32/libz.so.1:
+
+/usr/lib/libz.so.1:
+
+/usr/lib/libjbig2dec.so.0:
+
+/usr/lib/libopenjp2.so.7:
+
+/usr/lib/libleptonica.so.6:
+
+/usr/lib/libtesseract.so.5:
+
 /usr/lib32/libgmodule-2.0.so.0:
 
 /usr/lib/libgmodule-2.0.so.0:
@@ -344,8 +424,6 @@ CMakeFiles/reader.dir/scripts/reader/reader.cpp.o:
 
 /usr/lib/libtiff.so.6:
 
-/usr/lib/libjpeg.so.8:
-
 /usr/lib/libxkbcommon.so.0:
 
 /usr/lib32/libwayland-client.so.0:
@@ -382,17 +460,9 @@ CMakeFiles/reader.dir/scripts/reader/reader.cpp.o:
 
 /usr/lib/libthai.so.0:
 
-/usr/lib32/libfreetype.so.6:
-
-/usr/lib/libfreetype.so.6:
-
 /usr/lib/libgraphite2.so.3:
 
 /usr/lib/libglycin-2.so.0:
-
-/usr/lib32/libz.so.1:
-
-/usr/lib/libz.so.1:
 
 /usr/lib/libXrender.so.1:
 
@@ -421,6 +491,30 @@ CMakeFiles/reader.dir/scripts/reader/reader.cpp.o:
 /usr/lib32/libpcre2-8.so.0:
 
 /usr/lib/libpcre2-8.so.0:
+
+/usr/lib32/libbrotlicommon.so.1:
+
+/usr/lib/libbrotlicommon.so.1:
+
+/usr/lib32/libbz2.so.1.0:
+
+/usr/lib/libbz2.so.1.0:
+
+/usr/lib/libgif.so.7:
+
+/usr/lib/libwebp.so.7:
+
+/usr/lib/libwebpmux.so.3:
+
+/usr/lib/libarchive.so.13:
+
+/usr/lib32/libcurl.so.4:
+
+/usr/lib/libcurl.so.4:
+
+/usr/lib32/libgomp.so.1:
+
+/usr/lib/libgomp.so.1:
 
 /usr/lib32/libexpat.so.1:
 
@@ -490,8 +584,6 @@ CMakeFiles/reader.dir/scripts/reader/reader.cpp.o:
 
 /usr/lib/libzstd.so.1:
 
-/usr/lib/libwebp.so.7:
-
 /usr/lib/liblzo2.so.2:
 
 /usr/lib/libavahi-common.so.3:
@@ -510,14 +602,6 @@ CMakeFiles/reader.dir/scripts/reader/reader.cpp.o:
 
 /usr/lib/libdatrie.so.1:
 
-/usr/lib32/libbz2.so.1.0:
-
-/usr/lib/libbz2.so.1.0:
-
-/usr/lib32/libbrotlidec.so.1:
-
-/usr/lib/libbrotlidec.so.1:
-
 /usr/lib/libseccomp.so.2:
 
 /usr/lib32/libXau.so.6:
@@ -531,6 +615,52 @@ CMakeFiles/reader.dir/scripts/reader/reader.cpp.o:
 /usr/lib32/libblkid.so.1:
 
 /usr/lib/libblkid.so.1:
+
+/usr/lib/libsharpyuv.so.0:
+
+/usr/lib32/libcrypto.so.3:
+
+/usr/lib/libcrypto.so.3:
+
+/usr/lib/libacl.so.1:
+
+/usr/lib/liblz4.so.1:
+
+/usr/lib32/libnghttp3.so.9:
+
+/usr/lib/libnghttp3.so.9:
+
+/usr/lib32/libngtcp2_crypto_ossl.so.0:
+
+/usr/lib/libngtcp2_crypto_ossl.so.0:
+
+/usr/lib32/libngtcp2.so.16:
+
+/usr/lib/libngtcp2.so.16:
+
+/usr/lib32/libnghttp2.so.14:
+
+/usr/lib/libnghttp2.so.14:
+
+/usr/lib32/libidn2.so.0:
+
+/usr/lib/libidn2.so.0:
+
+/usr/lib32/libssh2.so.1:
+
+/usr/lib/libssh2.so.1:
+
+/usr/lib32/libpsl.so.5:
+
+/usr/lib/libpsl.so.5:
+
+/usr/lib32/libssl.so.3:
+
+/usr/lib/libssl.so.3:
+
+/usr/lib32/libgssapi_krb5.so.2:
+
+/usr/lib/libgssapi_krb5.so.2:
 
 /usr/lib/libgstaudio-1.0.so.0:
 
@@ -546,8 +676,6 @@ CMakeFiles/reader.dir/scripts/reader/reader.cpp.o:
 
 /usr/lib/libicuuc.so.78:
 
-/usr/lib/libsharpyuv.so.0:
-
 /usr/lib32/libdbus-1.so.3:
 
 /usr/lib/libdbus-1.so.3:
@@ -557,10 +685,6 @@ CMakeFiles/reader.dir/scripts/reader/reader.cpp.o:
 /usr/lib32/libp11-kit.so.0:
 
 /usr/lib/libp11-kit.so.0:
-
-/usr/lib32/libidn2.so.0:
-
-/usr/lib/libidn2.so.0:
 
 /usr/lib32/libunistring.so.5:
 
@@ -582,9 +706,29 @@ CMakeFiles/reader.dir/scripts/reader/reader.cpp.o:
 
 /usr/lib/libgmp.so.10:
 
-/usr/lib32/libbrotlicommon.so.1:
+/usr/lib32/libkrb5.so.3:
 
-/usr/lib/libbrotlicommon.so.1:
+/usr/lib/libkrb5.so.3:
+
+/usr/lib32/libk5crypto.so.3:
+
+/usr/lib/libk5crypto.so.3:
+
+/usr/lib32/libcom_err.so.2:
+
+/usr/lib/libcom_err.so.2:
+
+/usr/lib32/libkrb5support.so.0:
+
+/usr/lib/libkrb5support.so.0:
+
+/usr/lib32/libkeyutils.so.1:
+
+/usr/lib/libkeyutils.so.1:
+
+/usr/lib32/libresolv.so.2:
+
+/usr/lib/libresolv.so.2:
 
 /usr/lib32/libicudata.so.78:
 

@@ -1,7 +1,7 @@
-CMakeFiles/reader.dir/scripts/reader/reader.cpp.o: \
- /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/reader.cpp \
+CMakeFiles/reader.dir/scripts/reader/load-file.cpp.o: \
+ /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/load-file.cpp \
  /usr/include/stdc-predef.h \
- /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/reader.hpp \
+ /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/./reader.hpp \
  /usr/include/gtkmm-4.0/gdkmm/pixbuf.h \
  /usr/lib/gtkmm-4.0/include/gdkmmconfig.h \
  /usr/lib/pangomm-2.48/include/pangommconfig.h \
@@ -1598,5 +1598,46 @@ CMakeFiles/reader.dir/scripts/reader/reader.cpp.o: \
  /usr/include/gtkmm-4.0/gtkmm/volumebutton.h \
  /usr/include/gtkmm-4.0/gtkmm/widgetpaintable.h \
  /usr/include/gtkmm-4.0/gtkmm/windowcontrols.h \
- /usr/include/gtkmm-4.0/gtkmm/windowhandle.h \
- /usr/include/c++/15.2.1/iostream
+ /usr/include/gtkmm-4.0/gtkmm/windowhandle.h /usr/include/mupdf/fitz.h \
+ /usr/include/mupdf/fitz/version.h /usr/include/mupdf/fitz/config.h \
+ /usr/include/mupdf/fitz/system.h /usr/include/mupdf/fitz/export.h \
+ /usr/include/mupdf/memento.h /usr/include/mupdf/fitz/track-usage.h \
+ /usr/include/mupdf/fitz/context.h /usr/include/mupdf/fitz/geometry.h \
+ /usr/include/assert.h /usr/include/mupdf/fitz/output.h \
+ /usr/include/mupdf/fitz/buffer.h /usr/include/mupdf/fitz/string-util.h \
+ /usr/include/mupdf/fitz/stream.h /usr/include/mupdf/fitz/log.h \
+ /usr/include/mupdf/fitz/crypt.h /usr/include/mupdf/fitz/getopt.h \
+ /usr/include/mupdf/fitz/hash.h /usr/include/mupdf/fitz/pool.h \
+ /usr/include/mupdf/fitz/tree.h /usr/include/mupdf/fitz/bidi.h \
+ /usr/include/mupdf/fitz/xml.h /usr/include/mupdf/fitz/archive.h \
+ /usr/include/mupdf/fitz/json.h /usr/include/mupdf/fitz/hyphen.h \
+ /usr/include/mupdf/fitz/types.h /usr/include/mupdf/fitz/text.h \
+ /usr/include/mupdf/fitz/font.h /usr/include/mupdf/fitz/color.h \
+ /usr/include/mupdf/fitz/store.h /usr/include/mupdf/fitz/path.h \
+ /usr/include/mupdf/fitz/compress.h /usr/include/mupdf/fitz/pixmap.h \
+ /usr/include/mupdf/fitz/separation.h \
+ /usr/include/mupdf/fitz/compressed-buffer.h \
+ /usr/include/mupdf/fitz/filter.h /usr/include/mupdf/fitz/heap.h \
+ /usr/include/mupdf/fitz/heap-imp.h /usr/include/mupdf/fitz/image.h \
+ /usr/include/mupdf/fitz/bitmap.h /usr/include/mupdf/fitz/shade.h \
+ /usr/include/mupdf/fitz/glyph.h /usr/include/mupdf/fitz/device.h \
+ /usr/include/mupdf/fitz/display-list.h \
+ /usr/include/mupdf/fitz/structured-text.h \
+ /usr/include/mupdf/fitz/transition.h \
+ /usr/include/mupdf/fitz/glyph-cache.h /usr/include/mupdf/fitz/link.h \
+ /usr/include/mupdf/fitz/outline.h /usr/include/mupdf/fitz/document.h \
+ /usr/include/mupdf/fitz/util.h /usr/include/mupdf/fitz/writer.h \
+ /usr/include/mupdf/fitz/band-writer.h \
+ /usr/include/mupdf/fitz/write-pixmap.h \
+ /usr/include/mupdf/fitz/output-svg.h /usr/include/mupdf/fitz/story.h \
+ /usr/include/mupdf/fitz/story-writer.h /usr/include/mupdf/fitz/deskew.h \
+ /usr/include/mupdf/fitz/barcode.h /usr/include/c++/15.2.1/iostream \
+ /usr/include/c++/15.2.1/thread /usr/include/c++/15.2.1/bits/std_thread.h \
+ /usr/include/c++/15.2.1/bits/this_thread_sleep.h \
+ /usr/include/c++/15.2.1/bits/chrono.h /usr/include/c++/15.2.1/ratio \
+ /usr/include/c++/15.2.1/bits/parse_numbers.h \
+ /usr/include/c++/15.2.1/future /usr/include/c++/15.2.1/mutex \
+ /usr/include/c++/15.2.1/bits/std_mutex.h \
+ /usr/include/c++/15.2.1/bits/unique_lock.h \
+ /usr/include/c++/15.2.1/condition_variable \
+ /usr/include/c++/15.2.1/bits/atomic_futex.h

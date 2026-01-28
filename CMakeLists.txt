@@ -11,10 +11,10 @@ pkg_check_modules(GTKMM_VARS REQUIRED IMPORTED_TARGET gtkmm-4.0)
 # executable
 add_executable(${PROJECT_NAME})
 add_subdirectory("scripts")
-#target_compile_options(${PROJECT_NAME} PUBLIC -fpermissive)
 
 # libraries
 target_link_libraries(${PROJECT_NAME}
 	PRIVATE
 		PkgConfig::GTKMM_VARS
+		mupdf
 )

@@ -1,10 +1,12 @@
 #ifndef READER_HPP
 #define READER_HPP
+#include "gdkmm/pixbuf.h"
+#include <cstdint>
 #include <gtkmm.h>
 #include <vector>
 
 class reader_component : public Gtk::Box {
-	public:
+	public: // UI stuff goes here
 		reader_component();
 
 		// bottom settings for viewing current document
@@ -23,9 +25,17 @@ class reader_component : public Gtk::Box {
 			Gtk::Button back_button;
 			Gtk::Label current_path_label;
 
-	private:
-			unsigned long long current_page_index;
-			unsigned long long page_count;
+	private: // stuff related to processing the file goes here
+			uint64_t current_page_index;
+			uint64_t page_count;
+
+			//Gdk::Pixbuf first_buff;
+
+			void load_file(std::string path);
+			
+			// used to load each page by itself in a specific thread
+			void * page_render_thread(void *data_);
+
 };
 
 

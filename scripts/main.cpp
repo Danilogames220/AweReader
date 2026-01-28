@@ -52,7 +52,8 @@ MyWindow::MyWindow():
 
 
 int main(int argc, char * argv[]) {
-	// get path to read pdf
+	file_path = "./doc.pdf";
+
 	auto app = Gtk::Application::create("org.gtkmm.examples.base");
 
 	return app->make_window_and_run<MyWindow>(argc, argv);;

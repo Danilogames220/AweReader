@@ -222,6 +222,30 @@ scripts/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/reader.dir/build.make CMakeFiles/reader.dir/scripts/main.cpp.s
 .PHONY : scripts/main.cpp.s
 
+scripts/reader/load-file.o: scripts/reader/load-file.cpp.o
+.PHONY : scripts/reader/load-file.o
+
+# target to build an object file
+scripts/reader/load-file.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/reader.dir/build.make CMakeFiles/reader.dir/scripts/reader/load-file.cpp.o
+.PHONY : scripts/reader/load-file.cpp.o
+
+scripts/reader/load-file.i: scripts/reader/load-file.cpp.i
+.PHONY : scripts/reader/load-file.i
+
+# target to preprocess a source file
+scripts/reader/load-file.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/reader.dir/build.make CMakeFiles/reader.dir/scripts/reader/load-file.cpp.i
+.PHONY : scripts/reader/load-file.cpp.i
+
+scripts/reader/load-file.s: scripts/reader/load-file.cpp.s
+.PHONY : scripts/reader/load-file.s
+
+# target to generate assembly for a file
+scripts/reader/load-file.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/reader.dir/build.make CMakeFiles/reader.dir/scripts/reader/load-file.cpp.s
+.PHONY : scripts/reader/load-file.cpp.s
+
 scripts/reader/reader.o: scripts/reader/reader.cpp.o
 .PHONY : scripts/reader/reader.o
 
@@ -265,6 +289,9 @@ help:
 	@echo "... scripts/main.o"
 	@echo "... scripts/main.i"
 	@echo "... scripts/main.s"
+	@echo "... scripts/reader/load-file.o"
+	@echo "... scripts/reader/load-file.i"
+	@echo "... scripts/reader/load-file.s"
 	@echo "... scripts/reader/reader.o"
 	@echo "... scripts/reader/reader.i"
 	@echo "... scripts/reader/reader.s"

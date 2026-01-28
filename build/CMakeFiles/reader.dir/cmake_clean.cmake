@@ -4,6 +4,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/reader.dir/scripts/global-variables.cpp.o.d"
   "CMakeFiles/reader.dir/scripts/main.cpp.o"
   "CMakeFiles/reader.dir/scripts/main.cpp.o.d"
+  "CMakeFiles/reader.dir/scripts/reader/load-file.cpp.o"
+  "CMakeFiles/reader.dir/scripts/reader/load-file.cpp.o.d"
   "CMakeFiles/reader.dir/scripts/reader/reader.cpp.o"
   "CMakeFiles/reader.dir/scripts/reader/reader.cpp.o.d"
   "reader"

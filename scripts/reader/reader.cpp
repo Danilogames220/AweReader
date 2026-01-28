@@ -46,7 +46,8 @@ reader_component::reader_component() :
 	options.append(current_page);
 	options.append(next_page);
 	append(options);
-
+	
+	load_file("./doc.pdf");
 
 };
 
