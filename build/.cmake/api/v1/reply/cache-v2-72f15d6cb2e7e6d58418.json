@@ -1686,6 +1686,18 @@
 			"value" : "1"
 		},
 		{
+			"name" : "mupdf_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "The directory containing a CMake configuration file for mupdf."
+				}
+			],
+			"type" : "PATH",
+			"value" : "mupdf_DIR-NOTFOUND"
+		},
+		{
 			"name" : "pkgcfg_lib_GTKMM_VARS_cairo",
 			"properties" : 
 			[

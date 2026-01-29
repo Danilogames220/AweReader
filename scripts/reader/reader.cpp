@@ -1,9 +1,15 @@
-#include "reader.hpp"
+#include "./reader.hpp"
+#include "gdkmm/general.h"
+#include "gdkmm/pixbuf.h"
+#include "mupdf/fitz.h"
+
 #include <cstdio>
 #include <gtkmm.h>
 
 #include <iostream>
 #include <string>
+#include <memory>
+
 
 reader_component::reader_component() :
 	Gtk::Box(Gtk::Orientation::VERTICAL),
@@ -14,6 +20,9 @@ reader_component::reader_component() :
 	top_panel(Gtk::Orientation::HORIZONTAL),
 	back_button("<"),
 	current_path_label("~/books/stuff/doc.pdf"),
+
+	// pages
+	test(),
 
 	// options
 	options(Gtk::Orientation::HORIZONTAL),
@@ -31,8 +40,36 @@ reader_component::reader_component() :
 	append(top_panel);
 	// pages
 	pages_container.set_expand(true);
-	append(pages_container);
 	
+	test.set_expand(true);
+	test.set_draw_func([this](const Cairo::RefPtr<Cairo::Context>& cr, int width, int height) {
+        if (page_pixmaps.empty())
+    		return;
+
+		fz_pixmap *pm = (fz_pixmap *)page_pixmaps[0];
+
+		Glib::RefPtr<Gdk::Pixbuf> buff = Gdk::Pixbuf::create_from_data(
+			pm->samples,
+			Gdk::Colorspace::RGB,
+    		pm->alpha,          // has alpha
+    		8,             // bits per sample
+    		pm->w,
+    		pm->h,
+    		pm->stride
+		);
+		// TODO free pixmap after loading it into gtk
+		//fz_drop_pixmap(ctx, data->pix);
+
+
+		//Gdk::Cairo::set_source_pixbuf(const int &context, const int &pixbuf)
+
+		Gdk::Cairo::set_source_pixbuf(cr, buff);
+        cr->paint();
+    }
+);
+	pages_container.append(test);
+	append(pages_container);
+
 	// options
 	options.set_size_request(-1, 50);
 

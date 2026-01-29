@@ -227,6 +227,9 @@ PKG_CONFIG_ARGN:STRING=
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 
+//The directory containing a CMake configuration file for mupdf.
+mupdf_DIR:PATH=mupdf_DIR-NOTFOUND
+
 //Path to a library.
 pkgcfg_lib_GTKMM_VARS_cairo:FILEPATH=/usr/lib/libcairo.so
 
