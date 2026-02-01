@@ -1,6 +1,7 @@
 #TODO find way to include mupdf into executable
 cmake_minimum_required(VERSION 3.23)
 project(reader)
+set (CMAKE_CXX_STANDARD 20)
 
 # resources
 install(DIRECTORY "resources/" DESTINATION "resources/")

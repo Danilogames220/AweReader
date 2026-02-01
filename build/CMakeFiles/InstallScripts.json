@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/assuero/Documentos/computaria/cpp/pdf-reader/build/cmake_install.cmake",
+		"/home/assuero/Documentos/computaria/cpp/pdf-reader/build/scripts/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

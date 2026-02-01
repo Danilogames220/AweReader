@@ -18,6 +18,7 @@
 #include <thread>
 #include <future>
 
+
 struct thread_data {
 	fz_context *ctx;
 
@@ -31,7 +32,6 @@ struct thread_data {
 
 	int failed;
 };
-
 
 void fail(const char *msg) {
 	fprintf(stderr, "%s\n", msg);
@@ -171,33 +171,6 @@ void reader_component::load_file(std::string path) {
 
 				page_pixmaps.insert(page_pixmaps.begin() + i, std::move(buff));
 
-		
-				/*
-				// checking if an idea works
-				char pp[4];
-				sprintf(pp, "%d", i);
-				Gtk::Button aaa(pp);
-				if (i == 2) aaa.hide();
-				pages_container.append(aaa);
-				*/
-
-				/*
-				Gtk::DrawingArea da_b;
-				da_b.set_hexpand(true);
-
-				da_b.set_draw_func([this, i](const Cairo::RefPtr<Cairo::Context>& cr, int width, int height) {
-        			if (page_pixmaps.empty())
-    					return;
-					
-					Gdk::Cairo::set_source_pixbuf(cr, page_pixmaps[i]);
-        			
-					cr->paint();
-
-    			});
-
-				pages_container.append(da_b);
-				pages.insert(pages.begin() + i, std::move(da_b));
-				*/
 			}
 
 			// Free the thread's pixmap and display list.
