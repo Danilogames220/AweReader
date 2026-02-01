@@ -4,4 +4,5 @@ target_sources ( ${PROJECT_NAME}
 		"global-variables.cpp"
 
 		"reader/reader.cpp"
+		"reader/load-file.cpp"
 )
