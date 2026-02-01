@@ -26,16 +26,20 @@ class reader_component : public Gtk::Box {
 			Gtk::Button back_button;
 			Gtk::Label current_path_label;
 
-		std::vector<void *> page_pixmaps;
 	private: // stuff related to processing the file goes here
 		uint64_t current_page_index;
 		uint64_t page_count;
 
-
+		std::vector<Glib::RefPtr<Gdk::Pixbuf>> page_pixmaps;
+		// for the pages drawingarea
+		void draw_page(const Cairo::RefPtr<Cairo::Context>& cr, Glib::RefPtr<Gdk::Pixbuf> buff, int width, int height);
+		
 		void load_file(std::string path);
 			
 		// used to load each page by itself in a specific thread
 		void * page_render_thread(void *data_);
+
+		void build_pages_ui();
 
 };
 

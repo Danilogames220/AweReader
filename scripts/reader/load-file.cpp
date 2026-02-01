@@ -1,6 +1,12 @@
 // code "borrowed" from example:
 // https://mupdf.readthedocs.io/en/1.27.0/cookbook/c/multi-threaded.html
+
+// TODO
+//	- draw_page() should save all of the pixmaps as gdk::pixbuf then append each loaded page into the reader
+// 	
+
 #include "./reader.hpp"
+#include "gtkmm/button.h"
 
 #include <mupdf/fitz.h>
 
@@ -150,8 +156,48 @@ void reader_component::load_file(std::string path) {
 				// Write the rendered image to a PNG file
 				//fz_save_pixmap_as_png(ctx, data->pix, filename);
 				
-				page_pixmaps.insert(page_pixmaps.begin() + i, data->pix);			
+				
+							
+				Glib::RefPtr<Gdk::Pixbuf> buff = Gdk::Pixbuf::create_from_data(
+					data->pix->samples,
+					Gdk::Colorspace::RGB,
+    				data->pix->alpha,          // has alpha
+    				8,             // bits per sample
+    				data->pix->w,
+    				data->pix->h,
+    				data->pix->stride
+				);
 
+
+				page_pixmaps.insert(page_pixmaps.begin() + i, std::move(buff));
+
+		
+				/*
+				// checking if an idea works
+				char pp[4];
+				sprintf(pp, "%d", i);
+				Gtk::Button aaa(pp);
+				if (i == 2) aaa.hide();
+				pages_container.append(aaa);
+				*/
+
+				/*
+				Gtk::DrawingArea da_b;
+				da_b.set_hexpand(true);
+
+				da_b.set_draw_func([this, i](const Cairo::RefPtr<Cairo::Context>& cr, int width, int height) {
+        			if (page_pixmaps.empty())
+    					return;
+					
+					Gdk::Cairo::set_source_pixbuf(cr, page_pixmaps[i]);
+        			
+					cr->paint();
+
+    			});
+
+				pages_container.append(da_b);
+				pages.insert(pages.begin() + i, std::move(da_b));
+				*/
 			}
 
 			// Free the thread's pixmap and display list.
