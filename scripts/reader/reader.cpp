@@ -1,41 +1,52 @@
 #include "./reader.hpp"
-#include "gdkmm/general.h"
-#include "gdkmm/pixbuf.h"
-#include "gtkmm/drawingarea.h"
-#include "gtkmm/enums.h"
+#include "../global-variables.hpp"
+
+#include <QtWidgets>
 #include "mupdf/fitz.h"
 
-#include <gtkmm.h>
-
+#include <filesystem>
 #include <iostream>
+#include <qcoreapplication.h>
 #include <string>
 #include <memory>
 #include <thread>
 #include <format>
 
-reader_component::reader_component() :
-	Gtk::Box(Gtk::Orientation::VERTICAL),
+reader_component::reader_component(QWidget * parent) :
+	QVBoxLayout(parent),
+	//reader_c_layout(this),
 
 	// top panel
-	top_panel(Gtk::Orientation::HORIZONTAL),
+	top_panel(),
+	top_layout(&top_panel),
+
 	back_button("<"),
 	current_path_label("~/books/stuff/doc.pdf"),
 
 	// pages
-	pages_container(Gtk::Orientation::VERTICAL),
+	pages_container(),
 
 	// options
-	options(Gtk::Orientation::HORIZONTAL),
-	prev_page("<-"),
-	next_page("->"),
+	bottom_buttons(),
+	bb_layout(&bottom_buttons),
+
+	prev_button("<-"),
+	next_button("->"),
 	current_page("loading...")
 {
 	current_page_index = 0;
+	
+	load_file(main_dir.filePath("doc.pdf").toStdString());
 
+	//std::cout << main_dir.filePath("doc.pdf").toStdString() << "\n";
+
+	/*
+	// load file
 	std::thread load_file_t([this](){
 		load_file("./doc.pdf");
 
 		// ui changes related to file loading are only safe inside here
+		
 		Glib::signal_idle().connect_once([this]() {
         	build_pages_ui();
 		
@@ -50,42 +61,51 @@ reader_component::reader_component() :
 			);
 
    		});
-
 	});
 	load_file_t.detach();
+	*/
+	// remove later
+	QImage img(
+		pages[0].pix->samples,
+		pages[0].pix->w,
+		pages[0].pix->h,
+		pages[0].pix->stride,
+		QImage::Format_RGB888
+	);
+	QLabel * test = new QLabel(&pages_container);
+	test->setPixmap(QPixmap::fromImage(img));
+	test->show();
 
 	// load ui
+	setContentsMargins(0, 0, 0, 0);
+	addWidget(&top_panel);
+	addWidget(&pages_container);
+	addWidget(&bottom_buttons);
 
 	// top panel
-	top_panel.set_size_request(-1, 20);
-	current_path_label.set_hexpand(true);
-	back_button.set_size_request(35, -1);
+	top_panel.show();
 
-	top_panel.append(back_button);
-	top_panel.append(current_path_label);
-	append(top_panel);
+	back_button.setFixedSize(30, 30);
+	
+	top_layout.addWidget(&back_button);
+	top_layout.addWidget(&current_path_label);
+
 	// pages
-	pages_container.set_expand(true);
-	
-	//pages_container.append(test);
-	append(pages_container);
+	pages_container.setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
+	pages_container.show();
 
-	// options
-	options.set_size_request(-1, 50);
+	// bottom options
+	bb_layout.setContentsMargins(0, 0, 0, 0);
+	bottom_buttons.show();
 
-	//current_page.set_text("1 / 100");
+	current_page.setAlignment(Qt::AlignCenter);
 
-	prev_page.set_hexpand(true);
-	next_page.set_hexpand(true);
-	current_page.set_hexpand(true);
-	options.append(prev_page);
-	options.append(current_page);
-	options.append(next_page);
-	append(options);
-	
-
+	bb_layout.addWidget(&prev_button);
+	bb_layout.addWidget(&current_page);
+	bb_layout.addWidget(&next_button);
 };
 
+/*
 void reader_component::build_pages_ui() {
     for (int i = 0; i < page_pixmaps.size(); i++) {
 
@@ -129,3 +149,5 @@ void reader_component::set_next_page() {
 void reader_component::set_prev_page() {
 	set_page(current_page_index - 1);
 };
+
+*/

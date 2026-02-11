@@ -6,11 +6,10 @@
 // 	
 
 #include "./reader.hpp"
-#include "gtkmm/button.h"
 
 #include <mupdf/fitz.h>
+#include <QtWidgets>
 
-#include <mupdf/fitz/geometry.h>
 #include <stdlib.h>
 #include <pthread.h> // c++ mutex wont work with mupdf
 #include <string>
@@ -18,18 +17,53 @@
 #include <thread>
 #include <future>
 
+// page_data stuff
+page_data::page_data(fz_context *Ctx, int Pagenumber, fz_display_list *List, fz_rect Bbox, fz_pixmap * Pixmap, int Failed) {
+	// load values
+	ctx = Ctx;
+	page_number = Pagenumber;
+	list = List;
+	bbox = Bbox;
+	failed = Failed;
+	pix = Pixmap;
 
+	// load qt stuff
+	if (failed) return;
+
+	w_pix = new QPixmap();
+	//w_pix->loadFromData(
+	//	pix->samples
+		//pix->stride * pix->h
+	//);
+	//w_pix.
+
+	//widget = new QLabel();
+	
+	/*				
+	Glib::RefPtr<Gdk::Pixbuf> buff = Gdk::Pixbuf::create_from_data(
+		data->pix->samples,
+		Gdk::Colorspace::RGB,
+    		data->pix->alpha,          // has alpha
+    		8,             // bits per sample
+    		data->pix->w,
+    		data->pix->h,
+    		data->pix->stride
+		);
+
+
+		page_pixmaps.insert(page_pixmaps.begin() + i, std::move(buff));
+	*/
+
+
+}
+
+// load_file() stuff
 struct thread_data {
 	fz_context *ctx;
-
 	int pagenumber;
-
 	fz_display_list *list;
-
 	fz_rect bbox;
-
 	fz_pixmap *pix;
-
 	int failed;
 };
 
@@ -155,21 +189,9 @@ void reader_component::load_file(std::string path) {
 
 				// Write the rendered image to a PNG file
 				//fz_save_pixmap_as_png(ctx, data->pix, filename);
-				
-				
-							
-				Glib::RefPtr<Gdk::Pixbuf> buff = Gdk::Pixbuf::create_from_data(
-					data->pix->samples,
-					Gdk::Colorspace::RGB,
-    				data->pix->alpha,          // has alpha
-    				8,             // bits per sample
-    				data->pix->w,
-    				data->pix->h,
-    				data->pix->stride
-				);
-
-
-				page_pixmaps.insert(page_pixmaps.begin() + i, std::move(buff));
+	
+				page_data buff(data->ctx, data->pagenumber, data->list, data->bbox, data->pix, data->failed);
+				pages.insert(pages.begin() + i, std::move(buff));
 
 			}
 

@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/assuero/Documentos/computaria/cpp/pdf-reader/build/reader_autogen/mocs_compilation.cpp" "CMakeFiles/reader.dir/reader_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/reader.dir/reader_autogen/mocs_compilation.cpp.o.d"
   "/home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/global-variables.cpp" "CMakeFiles/reader.dir/scripts/global-variables.cpp.o" "gcc" "CMakeFiles/reader.dir/scripts/global-variables.cpp.o.d"
   "/home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/main.cpp" "CMakeFiles/reader.dir/scripts/main.cpp.o" "gcc" "CMakeFiles/reader.dir/scripts/main.cpp.o.d"
   "/home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/load-file.cpp" "CMakeFiles/reader.dir/scripts/reader/load-file.cpp.o" "gcc" "CMakeFiles/reader.dir/scripts/reader/load-file.cpp.o.d"

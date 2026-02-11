@@ -174,6 +174,56 @@ reader/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/reader.dir/build.make CMakeFiles/reader.dir/build
 .PHONY : reader/fast
 
+#=============================================================================
+# Target rules for targets named reader_autogen_timestamp_deps
+
+# Build rule for target.
+reader_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 reader_autogen_timestamp_deps
+.PHONY : reader_autogen_timestamp_deps
+
+# fast build rule for target.
+reader_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/reader_autogen_timestamp_deps.dir/build.make CMakeFiles/reader_autogen_timestamp_deps.dir/build
+.PHONY : reader_autogen_timestamp_deps/fast
+
+#=============================================================================
+# Target rules for targets named reader_autogen
+
+# Build rule for target.
+reader_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 reader_autogen
+.PHONY : reader_autogen
+
+# fast build rule for target.
+reader_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/reader_autogen.dir/build.make CMakeFiles/reader_autogen.dir/build
+.PHONY : reader_autogen/fast
+
+reader_autogen/mocs_compilation.o: reader_autogen/mocs_compilation.cpp.o
+.PHONY : reader_autogen/mocs_compilation.o
+
+# target to build an object file
+reader_autogen/mocs_compilation.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/reader.dir/build.make CMakeFiles/reader.dir/reader_autogen/mocs_compilation.cpp.o
+.PHONY : reader_autogen/mocs_compilation.cpp.o
+
+reader_autogen/mocs_compilation.i: reader_autogen/mocs_compilation.cpp.i
+.PHONY : reader_autogen/mocs_compilation.i
+
+# target to preprocess a source file
+reader_autogen/mocs_compilation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/reader.dir/build.make CMakeFiles/reader.dir/reader_autogen/mocs_compilation.cpp.i
+.PHONY : reader_autogen/mocs_compilation.cpp.i
+
+reader_autogen/mocs_compilation.s: reader_autogen/mocs_compilation.cpp.s
+.PHONY : reader_autogen/mocs_compilation.s
+
+# target to generate assembly for a file
+reader_autogen/mocs_compilation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/reader.dir/build.make CMakeFiles/reader.dir/reader_autogen/mocs_compilation.cpp.s
+.PHONY : reader_autogen/mocs_compilation.cpp.s
+
 scripts/global-variables.o: scripts/global-variables.cpp.o
 .PHONY : scripts/global-variables.o
 
@@ -282,7 +332,12 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... reader_autogen"
+	@echo "... reader_autogen_timestamp_deps"
 	@echo "... reader"
+	@echo "... reader_autogen/mocs_compilation.o"
+	@echo "... reader_autogen/mocs_compilation.i"
+	@echo "... reader_autogen/mocs_compilation.s"
 	@echo "... scripts/global-variables.o"
 	@echo "... scripts/global-variables.i"
 	@echo "... scripts/global-variables.s"

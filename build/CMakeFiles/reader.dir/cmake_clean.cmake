@@ -1,5 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/reader.dir/link.d"
+  "CMakeFiles/reader_autogen.dir/AutogenUsed.txt"
+  "CMakeFiles/reader_autogen.dir/ParseCache.txt"
+  "reader_autogen"
+  "CMakeFiles/reader.dir/reader_autogen/mocs_compilation.cpp.o"
+  "CMakeFiles/reader.dir/reader_autogen/mocs_compilation.cpp.o.d"
   "CMakeFiles/reader.dir/scripts/global-variables.cpp.o"
   "CMakeFiles/reader.dir/scripts/global-variables.cpp.o.d"
   "CMakeFiles/reader.dir/scripts/main.cpp.o"
