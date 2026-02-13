@@ -6,15 +6,25 @@
 
 #include <filesystem>
 #include <iostream>
-#include <qcoreapplication.h>
+#include <qlabel.h>
 #include <string>
 #include <memory>
 #include <thread>
 #include <format>
 
+
+void reader_component::create_page(page_data data) {
+	QLabel * l = new QLabel(&pages_container);
+	l->setPixmap(*data.w_pix);
+	
+	l->show();
+
+	std::cout << "page: " << data.page_number << " done\n";
+}
+
 reader_component::reader_component(QWidget * parent) :
-	QVBoxLayout(parent),
-	//reader_c_layout(this),
+	QWidget(parent),
+	reader_c_layout(this),
 
 	// top panel
 	top_panel(),
@@ -36,51 +46,35 @@ reader_component::reader_component(QWidget * parent) :
 {
 	current_page_index = 0;
 	
-	load_file(main_dir.filePath("doc.pdf").toStdString());
 
 	//std::cout << main_dir.filePath("doc.pdf").toStdString() << "\n";
 
+	
+	// load file	
+	
+	QThread * t = QThread::create( [this](void) -> void{
+		load_file(main_dir.filePath("doc.pdf").toStdString());
+	});
+
+	//load_file(main_dir.filePath("doc.pdf").toStdString());
+	QObject::connect(this, &reader_component::page_rendered, this, &reader_component::create_page);
+	t->start();
+	
 	/*
-	// load file
 	std::thread load_file_t([this](){
-		load_file("./doc.pdf");
+		load_file(main_dir.filePath("doc.pdf").toStdString());
 
 		// ui changes related to file loading are only safe inside here
-		
-		Glib::signal_idle().connect_once([this]() {
-        	build_pages_ui();
-		
-			current_page.set_text(std::format("{} / {}", current_page_index + 1, page_count));
-			
-			// connect signals to buttons
-			next_page.signal_clicked().connect(
-				sigc::mem_fun(*this, &reader_component::set_next_page)
-			);
-			prev_page.signal_clicked().connect(
-				sigc::mem_fun(*this, &reader_component::set_prev_page)
-			);
-
-   		});
 	});
 	load_file_t.detach();
 	*/
-	// remove later
-	QImage img(
-		pages[0].pix->samples,
-		pages[0].pix->w,
-		pages[0].pix->h,
-		pages[0].pix->stride,
-		QImage::Format_RGB888
-	);
-	QLabel * test = new QLabel(&pages_container);
-	test->setPixmap(QPixmap::fromImage(img));
-	test->show();
 
 	// load ui
-	setContentsMargins(0, 0, 0, 0);
-	addWidget(&top_panel);
-	addWidget(&pages_container);
-	addWidget(&bottom_buttons);
+	reader_c_layout.setContentsMargins(0, 0, 0, 0);
+	reader_c_layout.addWidget(&top_panel);
+	reader_c_layout.addWidget(&pages_container);
+	reader_c_layout.addWidget(&bottom_buttons);
+	setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
 
 	// top panel
 	top_panel.show();
@@ -103,6 +97,17 @@ reader_component::reader_component(QWidget * parent) :
 	bb_layout.addWidget(&prev_button);
 	bb_layout.addWidget(&current_page);
 	bb_layout.addWidget(&next_button);
+
+
+	//show();
+	// load pages
+	//load_file(main_dir.filePath("doc.pdf").toStdString());
+};
+void reader_component::showEvent(QShowEvent* event) {
+	QWidget::showEvent(event);
+
+	//load_file(main_dir.filePath("doc.pdf").toStdString());
+	puts("show");
 };
 
 /*

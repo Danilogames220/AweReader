@@ -25,11 +25,12 @@ int main(int argc, char * argv[]) {
 	main_window window = main_window();
 	
 	main_dir = QDir(QCoreApplication::applicationDirPath());
+	QVBoxLayout main_layout(&window);
+	main_layout.setContentsMargins(0, 0, 0, 0);
 
-	//file_path = "./doc.pdf";
 	
-
-	reader_component rc = reader_component(&window);
+	reader_component rc = reader_component(NULL);
+	main_layout.addWidget(&rc);
 
 
 	return app.exec();

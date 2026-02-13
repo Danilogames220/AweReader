@@ -3,6 +3,7 @@
 #include <QtWidgets>
 #include <mupdf/fitz.h>
 
+#include <qtmetamacros.h>
 #include <vector>
 
 class page_data {
@@ -19,16 +20,27 @@ class page_data {
 		int failed;
 
 		// qt stuff
-		QLabel * widget;
+		QLabel * label;
 		QPixmap * w_pix;
+
+		void load_label(QWidget * parent);
+
+		// make it work like render_pages_thread()
+		//void render();
 
 };
 
-class reader_component : public QVBoxLayout {
+class reader_component : public QWidget {
+	Q_OBJECT
+
+	protected:
+		void showEvent(QShowEvent *event) override;
 	// UI stuff
 	public: 
 		reader_component(QWidget * parent);
-		//QVBoxLayout reader_c_layout;
+		//void showEvent(QShowEvent* event);
+
+		QVBoxLayout reader_c_layout;
 
 		// top panel
 		QWidget top_panel;
@@ -47,6 +59,12 @@ class reader_component : public QVBoxLayout {
 			QLabel current_page;
 			QPushButton next_button;
 
+	public slots:
+		void create_page(page_data data);
+
+	signals:
+		void page_rendered(page_data page);	
+
 	// stuff related to processing the file
 	private: 
 		uint64_t current_page_index;
@@ -58,7 +76,7 @@ class reader_component : public QVBoxLayout {
 		void * page_render_thread(void *data_);
 		
 		// ui related functions
-		void build_pages_ui();
+		void on_pages_loaded();
 
 		void set_page(int index);
 
