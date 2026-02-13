@@ -9,12 +9,10 @@ class main_window : public QWidget {
 		main_window();
 };
 
-main_window::main_window()
-{
+main_window::main_window() {
 	resize(800, 600);
 	setWindowTitle("PDF Reader");
 
-	//set_child(reader);
 	show();
 }
 

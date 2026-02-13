@@ -3,7 +3,9 @@
 
 // TODO
 // - render each page individualy on page_data to make messing with single pages easier
+// 	- render with the data passed in the constuctor
 // 	- zoom page and resize acording to container size;
+// 	- make a copy of each pointers data to avoid the problem on below todo
 //
 // - the free pixmap on page_data constuctor gets called twice if you use the same pointer on 2 difrent page_data
 //      - happended on render_page_thread as of me still making it return data
@@ -44,17 +46,9 @@ page_data::page_data(fz_context *Ctx, int Pagenumber, fz_display_list *List, fz_
 	w_pix = new QPixmap();
 	*w_pix = QPixmap::fromImage(img);
 	
-	load_label(NULL);
+	//load_label(NULL);
 	
 	//fz_drop_pixmap(ctx, pix);
-}
-
-void page_data::load_label(QWidget * parent) {
-	label = new QLabel(NULL);
-	label->setPixmap(*w_pix);
-	//label->moveToThread(parent->thread());
-	//label->setParent(parent);
-	label->hide();
 }
 
 // load_file() stuff
@@ -168,16 +162,11 @@ void reader_component::load_file(std::string path) {
 			// Create the thread and pass it the data structure.
 			thread.insert(thread.begin() + i, std::async(std::launch::async, &reader_component::page_render_thread, this, data));
 
-
-
-			//if (pthread_create(&thread[i], NULL, renderer, data) != 0)
-			//	fail("pthread_create()");
 		}
 		
 
 		fprintf(stderr, "joining %d threads...\n", page_count);
 		for (int i = 0; i < page_count; i++) {
-			//char filename[42];
 			struct thread_data *data;
 		
 			data = (thread_data *)thread[i].get();
@@ -188,7 +177,6 @@ void reader_component::load_file(std::string path) {
 			}
 			else
 			{
-				//sprintf(filename, "out%04d.png", i);
 				//fprintf(stderr, "\tSaving %s...\n", filename);
 
 				// Write the rendered image to a PNG file
@@ -226,13 +214,9 @@ void reader_component::load_file(std::string path) {
 	//clear
 	fz_drop_context(ctx);
 
-	// start adding images to gtk frontend
-	
-	
 }
 
 void * reader_component::page_render_thread(void *data_) {
-	//printf("bbb");
 
 	struct thread_data *data = (struct thread_data *)data_;
 	int pagenumber = data->pagenumber;
@@ -265,7 +249,6 @@ void * reader_component::page_render_thread(void *data_) {
 		fz_run_display_list(ctx, list, dev, fz_identity, bbox, NULL);
 		fz_close_device(ctx, dev);
 
-		//fz_unmultiply_pixmap(ctx, data->pix);
 	}
 	fz_always(ctx)
 		fz_drop_device(ctx, dev);

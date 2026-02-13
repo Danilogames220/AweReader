@@ -2,11 +2,9 @@
 cmake_minimum_required(VERSION 3.23)
 project(reader)
 set(CMAKE_CXX_STANDARD 20)
-#set(CMAKE_EXPORT_COMPILE_COMMANDS ON) 
 
 find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets)
 qt_standard_project_setup()
-
 
 # project resources
 install(DIRECTORY "resources/" DESTINATION "resources/")
@@ -27,7 +25,6 @@ target_link_libraries(${PROJECT_NAME}
 		Qt6::Core
     		Qt6::Gui
     		Qt6::Widgets
-
 )
 
 install(TARGETS ${PROJECT_NAME}

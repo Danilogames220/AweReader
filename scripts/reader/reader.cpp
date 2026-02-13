@@ -45,29 +45,18 @@ reader_component::reader_component(QWidget * parent) :
 	current_page("loading...")
 {
 	current_page_index = 0;
-	
 
-	//std::cout << main_dir.filePath("doc.pdf").toStdString() << "\n";
 
-	
+
+
 	// load file	
 	
 	QThread * t = QThread::create( [this](void) -> void{
 		load_file(main_dir.filePath("doc.pdf").toStdString());
 	});
-
-	//load_file(main_dir.filePath("doc.pdf").toStdString());
 	QObject::connect(this, &reader_component::page_rendered, this, &reader_component::create_page);
 	t->start();
-	
-	/*
-	std::thread load_file_t([this](){
-		load_file(main_dir.filePath("doc.pdf").toStdString());
 
-		// ui changes related to file loading are only safe inside here
-	});
-	load_file_t.detach();
-	*/
 
 	// load ui
 	reader_c_layout.setContentsMargins(0, 0, 0, 0);
@@ -97,43 +86,9 @@ reader_component::reader_component(QWidget * parent) :
 	bb_layout.addWidget(&prev_button);
 	bb_layout.addWidget(&current_page);
 	bb_layout.addWidget(&next_button);
-
-
-	//show();
-	// load pages
-	//load_file(main_dir.filePath("doc.pdf").toStdString());
-};
-void reader_component::showEvent(QShowEvent* event) {
-	QWidget::showEvent(event);
-
-	//load_file(main_dir.filePath("doc.pdf").toStdString());
-	puts("show");
 };
 
 /*
-void reader_component::build_pages_ui() {
-    for (int i = 0; i < page_pixmaps.size(); i++) {
-
-		pages.push_back(Gtk::DrawingArea());
-        Gtk::DrawingArea * da = &pages[i];
-
-        da->set_content_width(pages_container.get_width());
-        da->set_content_height(pages_container.get_height());
-	
-        da->set_draw_func([this, i](const Cairo::RefPtr<Cairo::Context>& cr, int width, int height){
-                Gdk::Cairo::set_source_pixbuf(cr, page_pixmaps[i]);
-                cr->paint();
-            }
-        );
-
-        if (i != current_page_index) {
-            da->hide();
-		}
-
-        pages_container.append(*da);
-    }
-};
-
 void reader_component::set_page(int index) {
 	std::cout << "show_page ran; index =" << index << "\n";
 	if (index >= page_count || index < 0) {

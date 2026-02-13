@@ -23,7 +23,7 @@ class page_data {
 		QLabel * label;
 		QPixmap * w_pix;
 
-		void load_label(QWidget * parent);
+		//void load_label(QWidget * parent);
 
 		// make it work like render_pages_thread()
 		//void render();
@@ -33,8 +33,6 @@ class page_data {
 class reader_component : public QWidget {
 	Q_OBJECT
 
-	protected:
-		void showEvent(QShowEvent *event) override;
 	// UI stuff
 	public: 
 		reader_component(QWidget * parent);
