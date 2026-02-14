@@ -9,7 +9,7 @@
 class page_data {
 	public:
 		page_data(fz_context *Ctx, int Pagenumber, fz_display_list *List, fz_rect Bbox, fz_pixmap * Pixmap, int Failed);
-		//~page_data();
+		//~page_data(); // dont free mupdf variables in here
 
 		// mupdf stuff
 		fz_context *ctx;
@@ -48,7 +48,7 @@ class reader_component : public QWidget {
 		
 		// where the pages will get displayed in the window
 		QWidget pages_container;
-			std::vector<page_data> pages;
+			std::vector<std::optional<page_data>> pages;
 		
 		// bottom buttons
 		QWidget bottom_buttons;
@@ -60,8 +60,12 @@ class reader_component : public QWidget {
 	public slots:
 		void create_page(page_data data);
 
+		void set_next_page();
+		void set_prev_page();
+	
 	signals:
 		void page_rendered(page_data page);	
+		
 
 	// stuff related to processing the file
 	private: 
@@ -78,8 +82,6 @@ class reader_component : public QWidget {
 
 		void set_page(int index);
 
-		void set_next_page();
-		void set_prev_page();
 };
 
 

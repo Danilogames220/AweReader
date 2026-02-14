@@ -2,19 +2,20 @@
 // https://mupdf.readthedocs.io/en/1.27.0/cookbook/c/multi-threaded.html
 
 // TODO
-// - render each page individualy on page_data to make messing with single pages easier
+// - render each page individualy on page_data instead of render_page_thread
 // 	- render with the data passed in the constuctor
 // 	- zoom page and resize acording to container size;
-// 	- make a copy of each pointers data to avoid the problem on below todo
-//
-// - the free pixmap on page_data constuctor gets called twice if you use the same pointer on 2 difrent page_data
-//      - happended on render_page_thread as of me still making it return data
+// 
+// - way to start rendering from any page
 
 #include "./reader.hpp"
 
 #include <mupdf/fitz.h>
 #include <QtWidgets>
 
+#include <mupdf/fitz/color.h>
+#include <mupdf/fitz/context.h>
+#include <mupdf/fitz/display-list.h>
 #include <qpixmap.h>
 #include <stdlib.h>
 #include <pthread.h> // c++ mutex wont work with mupdf
@@ -27,11 +28,15 @@
 page_data::page_data(fz_context *Ctx, int Pagenumber, fz_display_list *List, fz_rect Bbox, fz_pixmap * Pixmap, int Failed) {
 	// load values
 	ctx = Ctx;
+	ctx = fz_clone_context(ctx);
 	page_number = Pagenumber;
 	list = List;
+	//memcpy(list, List, sizeof(fz_display_list);
 	bbox = Bbox;
+	pix = Pixmap; // qt already clones pixmaps
+	//memcpy(pix, Pixmap, sizeof(fz_pixmap));
+
 	failed = Failed;
-	pix = Pixmap;
 
 	// load qt stuff
 	if (failed) return;
@@ -46,14 +51,12 @@ page_data::page_data(fz_context *Ctx, int Pagenumber, fz_display_list *List, fz_
 	w_pix = new QPixmap();
 	*w_pix = QPixmap::fromImage(img);
 	
-	//load_label(NULL);
-	
-	//fz_drop_pixmap(ctx, pix);
-}
+	fz_drop_pixmap(ctx, pix);
+	fz_drop_context(ctx);
+};
 
 // load_file() stuff
 
-// might do this 
 struct thread_data {
 	fz_context *ctx;
 	int pagenumber;
@@ -115,7 +118,10 @@ void reader_component::load_file(std::string path) {
 		doc = fz_open_document(ctx, path.c_str());
 
 		page_count = fz_count_pages(ctx, doc);
-
+	
+		pages.clear();
+		pages.resize(page_count);
+		
 		for (int i = 0; i < page_count; i++) {
 			fz_page *page;
 			fz_rect bbox;
@@ -161,7 +167,6 @@ void reader_component::load_file(std::string path) {
 
 			// Create the thread and pass it the data structure.
 			thread.insert(thread.begin() + i, std::async(std::launch::async, &reader_component::page_render_thread, this, data));
-
 		}
 		
 
@@ -187,14 +192,8 @@ void reader_component::load_file(std::string path) {
 				//pages.insert(pages.begin() + i, std::move(buff));
 
 			}
+			fz_drop_display_list(ctx, data->list);
 
-			// Free the thread's pixmap and display list.
-			//fz_drop_pixmap(ctx, data->pix);
-
-			//fz_drop_display_list(ctx, data->list);
-
-			// Free the data structure passed back and forth
-			// between the main thread and rendering thread.
 			free(data);
 		}
 
