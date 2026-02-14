@@ -2,15 +2,21 @@
 // https://mupdf.readthedocs.io/en/1.27.0/cookbook/c/multi-threaded.html
 
 // TODO
-//	- draw_page() should save all of the pixmaps as gdk::pixbuf then append each loaded page into the reader
-// 	
+// - render each page individualy on page_data instead of render_page_thread
+// 	- render with the data passed in the constuctor
+// 	- zoom page and resize acording to container size;
+// 
+// - way to start rendering from any page
 
 #include "./reader.hpp"
-#include "gtkmm/button.h"
 
 #include <mupdf/fitz.h>
+#include <QtWidgets>
 
-#include <mupdf/fitz/geometry.h>
+#include <mupdf/fitz/color.h>
+#include <mupdf/fitz/context.h>
+#include <mupdf/fitz/display-list.h>
+#include <qpixmap.h>
 #include <stdlib.h>
 #include <pthread.h> // c++ mutex wont work with mupdf
 #include <string>
@@ -18,18 +24,45 @@
 #include <thread>
 #include <future>
 
+// page_data stuff
+page_data::page_data(fz_context *Ctx, int Pagenumber, fz_display_list *List, fz_rect Bbox, fz_pixmap * Pixmap, int Failed) {
+	// load values
+	ctx = Ctx;
+	ctx = fz_clone_context(ctx);
+	page_number = Pagenumber;
+	list = List;
+	//memcpy(list, List, sizeof(fz_display_list);
+	bbox = Bbox;
+	pix = Pixmap; // qt already clones pixmaps
+	//memcpy(pix, Pixmap, sizeof(fz_pixmap));
+
+	failed = Failed;
+
+	// load qt stuff
+	if (failed) return;
+
+	QImage img(
+		pix->samples,
+		pix->w,
+		pix->h,
+		pix->stride,
+		(pix->alpha) ? QImage::Format_RGBA8888 : QImage::Format_RGB888
+	);
+	w_pix = new QPixmap();
+	*w_pix = QPixmap::fromImage(img);
+	
+	fz_drop_pixmap(ctx, pix);
+	fz_drop_context(ctx);
+};
+
+// load_file() stuff
 
 struct thread_data {
 	fz_context *ctx;
-
 	int pagenumber;
-
 	fz_display_list *list;
-
 	fz_rect bbox;
-
 	fz_pixmap *pix;
-
 	int failed;
 };
 
@@ -85,7 +118,10 @@ void reader_component::load_file(std::string path) {
 		doc = fz_open_document(ctx, path.c_str());
 
 		page_count = fz_count_pages(ctx, doc);
-
+	
+		pages.clear();
+		pages.resize(page_count);
+		
 		for (int i = 0; i < page_count; i++) {
 			fz_page *page;
 			fz_rect bbox;
@@ -97,7 +133,7 @@ void reader_component::load_file(std::string path) {
 
 			fz_var(dev);
 
-			fz_try(ctx) {
+		fz_try(ctx) {
 				page = fz_load_page(ctx, doc, i);
 
 				bbox = fz_bound_page(ctx, page);
@@ -131,15 +167,11 @@ void reader_component::load_file(std::string path) {
 
 			// Create the thread and pass it the data structure.
 			thread.insert(thread.begin() + i, std::async(std::launch::async, &reader_component::page_render_thread, this, data));
-
-			//if (pthread_create(&thread[i], NULL, renderer, data) != 0)
-			//	fail("pthread_create()");
 		}
 		
 
 		fprintf(stderr, "joining %d threads...\n", page_count);
 		for (int i = 0; i < page_count; i++) {
-			char filename[42];
 			struct thread_data *data;
 		
 			data = (thread_data *)thread[i].get();
@@ -150,35 +182,18 @@ void reader_component::load_file(std::string path) {
 			}
 			else
 			{
-				//sprintf(filename, "out%04d.png", i);
 				//fprintf(stderr, "\tSaving %s...\n", filename);
 
 				// Write the rendered image to a PNG file
 				//fz_save_pixmap_as_png(ctx, data->pix, filename);
-				
-				
-							
-				Glib::RefPtr<Gdk::Pixbuf> buff = Gdk::Pixbuf::create_from_data(
-					data->pix->samples,
-					Gdk::Colorspace::RGB,
-    				data->pix->alpha,          // has alpha
-    				8,             // bits per sample
-    				data->pix->w,
-    				data->pix->h,
-    				data->pix->stride
-				);
-
-
-				page_pixmaps.insert(page_pixmaps.begin() + i, std::move(buff));
+	
+				//page_data buff(data->ctx, data->pagenumber, data->list, data->bbox, data->pix, data->failed);
+				//buff.load_label(&pages_container);
+				//pages.insert(pages.begin() + i, std::move(buff));
 
 			}
-
-			// Free the thread's pixmap and display list.
-			//fz_drop_pixmap(ctx, data->pix);
 			fz_drop_display_list(ctx, data->list);
 
-			// Free the data structure passed back and forth
-			// between the main thread and rendering thread.
 			free(data);
 		}
 
@@ -198,13 +213,9 @@ void reader_component::load_file(std::string path) {
 	//clear
 	fz_drop_context(ctx);
 
-	// start adding images to gtk frontend
-	
-	
 }
 
 void * reader_component::page_render_thread(void *data_) {
-	//printf("bbb");
 
 	struct thread_data *data = (struct thread_data *)data_;
 	int pagenumber = data->pagenumber;
@@ -237,7 +248,6 @@ void * reader_component::page_render_thread(void *data_) {
 		fz_run_display_list(ctx, list, dev, fz_identity, bbox, NULL);
 		fz_close_device(ctx, dev);
 
-		//fz_unmultiply_pixmap(ctx, data->pix);
 	}
 	fz_always(ctx)
 		fz_drop_device(ctx, dev);
@@ -248,6 +258,10 @@ void * reader_component::page_render_thread(void *data_) {
 	fz_drop_context(ctx);
 
 	fprintf(stderr, "thread at page %d done!\n", pagenumber);
+	
+	page_data aa(data->ctx, data->pagenumber, data->list, data->bbox, data->pix, data->failed);
 
+	emit page_rendered(std::move(aa));
+	
 	return data;
 };

@@ -1,59 +1,35 @@
-#include <gtkmm.h>
-#include "gtkmm/text.h"
+#include <QtWidgets>
 #include <iostream>
 
 #include "./global-variables.hpp"
 #include "./reader/reader.hpp"
 
-using namespace std;
-
-class MyWindow : public Gtk::Window {
+class main_window : public QWidget {
 	public:
-  		MyWindow();
-		Gtk::Box content_box;
-		Gtk::Button btn;
-		Gtk::Button btn2;
-		Gtk::Entry path_in;
-
-		reader_component reader;
-
-		void click() {
-			printf("%s\n", path_in.get_text().c_str());
-		};
+		main_window();
 };
 
-MyWindow::MyWindow():
-	content_box(Gtk::Orientation::VERTICAL),
-	path_in(),
-	btn("text"), 
-	btn2("text2")
+main_window::main_window() {
+	resize(800, 600);
+	setWindowTitle("PDF Reader");
 
-{
-  
-	set_title("PDF Reader");
-  	set_default_size(800, 600);
-
-	set_child(reader);
-
-	/*
-	//btn.set_margin(10);
-  	btn.set_size_request(-1, 20);
-	btn.signal_clicked().connect(sigc::mem_fun(*this, &MyWindow::click));
-	
-	btn2.set_margin(10);
-
-	path_in.set_placeholder_text("huh");
-
-	content_box.append(btn);
-	content_box.append(btn2);
-	content_box.append(path_in);
-	*/
+	show();
 }
 
+QDir main_dir;
 
 int main(int argc, char * argv[]) {
-	file_path = "./doc.pdf";
-	auto app = Gtk::Application::create("org.gtkmm.examples.base");
+	QApplication app(argc, argv);
+	main_window window = main_window();
+	
+	main_dir = QDir(QCoreApplication::applicationDirPath());
+	QVBoxLayout main_layout(&window);
+	main_layout.setContentsMargins(0, 0, 0, 0);
 
-	return app->make_window_and_run<MyWindow>(argc, argv);;
+	
+	reader_component rc = reader_component(NULL);
+	main_layout.addWidget(&rc);
+
+
+	return app.exec();
 }

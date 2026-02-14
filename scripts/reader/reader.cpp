@@ -1,126 +1,126 @@
 #include "./reader.hpp"
-#include "gdkmm/general.h"
-#include "gdkmm/pixbuf.h"
-#include "gtkmm/drawingarea.h"
-#include "gtkmm/enums.h"
+#include "../global-variables.hpp"
+
+#include <QtWidgets>
 #include "mupdf/fitz.h"
 
-#include <gtkmm.h>
-
+#include <filesystem>
 #include <iostream>
 #include <string>
 #include <memory>
 #include <thread>
 #include <format>
 
-reader_component::reader_component() :
-	Gtk::Box(Gtk::Orientation::VERTICAL),
+void reader_component::create_page(page_data data) {
+	int page_index = data.page_number - 1;
+
+	QLabel * l = new QLabel(&pages_container);
+	l->setPixmap(*data.w_pix);
+	l->hide();
+
+	page_data p_buf = data;
+	p_buf.label = l;
+	pages[page_index] = std::move(p_buf);
+
+	if (current_page_index == page_index) set_page(page_index);
+
+	std::cout << "page: " << (data.page_number - 1) << " done\n";
+}
+
+reader_component::reader_component(QWidget * parent) :
+	QWidget(parent),
+	reader_c_layout(this),
 
 	// top panel
-	top_panel(Gtk::Orientation::HORIZONTAL),
+	top_panel(),
+	top_layout(&top_panel),
+
 	back_button("<"),
 	current_path_label("~/books/stuff/doc.pdf"),
 
 	// pages
-	pages_container(Gtk::Orientation::VERTICAL),
+	pages_container(),
 
 	// options
-	options(Gtk::Orientation::HORIZONTAL),
-	prev_page("<-"),
-	next_page("->"),
+	bottom_buttons(),
+	bb_layout(&bottom_buttons),
+
+	prev_button("<-"),
+	next_button("->"),
 	current_page("loading...")
 {
 	current_page_index = 0;
-
-	std::thread load_file_t([this](){
-		load_file("./doc.pdf");
-
-		// ui changes related to file loading are only safe inside here
-		Glib::signal_idle().connect_once([this]() {
-        	build_pages_ui();
-		
-			current_page.set_text(std::format("{} / {}", current_page_index + 1, page_count));
-			
-			// connect signals to buttons
-			next_page.signal_clicked().connect(
-				sigc::mem_fun(*this, &reader_component::set_next_page)
-			);
-			prev_page.signal_clicked().connect(
-				sigc::mem_fun(*this, &reader_component::set_prev_page)
-			);
-
-   		});
-
+	// load file	
+	
+	QThread * t = QThread::create( [this](void) -> void{
+		load_file(main_dir.filePath("doc.pdf").toStdString());
 	});
-	load_file_t.detach();
-
-	// load ui
-
-	// top panel
-	top_panel.set_size_request(-1, 20);
-	current_path_label.set_hexpand(true);
-	back_button.set_size_request(35, -1);
-
-	top_panel.append(back_button);
-	top_panel.append(current_path_label);
-	append(top_panel);
-	// pages
-	pages_container.set_expand(true);
+	QObject::connect(this, &reader_component::page_rendered, this, &reader_component::create_page);
 	
-	//pages_container.append(test);
-	append(pages_container);
+	// after load_file finished
+	QObject::connect(t, &QThread::finished, this, [this]{
+			std::cout << pages[0]->label->text().toStdString() << "\n";
 
-	// options
-	options.set_size_request(-1, 50);
+			QObject::connect(&prev_button, &QPushButton::clicked,
+					this, &reader_component::set_prev_page);
 
-	//current_page.set_text("1 / 100");
+			QObject::connect(&next_button, &QPushButton::clicked,
+					this, &reader_component::set_next_page);
 
-	prev_page.set_hexpand(true);
-	next_page.set_hexpand(true);
-	current_page.set_hexpand(true);
-	options.append(prev_page);
-	options.append(current_page);
-	options.append(next_page);
-	append(options);
-	
+		});
+		t->start();
 
-};
 
-void reader_component::build_pages_ui() {
-    for (int i = 0; i < page_pixmaps.size(); i++) {
+		// load ui
+		reader_c_layout.setContentsMargins(0, 0, 0, 0);
+		reader_c_layout.addWidget(&top_panel);
+		reader_c_layout.addWidget(&pages_container);
+		reader_c_layout.addWidget(&bottom_buttons);
+		setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
 
-		pages.push_back(Gtk::DrawingArea());
-        Gtk::DrawingArea * da = &pages[i];
+		// top panel
+		top_panel.show();
 
-        da->set_content_width(pages_container.get_width());
-        da->set_content_height(pages_container.get_height());
-	
-        da->set_draw_func([this, i](const Cairo::RefPtr<Cairo::Context>& cr, int width, int height){
-                Gdk::Cairo::set_source_pixbuf(cr, page_pixmaps[i]);
-                cr->paint();
-            }
-        );
+		back_button.setFixedSize(30, 30);
+		
+		top_layout.addWidget(&back_button);
+		top_layout.addWidget(&current_path_label);
 
-        if (i != current_page_index) {
-            da->hide();
-		}
+		// pages
+		pages_container.setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
+		pages_container.show();
 
-        pages_container.append(*da);
-    }
-};
+		// bottom options
+		bb_layout.setContentsMargins(0, 0, 0, 0);
+		bottom_buttons.show();
 
-void reader_component::set_page(int index) {
-	std::cout << "show_page ran; index =" << index << "\n";
-	if (index >= page_count || index < 0) {
-		return;
+		current_page.setAlignment(Qt::AlignCenter);
+
+		bb_layout.addWidget(&prev_button);
+		bb_layout.addWidget(&current_page);
+		bb_layout.addWidget(&next_button);
 	};
 
-	pages[current_page_index].hide();
-	current_page_index = index;
-	current_page.set_text(std::format("{} / {}", current_page_index + 1, page_count));
-	pages[current_page_index].show();
 
+	void reader_component::set_page(int index) {
+		if (index >= page_count || index < 0) {
+			return;
+		};
+		if (!pages[current_page_index]->label) {
+			return;
+		}
+		
+		// update current page
+		pages[current_page_index]->label->hide();
+		current_page_index = index;
+		pages[current_page_index]->label->show();
 	
+		// update page count thing
+		current_page.setText(QString::fromStdString(
+			std::format("{} / {}", current_page_index + 1, page_count)
+		));
+
+		
 };
 
 void reader_component::set_next_page() {

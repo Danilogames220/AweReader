@@ -1,16 +1,15 @@
 #ifndef READER_HPP
 #define READER_HPP
-#include "gtkmm/drawingarea.h"
-#include <gtkmm.h>
-#include <gdkmm.h>
+#include <QtWidgets>
 #include <mupdf/fitz.h>
 
+#include <qtmetamacros.h>
 #include <vector>
 
 class page_data {
 	public:
-		page_data();
-		~page_data();
+		page_data(fz_context *Ctx, int Pagenumber, fz_display_list *List, fz_rect Bbox, fz_pixmap * Pixmap, int Failed);
+		//~page_data(); // dont free mupdf variables in here
 
 		// mupdf stuff
 		fz_context *ctx;
@@ -20,52 +19,69 @@ class page_data {
 		fz_pixmap *pix;
 		int failed;
 
-		// gtk stuff
-		Gtk::DrawingArea widget;
-		Glib::RefPtr<Gdk::Pixbuf> w_pix;
+		// qt stuff
+		QLabel * label;
+		QPixmap * w_pix;
+
+		//void load_label(QWidget * parent);
+
+		// make it work like render_pages_thread()
+		//void render();
 
 };
 
-class reader_component : public Gtk::Box {
-	public: // UI stuff goes here
-		reader_component();
+class reader_component : public QWidget {
+	Q_OBJECT
 
-		// bottom settings for viewing current document
-		Gtk::Box options;
-			Gtk::Button prev_page;
-			Gtk::Button next_page;
-			
-			Gtk::Label current_page;
+	// UI stuff
+	public: 
+		reader_component(QWidget * parent);
+		//void showEvent(QShowEvent* event);
 
-		// container for the file contents
-		Gtk::Box pages_container;
-			std::vector<Gtk::DrawingArea> pages;
-			//std::vector<page_data> pages;
+		QVBoxLayout reader_c_layout;
 
-		// display current file path/name and back option
-		Gtk::Box top_panel;
-			Gtk::Button back_button;
-			Gtk::Label current_path_label;
+		// top panel
+		QWidget top_panel;
+		QHBoxLayout top_layout;
+			QPushButton back_button;
+			QLabel current_path_label;
+		
+		// where the pages will get displayed in the window
+		QWidget pages_container;
+			std::vector<std::optional<page_data>> pages;
+		
+		// bottom buttons
+		QWidget bottom_buttons;
+		QHBoxLayout bb_layout;
+			QPushButton prev_button;
+			QLabel current_page;
+			QPushButton next_button;
+
+	public slots:
+		void create_page(page_data data);
+
+		void set_next_page();
+		void set_prev_page();
+	
+	signals:
+		void page_rendered(page_data page);	
 		
 
-	private: // stuff related to processing the file goes here
+	// stuff related to processing the file
+	private: 
 		uint64_t current_page_index;
 		uint64_t page_count;
 
-		std::vector<Glib::RefPtr<Gdk::Pixbuf>> page_pixmaps;
-		
 		void load_file(std::string path);
 			
 		// used to load each page by itself in a specific thread
 		void * page_render_thread(void *data_);
 		
 		// ui related functions
-		void build_pages_ui();
+		void on_pages_loaded();
 
 		void set_page(int index);
 
-		void set_next_page();
-		void set_prev_page();
 };
 
 

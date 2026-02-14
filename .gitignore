@@ -1,1 +1,6 @@
-/build/
+build
+compile_commands.json
+doc.pdf
+.doc.pdf
+.cache
+.qt
