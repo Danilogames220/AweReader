@@ -55,6 +55,33 @@ page_data::page_data(fz_context *Ctx, int Pagenumber, fz_display_list *List, fz_
 	fz_drop_context(ctx);
 };
 
+void page_data::resize(QRect rect) {
+	if (!w_pix) return;
+
+	*w_pix = w_pix->scaledToWidth(rect.width());
+	*w_pix = w_pix->scaledToHeight(rect.height());
+	/*
+	if (w_pix->height() > w_pix->width()) {
+		*w_pix = w_pix->scaledToWidth(size.width());
+		*w_pix = w_pix->scaledToHeight(size.height());
+	} else {
+		*w_pix = w_pix->scaledToWidth(size.width());
+		*w_pix = w_pix->scaledToHeight(size.height());
+	}
+	*/
+	if (label) {
+        	label->setPixmap(*w_pix);
+        	label->resize(w_pix->size());
+
+		label->move((rect.width() - label->width())/2 + rect.x(),
+			(rect.height() - label->height())/2 + rect.y());
+    	}
+
+	//if (label) label->setFixedSize(w_pix->size());
+
+
+}
+
 // load_file() stuff
 
 struct thread_data {
@@ -83,6 +110,7 @@ void unlock_mutex(void *user, int lock) {
 	if (pthread_mutex_unlock(&mutex[lock]) != 0)
 		fail("pthread_mutex_unlock()");
 }
+
 
 
 void reader_component::load_file(std::string path) {

@@ -16,7 +16,6 @@ main_window::main_window() {
 	show();
 }
 
-QDir main_dir;
 
 int main(int argc, char * argv[]) {
 	QApplication app(argc, argv);
@@ -26,9 +25,15 @@ int main(int argc, char * argv[]) {
 	QVBoxLayout main_layout(&window);
 	main_layout.setContentsMargins(0, 0, 0, 0);
 
+	if (QCoreApplication::arguments().size() > 1) {
+		puts("argument detected");
+		file_path = std::string(argv[1]);
+		
+		reader_component rc = reader_component();
+		main_layout.addWidget(&rc);
+		return app.exec();
+	};
 	
-	reader_component rc = reader_component(NULL);
-	main_layout.addWidget(&rc);
 
 
 	return app.exec();

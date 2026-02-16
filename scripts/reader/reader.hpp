@@ -1,8 +1,10 @@
 #ifndef READER_HPP
 #define READER_HPP
+#include <QtCore>
 #include <QtWidgets>
 #include <mupdf/fitz.h>
 
+#include <qevent.h>
 #include <qtmetamacros.h>
 #include <vector>
 
@@ -23,7 +25,12 @@ class page_data {
 		QLabel * label;
 		QPixmap * w_pix;
 
-		//void load_label(QWidget * parent);
+		// gui stuff
+		bool is_centered;
+		float zoom;
+
+
+		void resize(QRect rect);
 
 		// make it work like render_pages_thread()
 		//void render();
@@ -32,11 +39,17 @@ class page_data {
 
 class reader_component : public QWidget {
 	Q_OBJECT
+	
+	protected:
+		// load_file() happens here
+		void showEvent(QShowEvent * event) override;
+		void resizeEvent(QResizeEvent * event) override;
+
 
 	// UI stuff
 	public: 
-		reader_component(QWidget * parent);
-		//void showEvent(QShowEvent* event);
+		reader_component();
+		
 
 		QVBoxLayout reader_c_layout;
 
@@ -71,6 +84,8 @@ class reader_component : public QWidget {
 	private: 
 		uint64_t current_page_index;
 		uint64_t page_count;
+
+		bool can_resize;
 
 		void load_file(std::string path);
 			

@@ -2,8 +2,6 @@ CMakeFiles/reader.dir/scripts/reader/reader.cpp.o: \
  /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/reader.cpp \
  /usr/include/stdc-predef.h \
  /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/./reader.hpp \
- /usr/include/qt6/QtWidgets/QtWidgets \
- /usr/include/qt6/QtWidgets/QtWidgetsDepends \
  /usr/include/qt6/QtCore/QtCore /usr/include/qt6/QtCore/QtCoreDepends \
  /usr/include/qt6/QtCore/qglobal.h /usr/include/c++/15.2.1/type_traits \
  /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/c++config.h \
@@ -762,7 +760,9 @@ CMakeFiles/reader.dir/scripts/reader/reader.cpp.o: \
  /usr/include/qt6/QtCore/qxmlstream.h \
  /usr/include/qt6/QtCore/qxpfunctional.h \
  /usr/include/qt6/QtCore/q23functional.h \
- /usr/include/qt6/QtCore/qyieldcpu.h /usr/include/qt6/QtGui/QtGui \
+ /usr/include/qt6/QtCore/qyieldcpu.h /usr/include/qt6/QtWidgets/QtWidgets \
+ /usr/include/qt6/QtWidgets/QtWidgetsDepends \
+ /usr/include/qt6/QtCore/QtCore /usr/include/qt6/QtGui/QtGui \
  /usr/include/qt6/QtGui/QtGuiDepends /usr/include/qt6/QtGui/qtguiglobal.h \
  /usr/include/qt6/QtGui/qtgui-config.h \
  /usr/include/qt6/QtGui/qtguiexports.h \
@@ -1101,6 +1101,7 @@ CMakeFiles/reader.dir/scripts/reader/reader.cpp.o: \
  /usr/include/mupdf/fitz/write-pixmap.h \
  /usr/include/mupdf/fitz/output-svg.h /usr/include/mupdf/fitz/story.h \
  /usr/include/mupdf/fitz/story-writer.h /usr/include/mupdf/fitz/deskew.h \
- /usr/include/mupdf/fitz/barcode.h /usr/include/qt6/QtCore/qtmetamacros.h \
+ /usr/include/mupdf/fitz/barcode.h /usr/include/qt6/QtGui/qevent.h \
+ /usr/include/qt6/QtCore/qtmetamacros.h \
  /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/../global-variables.hpp \
  /usr/include/c++/15.2.1/iostream /usr/include/c++/15.2.1/thread
