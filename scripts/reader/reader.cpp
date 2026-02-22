@@ -12,12 +12,14 @@
 
 void reader_component::showEvent(QShowEvent * event) {
 	QWidget::showEvent(event);	
-	
+
+	/*
 	std::cout << top_panel.height() << "\n";
 	std::cout << pages_container.height() << "\n";
 	std::cout << bottom_buttons.height() << "\n";
 	std::cout << top_panel.height() + pages_container.height() + bottom_buttons.height() << "\n";
-	
+	*/
+
 	// start variables before loading the file
 	current_page_index = 0;
 	can_resize = 0;
@@ -27,16 +29,16 @@ void reader_component::showEvent(QShowEvent * event) {
 		//load_file(main_dir.filePath("doc.pdf").toStdString());
 		load_file(file_path);
 	});
-	QObject::connect(this, &reader_component::page_rendered, this, &reader_component::create_page);
+	//QObject::connect(this, &reader_component::page_rendered, this, &reader_component::create_page);
 	
 	// after load_file finished
 	QObject::connect(t, &QThread::finished, this, [this]{
 
-		QObject::connect(&prev_button, &QPushButton::clicked,
-				this, &reader_component::set_prev_page);
+		//QObject::connect(&prev_button, &QPushButton::clicked,
+		//		this, &reader_component::set_prev_page);
 
-		QObject::connect(&next_button, &QPushButton::clicked,
-			this, &reader_component::set_next_page);
+		//QObject::connect(&next_button, &QPushButton::clicked,
+		//	this, &reader_component::set_next_page);
 
 	});
 	t->start();
@@ -51,11 +53,11 @@ void reader_component::resizeEvent(QResizeEvent * event) {
 	std::cout << pages_container.height() << "\n";
 }
 
-void reader_component::create_page(page_data data) {
-	int page_index = data.page_number - 1;
+void reader_component::create_page(page_data * data) {
+	int page_index = data->data->pagenumber - 1;
 
 	QLabel * l = new QLabel(this);
-	l->setPixmap(*data.w_pix);
+	l->setPixmap(*data->w_pix);
 	
 	//l->setFixedSize(data.w_pix->width(), data.w_pix->height());
 	//l->setFixedHeight(pages_container.height());
@@ -64,15 +66,15 @@ void reader_component::create_page(page_data data) {
 	l->lower();
 	l->hide();
 
-	page_data p_buf = data;
-	p_buf.label = l;
-	p_buf.resize(pages_container.geometry());
+	page_data * p_buf = data;
+	p_buf->label = l;
+	p_buf->resize(pages_container.geometry());
 	
 	pages[page_index] = std::move(p_buf);
 
 	if (current_page_index == page_index) set_page(page_index);
 
-	std::cout << "page: " << (data.page_number - 1) << " done\n";
+	std::cout << "page: " << page_index << " done\n";
 }
 
 reader_component::reader_component() :

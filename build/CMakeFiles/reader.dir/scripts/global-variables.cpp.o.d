@@ -1103,5 +1103,5 @@ CMakeFiles/reader.dir/scripts/global-variables.cpp.o: \
  /usr/include/mupdf/fitz/write-pixmap.h \
  /usr/include/mupdf/fitz/output-svg.h /usr/include/mupdf/fitz/story.h \
  /usr/include/mupdf/fitz/story-writer.h /usr/include/mupdf/fitz/deskew.h \
- /usr/include/mupdf/fitz/barcode.h /usr/include/qt6/QtGui/qevent.h \
- /usr/include/qt6/QtCore/qtmetamacros.h
+ /usr/include/mupdf/fitz/barcode.h \
+ /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/./reader/./page-data.hpp

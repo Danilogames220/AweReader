@@ -12,6 +12,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/global-variables.cpp" "CMakeFiles/reader.dir/scripts/global-variables.cpp.o" "gcc" "CMakeFiles/reader.dir/scripts/global-variables.cpp.o.d"
   "/home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/main.cpp" "CMakeFiles/reader.dir/scripts/main.cpp.o" "gcc" "CMakeFiles/reader.dir/scripts/main.cpp.o.d"
   "/home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/load-file.cpp" "CMakeFiles/reader.dir/scripts/reader/load-file.cpp.o" "gcc" "CMakeFiles/reader.dir/scripts/reader/load-file.cpp.o.d"
+  "/home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/page-data.cpp" "CMakeFiles/reader.dir/scripts/reader/page-data.cpp.o" "gcc" "CMakeFiles/reader.dir/scripts/reader/page-data.cpp.o.d"
   "/home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/reader.cpp" "CMakeFiles/reader.dir/scripts/reader/reader.cpp.o" "gcc" "CMakeFiles/reader.dir/scripts/reader/reader.cpp.o.d"
   "" "reader" "gcc" "CMakeFiles/reader.dir/link.d"
   )

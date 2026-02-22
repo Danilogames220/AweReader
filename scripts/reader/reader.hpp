@@ -4,38 +4,9 @@
 #include <QtWidgets>
 #include <mupdf/fitz.h>
 
-#include <qevent.h>
-#include <qtmetamacros.h>
 #include <vector>
 
-class page_data {
-	public:
-		page_data(fz_context *Ctx, int Pagenumber, fz_display_list *List, fz_rect Bbox, fz_pixmap * Pixmap, int Failed);
-		//~page_data(); // dont free mupdf variables in here
-
-		// mupdf stuff
-		fz_context *ctx;
-		int page_number;
-		fz_display_list *list;
-		fz_rect bbox;
-		fz_pixmap *pix;
-		int failed;
-
-		// qt stuff
-		QLabel * label;
-		QPixmap * w_pix;
-
-		// gui stuff
-		bool is_centered;
-		float zoom;
-
-
-		void resize(QRect rect);
-
-		// make it work like render_pages_thread()
-		//void render();
-
-};
+#include "./page-data.hpp"
 
 class reader_component : public QWidget {
 	Q_OBJECT
@@ -61,7 +32,7 @@ class reader_component : public QWidget {
 		
 		// where the pages will get displayed in the window
 		QWidget pages_container;
-			std::vector<std::optional<page_data>> pages;
+			std::vector<page_data *> pages;
 		
 		// bottom buttons
 		QWidget bottom_buttons;
@@ -71,13 +42,13 @@ class reader_component : public QWidget {
 			QPushButton next_button;
 
 	public slots:
-		void create_page(page_data data);
+		void create_page(page_data * data);
 
 		void set_next_page();
 		void set_prev_page();
 	
 	signals:
-		void page_rendered(page_data page);	
+		void page_rendered(page_data *  page);	
 		
 
 	// stuff related to processing the file

@@ -2,13 +2,12 @@
 // https://mupdf.readthedocs.io/en/1.27.0/cookbook/c/multi-threaded.html
 
 // TODO
-// - render each page individualy on page_data instead of render_page_thread
-// 	- render with the data passed in the constuctor
-// 	- zoom page and resize acording to container size;
+// - zoom page and resize acording to pages_container size;
 // 
 // - way to start rendering from any page
 
 #include "./reader.hpp"
+#include "page-data.hpp"
 
 #include <mupdf/fitz.h>
 #include <QtWidgets>
@@ -24,74 +23,6 @@
 #include <thread>
 #include <future>
 
-// page_data stuff
-page_data::page_data(fz_context *Ctx, int Pagenumber, fz_display_list *List, fz_rect Bbox, fz_pixmap * Pixmap, int Failed) {
-	// load values
-	ctx = Ctx;
-	ctx = fz_clone_context(ctx);
-	page_number = Pagenumber;
-	list = List;
-	//memcpy(list, List, sizeof(fz_display_list);
-	bbox = Bbox;
-	pix = Pixmap; // qt already clones pixmaps
-	//memcpy(pix, Pixmap, sizeof(fz_pixmap));
-
-	failed = Failed;
-
-	// load qt stuff
-	if (failed) return;
-
-	QImage img(
-		pix->samples,
-		pix->w,
-		pix->h,
-		pix->stride,
-		(pix->alpha) ? QImage::Format_RGBA8888 : QImage::Format_RGB888
-	);
-	w_pix = new QPixmap();
-	*w_pix = QPixmap::fromImage(img);
-	
-	fz_drop_pixmap(ctx, pix);
-	fz_drop_context(ctx);
-};
-
-void page_data::resize(QRect rect) {
-	if (!w_pix) return;
-
-	*w_pix = w_pix->scaledToWidth(rect.width());
-	*w_pix = w_pix->scaledToHeight(rect.height());
-	/*
-	if (w_pix->height() > w_pix->width()) {
-		*w_pix = w_pix->scaledToWidth(size.width());
-		*w_pix = w_pix->scaledToHeight(size.height());
-	} else {
-		*w_pix = w_pix->scaledToWidth(size.width());
-		*w_pix = w_pix->scaledToHeight(size.height());
-	}
-	*/
-	if (label) {
-        	label->setPixmap(*w_pix);
-        	label->resize(w_pix->size());
-
-		label->move((rect.width() - label->width())/2 + rect.x(),
-			(rect.height() - label->height())/2 + rect.y());
-    	}
-
-	//if (label) label->setFixedSize(w_pix->size());
-
-
-}
-
-// load_file() stuff
-
-struct thread_data {
-	fz_context *ctx;
-	int pagenumber;
-	fz_display_list *list;
-	fz_rect bbox;
-	fz_pixmap *pix;
-	int failed;
-};
 
 void fail(const char *msg) {
 	fprintf(stderr, "%s\n", msg);
@@ -110,8 +41,6 @@ void unlock_mutex(void *user, int lock) {
 	if (pthread_mutex_unlock(&mutex[lock]) != 0)
 		fail("pthread_mutex_unlock()");
 }
-
-
 
 void reader_component::load_file(std::string path) {
 	fz_context * ctx;
@@ -161,7 +90,7 @@ void reader_component::load_file(std::string path) {
 
 			fz_var(dev);
 
-		fz_try(ctx) {
+			fz_try(ctx) {
 				page = fz_load_page(ctx, doc, i);
 
 				bbox = fz_bound_page(ctx, page);
@@ -193,8 +122,13 @@ void reader_component::load_file(std::string path) {
 			data->pix = NULL;
 			data->failed = 0;
 
+			//page_data d_buff(data);
 			// Create the thread and pass it the data structure.
-			thread.insert(thread.begin() + i, std::async(std::launch::async, &reader_component::page_render_thread, this, data));
+			thread.insert(thread.begin() + i, std::async(std::launch::async, [this, data](){
+				return (void *)new page_data(data, [](thread_data * d){
+					puts("nnnn");
+				});
+			}));
 		}
 		
 
@@ -202,7 +136,8 @@ void reader_component::load_file(std::string path) {
 		for (int i = 0; i < page_count; i++) {
 			struct thread_data *data;
 		
-			data = (thread_data *)thread[i].get();
+			/*
+			data = thread[i].get()->data;
 
 			if (data->failed)
 			{
@@ -220,9 +155,10 @@ void reader_component::load_file(std::string path) {
 				//pages.insert(pages.begin() + i, std::move(buff));
 
 			}
-			fz_drop_display_list(ctx, data->list);
+			*/
+			//fz_drop_display_list(ctx, data->list);
 
-			free(data);
+			//free(data);
 		}
 
 	}
@@ -243,6 +179,7 @@ void reader_component::load_file(std::string path) {
 
 }
 
+/*
 void * reader_component::page_render_thread(void *data_) {
 
 	struct thread_data *data = (struct thread_data *)data_;
@@ -287,9 +224,10 @@ void * reader_component::page_render_thread(void *data_) {
 
 	fprintf(stderr, "thread at page %d done!\n", pagenumber);
 	
-	page_data aa(data->ctx, data->pagenumber, data->list, data->bbox, data->pix, data->failed);
+	page_data aa(data);
 
 	emit page_rendered(std::move(aa));
 	
 	return data;
 };
+*/
