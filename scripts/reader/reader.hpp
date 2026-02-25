@@ -20,8 +20,6 @@ class reader_component : public QWidget {
 	// UI stuff
 	public: 
 		reader_component();
-		
-
 		QVBoxLayout reader_c_layout;
 
 		// top panel
@@ -41,16 +39,6 @@ class reader_component : public QWidget {
 			QLabel current_page;
 			QPushButton next_button;
 
-	public slots:
-		void create_page(page_data * data);
-
-		void set_next_page();
-		void set_prev_page();
-	
-	signals:
-		void page_rendered(page_data *  page);	
-		
-
 	// stuff related to processing the file
 	private: 
 		uint64_t current_page_index;
@@ -61,13 +49,22 @@ class reader_component : public QWidget {
 		void load_file(std::string path);
 			
 		// used to load each page by itself in a specific thread
-		void * page_render_thread(void *data_);
+		//void * page_render_thread(void *data_);
 		
 		// ui related functions
 		void on_pages_loaded();
 
 		void set_page(int index);
 
+		// defined in page-data.cpp
+	public slots:
+		void add_page_to_reader(page_data * page);
+		
+		void set_next_page();
+		void set_prev_page();
+
+	signals:
+		void page_rendered(page_data * page);	
 };
 
 

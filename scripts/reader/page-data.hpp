@@ -6,6 +6,9 @@
 #include <functional>
 #include <mupdf/fitz.h>
 
+//#define ON_RENDERED void(* on_rendered)(page_data *)
+#define ON_RENDERED std::function<void(page_data *)> on_rendered
+
 struct thread_data {
 	bool rendered;
 
@@ -22,8 +25,12 @@ class page_data : public QObject {
 	Q_OBJECT
 
 	public:
+		// copies Data
 		page_data(thread_data * Data);
-		page_data(thread_data * Data, void(* on_rendered)(thread_data *));
+		// renders Data
+		page_data(thread_data * Data, ON_RENDERED);
+		// renders Data size pixmap acording to size
+		page_data(QSize size, thread_data * Data, ON_RENDERED);
 
 		~page_data();
 
@@ -31,22 +38,31 @@ class page_data : public QObject {
 
 		// qt stuff
 		QLabel * label;
-		QPixmap * w_pix;
+		QPixmap * label_pix;
+		QImage * label_img;
 
 		// gui stuff
 		bool is_centered;
+		
 		float zoom;
+		float zoom2;
 
+		void resize(QSize size);
 
-		void resize(QRect rect);
+		// re-render the page resizing acording to size, but in a seprate thread
+		void query_resize(QSize size);
+		void query_resize(QSize size, ON_RENDERED);
 
 		// make it work like render_pages_thread()
-		void render(thread_data * Data);
+		//void render(thread_data * Data);
+		void render(QSize size, thread_data * Data);
+		//void render(QSize size,thread_data * Data);
+		
 		// loads the current data to widgets
-		void load();
+		void load_widget();
 	
 	signals:
-		void rendered(thread_data * Data);
+		void rendered(page_data * self);
 
 };
 

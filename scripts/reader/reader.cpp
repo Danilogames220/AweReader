@@ -13,17 +13,14 @@
 void reader_component::showEvent(QShowEvent * event) {
 	QWidget::showEvent(event);	
 
-	/*
-	std::cout << top_panel.height() << "\n";
-	std::cout << pages_container.height() << "\n";
-	std::cout << bottom_buttons.height() << "\n";
-	std::cout << top_panel.height() + pages_container.height() + bottom_buttons.height() << "\n";
-	*/
 
 	// start variables before loading the file
+	//set_page(0);
 	current_page_index = 0;
 	can_resize = 0;
 
+	QObject::connect(this, &reader_component::page_rendered, this, &reader_component::add_page_to_reader);
+	
 	// load file	
 	QThread * t = QThread::create( [this](void) -> void{
 		//load_file(main_dir.filePath("doc.pdf").toStdString());
@@ -33,12 +30,15 @@ void reader_component::showEvent(QShowEvent * event) {
 	
 	// after load_file finished
 	QObject::connect(t, &QThread::finished, this, [this]{
+		std::cout << "pages size: " << pages.size() << "\n";
+		
 
-		//QObject::connect(&prev_button, &QPushButton::clicked,
-		//		this, &reader_component::set_prev_page);
+		current_page.setText(QString::fromStdString(std::format("{} / {}", current_page_index + 1, page_count)));
+		QObject::connect(&prev_button, &QPushButton::clicked,
+				this, &reader_component::set_prev_page);
 
-		//QObject::connect(&next_button, &QPushButton::clicked,
-		//	this, &reader_component::set_next_page);
+		QObject::connect(&next_button, &QPushButton::clicked,
+			this, &reader_component::set_next_page);
 
 	});
 	t->start();
@@ -53,30 +53,7 @@ void reader_component::resizeEvent(QResizeEvent * event) {
 	std::cout << pages_container.height() << "\n";
 }
 
-void reader_component::create_page(page_data * data) {
-	int page_index = data->data->pagenumber - 1;
-
-	QLabel * l = new QLabel(this);
-	l->setPixmap(*data->w_pix);
-	
-	//l->setFixedSize(data.w_pix->width(), data.w_pix->height());
-	//l->setFixedHeight(pages_container.height());
-
-	l->move(0, top_panel.height());
-	l->lower();
-	l->hide();
-
-	page_data * p_buf = data;
-	p_buf->label = l;
-	p_buf->resize(pages_container.geometry());
-	
-	pages[page_index] = std::move(p_buf);
-
-	if (current_page_index == page_index) set_page(page_index);
-
-	std::cout << "page: " << page_index << " done\n";
-}
-
+// might be better to start variables inside showEvent than heve
 reader_component::reader_component() :
 	QWidget(),
 	reader_c_layout(this),
@@ -98,10 +75,9 @@ reader_component::reader_component() :
 
 	prev_button("<-"),
 	next_button("->"),
-	current_page("loading...")
+	current_page(QString::fromStdString(std::format("{} / {}", current_page_index + 1, page_count)))
+		
 {
-
-
 	// load ui
 	reader_c_layout.setContentsMargins(0, 0, 0, 0);
 	setLayout(&reader_c_layout);
@@ -131,11 +107,6 @@ reader_component::reader_component() :
 	bb_layout.addWidget(&prev_button);
 	bb_layout.addWidget(&current_page);
 	bb_layout.addWidget(&next_button);
-	
-	//std::cout << top_panel.height() << "\n";
-	//std::cout << pages_container.height() << "\n";
-	//std::cout << bottom_buttons.height() << "\n";
-
 };
 
 
@@ -148,10 +119,14 @@ void reader_component::set_page(int index) {
 	}
 		
 	// update current page
-	pages[current_page_index]->label->hide();
-	current_page_index = index;
-	pages[current_page_index]->label->show();
-	
+	// nullptr check wont work and causes a segmentation fault
+	if (pages[current_page_index] != nullptr && 
+	    pages[index] != nullptr) {
+		pages[current_page_index]->label->hide();
+		current_page_index = index;
+		pages[current_page_index]->label->show();
+	}
+
 	// update page count thing
 	current_page.setText(QString::fromStdString(
 		std::format("{} / {}", current_page_index + 1, page_count)

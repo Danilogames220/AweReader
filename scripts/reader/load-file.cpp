@@ -12,10 +12,6 @@
 #include <mupdf/fitz.h>
 #include <QtWidgets>
 
-#include <mupdf/fitz/color.h>
-#include <mupdf/fitz/context.h>
-#include <mupdf/fitz/display-list.h>
-#include <qpixmap.h>
 #include <stdlib.h>
 #include <pthread.h> // c++ mutex wont work with mupdf
 #include <string>
@@ -47,7 +43,7 @@ void reader_component::load_file(std::string path) {
 	fz_document * doc = NULL;
 	fz_locks_context locks;
 
-	std::vector<std::future<void *>> thread;
+	std::vector<std::future<page_data *>> thread;
 
 	pthread_mutex_t mtx[FZ_LOCK_MAX];	
 
@@ -92,15 +88,10 @@ void reader_component::load_file(std::string path) {
 
 			fz_try(ctx) {
 				page = fz_load_page(ctx, doc, i);
-
 				bbox = fz_bound_page(ctx, page);
-
 				list = fz_new_display_list(ctx, bbox);
-
 				dev = fz_new_list_device(ctx, list);
-
 				fz_run_page(ctx, page, dev, fz_identity, NULL);
-
 				fz_close_device(ctx, dev);
 			}
 			fz_always(ctx) {
@@ -122,45 +113,20 @@ void reader_component::load_file(std::string path) {
 			data->pix = NULL;
 			data->failed = 0;
 
-			//page_data d_buff(data);
-			// Create the thread and pass it the data structure.
-			thread.insert(thread.begin() + i, std::async(std::launch::async, [this, data](){
-				return (void *)new page_data(data, [](thread_data * d){
-					puts("nnnn");
-				});
+			thread.insert(
+				thread.begin() + i, 
+				std::async(std::launch::async, [this, data]() -> page_data* {
+				page_data * buf = new page_data(
+					QSize(0, 0), 
+					data, 
+					[this, buf](page_data * d)-> void {
+						emit this->page_rendered(d);
+					} 
+				);
+				
+				return buf;
 			}));
-		}
-		
-
-		fprintf(stderr, "joining %d threads...\n", page_count);
-		for (int i = 0; i < page_count; i++) {
-			struct thread_data *data;
-		
-			/*
-			data = thread[i].get()->data;
-
-			if (data->failed)
-			{
-				fprintf(stderr, "\tRendering for page %d failed\n", i + 1);
-			}
-			else
-			{
-				//fprintf(stderr, "\tSaving %s...\n", filename);
-
-				// Write the rendered image to a PNG file
-				//fz_save_pixmap_as_png(ctx, data->pix, filename);
-	
-				//page_data buff(data->ctx, data->pagenumber, data->list, data->bbox, data->pix, data->failed);
-				//buff.load_label(&pages_container);
-				//pages.insert(pages.begin() + i, std::move(buff));
-
-			}
-			*/
-			//fz_drop_display_list(ctx, data->list);
-
-			//free(data);
-		}
-
+		};
 	}
 	fz_always(ctx) {
 		thread.clear();
@@ -176,58 +142,4 @@ void reader_component::load_file(std::string path) {
 	printf("file loaded succefully\n");
 	//clear
 	fz_drop_context(ctx);
-
 }
-
-/*
-void * reader_component::page_render_thread(void *data_) {
-
-	struct thread_data *data = (struct thread_data *)data_;
-	int pagenumber = data->pagenumber;
-	fz_context *ctx = data->ctx;
-	fz_display_list *list = data->list;
-	fz_rect bbox = data->bbox;
-	fz_device *dev = NULL;
-
-	fprintf(stderr, "thread at page %d loading!\n", pagenumber);
-
-	// The context pointer is pointing to the main thread's
-	// context, so here we create a new context based on it for
-	// use in this thread.
-	ctx = fz_clone_context(ctx);
-
-	// Next we run the display list through the draw device which
-	// will render the request area of the page to the pixmap.
-
-	fz_var(dev);
-
-	fprintf(stderr, "thread at page %d rendering!\n", pagenumber);
-	fz_try(ctx)
-	{
-		// Create a white pixmap using the correct dimensions.
-		data->pix = fz_new_pixmap_with_bbox(ctx, fz_device_rgb(ctx), fz_round_rect(bbox), NULL, 0);
-		fz_clear_pixmap_with_value(ctx, data->pix, 0xff);
-
-		// Do the actual rendering.
-		dev = fz_new_draw_device(ctx, fz_identity, data->pix);
-		fz_run_display_list(ctx, list, dev, fz_identity, bbox, NULL);
-		fz_close_device(ctx, dev);
-
-	}
-	fz_always(ctx)
-		fz_drop_device(ctx, dev);
-	fz_catch(ctx)
-		data->failed = 1;
-
-	// Free this thread's context.
-	fz_drop_context(ctx);
-
-	fprintf(stderr, "thread at page %d done!\n", pagenumber);
-	
-	page_data aa(data);
-
-	emit page_rendered(std::move(aa));
-	
-	return data;
-};
-*/

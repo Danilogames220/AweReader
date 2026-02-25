@@ -5199,6 +5199,7 @@ CMakeFiles/reader.dir/scripts/reader/page-data.cpp.o: /home/assuero/Documentos/c
   /usr/include/qt6/QtGui/QAction \
   /usr/include/qt6/QtGui/QActionGroup \
   /usr/include/qt6/QtGui/QFileSystemModel \
+  /usr/include/qt6/QtGui/QImage \
   /usr/include/qt6/QtGui/QMatrix4x4 \
   /usr/include/qt6/QtGui/QPaintDevice \
   /usr/include/qt6/QtGui/QPaintDeviceWindow \
@@ -6995,6 +6996,8 @@ CMakeFiles/reader.dir/scripts/global-variables.cpp.o:
 /usr/lib/crti.o:
 
 /usr/lib/Scrt1.o:
+
+/usr/include/qt6/QtGui/QImage:
 
 /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/page-data.cpp:
 
