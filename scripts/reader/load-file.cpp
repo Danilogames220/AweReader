@@ -38,7 +38,7 @@ void unlock_mutex(void *user, int lock) {
 		fail("pthread_mutex_unlock()");
 }
 
-void reader_component::load_file(std::string path) {
+void reader_component::load_file(QSize size, std::string path) {
 	fz_context * ctx;
 	fz_document * doc = NULL;
 	fz_locks_context locks;
@@ -115,9 +115,9 @@ void reader_component::load_file(std::string path) {
 
 			thread.insert(
 				thread.begin() + i, 
-				std::async(std::launch::async, [this, data]() -> page_data* {
+				std::async(std::launch::async, [this, data, size]() -> page_data* {
 				page_data * buf = new page_data(
-					QSize(0, 0), 
+					size, 
 					data, 
 					[this, buf](page_data * d)-> void {
 						emit this->page_rendered(d);

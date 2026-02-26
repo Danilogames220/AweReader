@@ -7,27 +7,18 @@
 
 #include <iostream>
 #include <future>
+#include <mupdf/fitz/geometry.h>
 #include <qpixmap.h>
+#include <qsize.h>
 #include <qtmetamacros.h>
 
-/*
-void page_data::resize(QRect rect) {
-	if (!w_pix) return;
-
-	*w_pix = w_pix->scaledToWidth(rect.width());
-	*w_pix = w_pix->scaledToHeight(rect.height());
-	if (label) {
-        	label->setPixmap(*w_pix);
-        	label->resize(w_pix->size());
-
-		label->move((rect.width() - label->width())/2 + rect.x(),
-			(rect.height() - label->height())/2 + rect.y());
-    	}
-
-	//if (label) label->setFixedSize(w_pix->size());
-
+QSizeF get_resize_factors(QSizeF parent, QSizeF child) {
+	return QSizeF(
+		child.width()/parent.width(), 
+		child.height()/parent.height()	
+	);
 }
-*/
+
 void page_data::load_widget() {
 	if (data == nullptr) {
 		std::cerr << "page_data::load_widget(): "
@@ -53,12 +44,27 @@ void page_data::load_widget() {
 
 };
 void page_data::render(QSize size, thread_data * Data) {
+	QSizeF size_factor(0, 0);
+	bool size_empty = true;
+
 	struct thread_data *dat = Data;
 	int pagenumber = dat->pagenumber;
 	fz_context *ctx = dat->ctx;
 	fz_display_list *list = dat->list;
 	fz_rect bbox = dat->bbox;
 	fz_device *dev = NULL;
+
+	fz_matrix ctm;
+
+	// check if size is empty
+	if (size.width() > 0 && size.height() > 0) {
+		puts("size is not 0");
+		size_empty = false;
+		size_factor = get_resize_factors(size, QSizeF(bbox.x1, bbox.y1));
+	}
+
+	std::cout << "factor x: " << size_factor.width() << "\n"
+		  << "factor y: " << size_factor.height() << "\n";
 
 	fprintf(stderr, "thread at page %d loading!\n", pagenumber);
 
@@ -70,8 +76,19 @@ void page_data::render(QSize size, thread_data * Data) {
 	// Next we run the display list through the draw device which
 	// will render the request area of the page to the pixmap.
 
+	// resize page acording to size
+	if (!size_empty) {
+		if (size_factor.width() > size_factor.height()) {
+			ctm = fz_scale(1/size_factor.width(), 1/size_factor.width());
+		} else {
+			ctm = fz_scale(1/size_factor.height(), 1/size_factor.height());
+		}; 
+	}
+	
+
 	fz_var(dev);
 
+	// where the rendering actualy happens
 	fprintf(stderr, "thread at page %d rendering!\n", pagenumber);
 	fz_try(ctx) {
 		// Create a white pixmap using the correct dimensions.
@@ -81,6 +98,19 @@ void page_data::render(QSize size, thread_data * Data) {
 		// Do the actual rendering.
 		dev = fz_new_draw_device(ctx, fz_identity, dat->pix);
 		fz_run_display_list(ctx, list, dev, fz_identity, bbox, NULL);
+		if (!size_empty) {
+			if (size_factor.width() > size_factor.height()) {
+				dat->pix = fz_scale_pixmap(ctx, dat->pix, 0, 0,
+					bbox.x1 * 1/size_factor.width(), 
+					bbox.y1 * 1/size_factor.width(), 
+				NULL);
+			} else {
+				dat->pix = fz_scale_pixmap(ctx, dat->pix, 0, 0, 
+					bbox.x1 * 1/size_factor.height(), 
+					bbox.y1 * 1/size_factor.height(), 
+				NULL);
+			}; 
+		}
 		fz_close_device(ctx, dev);
 		
 	}
@@ -161,6 +191,5 @@ void reader_component::add_page_to_reader(page_data * page) {
 		page->label->show();
 	}
 	pages[page_index] = page;
-	puts("nnnn");
 }
 

@@ -46,7 +46,7 @@ class reader_component : public QWidget {
 
 		bool can_resize;
 
-		void load_file(std::string path);
+		void load_file(QSize size, std::string path);
 			
 		// used to load each page by itself in a specific thread
 		//void * page_render_thread(void *data_);

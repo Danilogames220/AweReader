@@ -23,8 +23,8 @@ void reader_component::showEvent(QShowEvent * event) {
 	
 	// load file	
 	QThread * t = QThread::create( [this](void) -> void{
-		//load_file(main_dir.filePath("doc.pdf").toStdString());
-		load_file(file_path);
+		load_file(pages_container.size(), file_path);
+		//load_file(QSize(0, 0), file_path);
 	});
 	//QObject::connect(this, &reader_component::page_rendered, this, &reader_component::create_page);
 	

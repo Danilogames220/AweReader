@@ -1067,6 +1067,8 @@ CMakeFiles/reader.dir/scripts/main.cpp.o: \
  /usr/include/qt6/QtWidgets/qwidget.h \
  /usr/include/qt6/QtWidgets/qwidgetaction.h \
  /usr/include/qt6/QtWidgets/qwizard.h /usr/include/c++/15.2.1/iostream \
+ /usr/include/qt6/QtWidgets/qboxlayout.h \
+ /usr/include/qt6/QtCore/qnamespace.h \
  /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/./global-variables.hpp \
  /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/./reader/reader.hpp \
  /usr/include/qt6/QtCore/QtCore /usr/include/mupdf/fitz.h \
