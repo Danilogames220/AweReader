@@ -1103,5 +1103,5 @@ CMakeFiles/reader.dir/scripts/reader/load-file.cpp.o: \
  /usr/include/mupdf/fitz/story-writer.h /usr/include/mupdf/fitz/deskew.h \
  /usr/include/mupdf/fitz/barcode.h \
  /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/././page-data.hpp \
- /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/page-data.hpp \
+ /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/./page-data.hpp \
  /usr/include/c++/15.2.1/iostream /usr/include/c++/15.2.1/thread

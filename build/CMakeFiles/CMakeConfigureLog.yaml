@@ -23,6 +23,7 @@ events:
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
@@ -37,6 +38,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -72,6 +74,7 @@ events:
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
@@ -80,6 +83,7 @@ events:
       - "/usr/local/sbin/gmake"
       - "/usr/local/bin/gmake"
       - "/usr/bin/gmake"
+      - "/var/lib/flatpak/exports/bin/gmake"
       - "/usr/lib/jvm/default/bin/gmake"
       - "/usr/bin/site_perl/gmake"
       - "/usr/bin/vendor_perl/gmake"
@@ -92,6 +96,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -125,6 +130,7 @@ events:
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
@@ -138,6 +144,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -172,6 +179,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -221,6 +229,7 @@ events:
       - "/usr/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
@@ -231,6 +240,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -258,6 +268,7 @@ events:
       - "/usr/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
@@ -268,6 +279,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -295,6 +307,7 @@ events:
       - "/usr/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
@@ -305,6 +318,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -332,6 +346,7 @@ events:
       - "/usr/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
@@ -342,6 +357,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -369,6 +385,7 @@ events:
       - "/usr/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
@@ -379,6 +396,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -406,6 +424,7 @@ events:
       - "/usr/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
@@ -416,6 +435,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -443,6 +463,7 @@ events:
       - "/usr/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
@@ -453,6 +474,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -480,6 +502,7 @@ events:
       - "/usr/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
@@ -490,6 +513,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -517,6 +541,7 @@ events:
       - "/usr/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
@@ -525,6 +550,7 @@ events:
       - "/usr/bin/dlltool"
       - "/usr/local/sbin/dlltool"
       - "/usr/local/bin/dlltool"
+      - "/var/lib/flatpak/exports/bin/dlltool"
       - "/usr/lib/jvm/default/bin/dlltool"
       - "/usr/bin/site_perl/dlltool"
       - "/usr/bin/vendor_perl/dlltool"
@@ -535,6 +561,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -562,6 +589,7 @@ events:
       - "/usr/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
@@ -572,6 +600,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -599,6 +628,7 @@ events:
       - "/usr/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
@@ -607,6 +637,7 @@ events:
       - "/usr/bin/tapi"
       - "/usr/local/sbin/tapi"
       - "/usr/local/bin/tapi"
+      - "/var/lib/flatpak/exports/bin/tapi"
       - "/usr/lib/jvm/default/bin/tapi"
       - "/usr/bin/site_perl/tapi"
       - "/usr/bin/vendor_perl/tapi"
@@ -617,6 +648,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -647,6 +679,7 @@ events:
       - "/usr/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
@@ -655,6 +688,7 @@ events:
       - "/usr/bin/gcc-ar-15.2"
       - "/usr/local/sbin/gcc-ar-15.2"
       - "/usr/local/bin/gcc-ar-15.2"
+      - "/var/lib/flatpak/exports/bin/gcc-ar-15.2"
       - "/usr/lib/jvm/default/bin/gcc-ar-15.2"
       - "/usr/bin/site_perl/gcc-ar-15.2"
       - "/usr/bin/vendor_perl/gcc-ar-15.2"
@@ -662,6 +696,7 @@ events:
       - "/usr/bin/gcc-ar-15"
       - "/usr/local/sbin/gcc-ar-15"
       - "/usr/local/bin/gcc-ar-15"
+      - "/var/lib/flatpak/exports/bin/gcc-ar-15"
       - "/usr/lib/jvm/default/bin/gcc-ar-15"
       - "/usr/bin/site_perl/gcc-ar-15"
       - "/usr/bin/vendor_perl/gcc-ar-15"
@@ -669,6 +704,7 @@ events:
       - "/usr/bin/gcc-ar15"
       - "/usr/local/sbin/gcc-ar15"
       - "/usr/local/bin/gcc-ar15"
+      - "/var/lib/flatpak/exports/bin/gcc-ar15"
       - "/usr/lib/jvm/default/bin/gcc-ar15"
       - "/usr/bin/site_perl/gcc-ar15"
       - "/usr/bin/vendor_perl/gcc-ar15"
@@ -679,6 +715,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -709,6 +746,7 @@ events:
       - "/usr/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
@@ -717,6 +755,7 @@ events:
       - "/usr/bin/gcc-ranlib-15.2"
       - "/usr/local/sbin/gcc-ranlib-15.2"
       - "/usr/local/bin/gcc-ranlib-15.2"
+      - "/var/lib/flatpak/exports/bin/gcc-ranlib-15.2"
       - "/usr/lib/jvm/default/bin/gcc-ranlib-15.2"
       - "/usr/bin/site_perl/gcc-ranlib-15.2"
       - "/usr/bin/vendor_perl/gcc-ranlib-15.2"
@@ -724,6 +763,7 @@ events:
       - "/usr/bin/gcc-ranlib-15"
       - "/usr/local/sbin/gcc-ranlib-15"
       - "/usr/local/bin/gcc-ranlib-15"
+      - "/var/lib/flatpak/exports/bin/gcc-ranlib-15"
       - "/usr/lib/jvm/default/bin/gcc-ranlib-15"
       - "/usr/bin/site_perl/gcc-ranlib-15"
       - "/usr/bin/vendor_perl/gcc-ranlib-15"
@@ -731,6 +771,7 @@ events:
       - "/usr/bin/gcc-ranlib15"
       - "/usr/local/sbin/gcc-ranlib15"
       - "/usr/local/bin/gcc-ranlib15"
+      - "/var/lib/flatpak/exports/bin/gcc-ranlib15"
       - "/usr/lib/jvm/default/bin/gcc-ranlib15"
       - "/usr/bin/site_perl/gcc-ranlib15"
       - "/usr/bin/vendor_perl/gcc-ranlib15"
@@ -741,6 +782,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -781,6 +823,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -815,6 +858,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -867,6 +911,7 @@ events:
       - "/usr/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
@@ -875,6 +920,7 @@ events:
       - "/usr/bin/gcc-ar-15.2"
       - "/usr/local/sbin/gcc-ar-15.2"
       - "/usr/local/bin/gcc-ar-15.2"
+      - "/var/lib/flatpak/exports/bin/gcc-ar-15.2"
       - "/usr/lib/jvm/default/bin/gcc-ar-15.2"
       - "/usr/bin/site_perl/gcc-ar-15.2"
       - "/usr/bin/vendor_perl/gcc-ar-15.2"
@@ -882,6 +928,7 @@ events:
       - "/usr/bin/gcc-ar-15"
       - "/usr/local/sbin/gcc-ar-15"
       - "/usr/local/bin/gcc-ar-15"
+      - "/var/lib/flatpak/exports/bin/gcc-ar-15"
       - "/usr/lib/jvm/default/bin/gcc-ar-15"
       - "/usr/bin/site_perl/gcc-ar-15"
       - "/usr/bin/vendor_perl/gcc-ar-15"
@@ -889,6 +936,7 @@ events:
       - "/usr/bin/gcc-ar15"
       - "/usr/local/sbin/gcc-ar15"
       - "/usr/local/bin/gcc-ar15"
+      - "/var/lib/flatpak/exports/bin/gcc-ar15"
       - "/usr/lib/jvm/default/bin/gcc-ar15"
       - "/usr/bin/site_perl/gcc-ar15"
       - "/usr/bin/vendor_perl/gcc-ar15"
@@ -899,6 +947,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -929,6 +978,7 @@ events:
       - "/usr/bin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
@@ -937,6 +987,7 @@ events:
       - "/usr/bin/gcc-ranlib-15.2"
       - "/usr/local/sbin/gcc-ranlib-15.2"
       - "/usr/local/bin/gcc-ranlib-15.2"
+      - "/var/lib/flatpak/exports/bin/gcc-ranlib-15.2"
       - "/usr/lib/jvm/default/bin/gcc-ranlib-15.2"
       - "/usr/bin/site_perl/gcc-ranlib-15.2"
       - "/usr/bin/vendor_perl/gcc-ranlib-15.2"
@@ -944,6 +995,7 @@ events:
       - "/usr/bin/gcc-ranlib-15"
       - "/usr/local/sbin/gcc-ranlib-15"
       - "/usr/local/bin/gcc-ranlib-15"
+      - "/var/lib/flatpak/exports/bin/gcc-ranlib-15"
       - "/usr/lib/jvm/default/bin/gcc-ranlib-15"
       - "/usr/bin/site_perl/gcc-ranlib-15"
       - "/usr/bin/vendor_perl/gcc-ranlib-15"
@@ -951,6 +1003,7 @@ events:
       - "/usr/bin/gcc-ranlib15"
       - "/usr/local/sbin/gcc-ranlib15"
       - "/usr/local/bin/gcc-ranlib15"
+      - "/var/lib/flatpak/exports/bin/gcc-ranlib15"
       - "/usr/lib/jvm/default/bin/gcc-ranlib15"
       - "/usr/bin/site_perl/gcc-ranlib15"
       - "/usr/bin/vendor_perl/gcc-ranlib15"
@@ -961,6 +1014,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -974,8 +1028,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-7Ii0f0"
-      binary: "/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-7Ii0f0"
+      source: "/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-2lowos"
+      binary: "/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-2lowos"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -984,13 +1038,13 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-7Ii0f0'
+        Change Dir: '/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-2lowos'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_5d3e5/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_5d3e5.dir/build.make CMakeFiles/cmTC_5d3e5.dir/build
-        make[1]: Entering directory '/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-7Ii0f0'
-        Building C object CMakeFiles/cmTC_5d3e5.dir/CMakeCCompilerABI.c.o
-        /usr/bin/cc   -v -o CMakeFiles/cmTC_5d3e5.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_2b56c/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_2b56c.dir/build.make CMakeFiles/cmTC_2b56c.dir/build
+        make[1]: Entering directory '/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-2lowos'
+        Building C object CMakeFiles/cmTC_2b56c.dir/CMakeCCompilerABI.c.o
+        /usr/bin/cc   -v -o CMakeFiles/cmTC_2b56c.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
         Using built-in specs.
         COLLECT_GCC=/usr/bin/cc
         Target: x86_64-pc-linux-gnu
@@ -998,8 +1052,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 15.2.1 20260209 (GCC) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5d3e5.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_5d3e5.dir/'
-         /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_5d3e5.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/ccYgfJ3i.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2b56c.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_2b56c.dir/'
+         /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_2b56c.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/ccdu48Kt.s
         GNU C23 (GCC) version 15.2.1 20260209 (x86_64-pc-linux-gnu)
         	compiled by GNU C version 15.2.1 20260209, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.3.1, isl version isl-0.27-GMP
         
@@ -1013,14 +1067,14 @@ events:
          /usr/include
         End of search list.
         Compiler executable checksum: 4a3176b8a5098bb872007d0a1d5e5fb3
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5d3e5.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_5d3e5.dir/'
-         as -v --64 -o CMakeFiles/cmTC_5d3e5.dir/CMakeCCompilerABI.c.o /tmp/ccYgfJ3i.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2b56c.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_2b56c.dir/'
+         as -v --64 -o CMakeFiles/cmTC_2b56c.dir/CMakeCCompilerABI.c.o /tmp/ccdu48Kt.s
         GNU assembler version 2.46 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.46
         COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5d3e5.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_5d3e5.dir/CMakeCCompilerABI.c.'
-        Linking C executable cmTC_5d3e5
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5d3e5.dir/link.txt --verbose=1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2b56c.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_2b56c.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_2b56c
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2b56c.dir/link.txt --verbose=1
         Using built-in specs.
         COLLECT_GCC=/usr/bin/cc
         COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper
@@ -1031,14 +1085,14 @@ events:
         gcc version 15.2.1 20260209 (GCC) 
         COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_5d3e5' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_5d3e5.'
-         /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccWCmHfx.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_5d3e5 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_5d3e5.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_2b56c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_2b56c.'
+         /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccYz8lFb.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_2b56c /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_2b56c.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
         collect2 version 15.2.1 20260209
-        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccWCmHfx.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_5d3e5 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_5d3e5.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
+        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccYz8lFb.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_2b56c /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_2b56c.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
         GNU ld (GNU Binutils) 2.46
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_5d3e5' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_5d3e5.'
-        /usr/bin/cc  -v -Wl,-v CMakeFiles/cmTC_5d3e5.dir/CMakeCCompilerABI.c.o -o cmTC_5d3e5
-        make[1]: Leaving directory '/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-7Ii0f0'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_2b56c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_2b56c.'
+        /usr/bin/cc  -v -Wl,-v CMakeFiles/cmTC_2b56c.dir/CMakeCCompilerABI.c.o -o cmTC_2b56c
+        make[1]: Leaving directory '/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-2lowos'
         
       exitCode: 0
   -
@@ -1073,13 +1127,13 @@ events:
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-7Ii0f0']
+        ignore line: [Change Dir: '/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-2lowos']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_5d3e5/fast]
-        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_5d3e5.dir/build.make CMakeFiles/cmTC_5d3e5.dir/build]
-        ignore line: [make[1]: Entering directory '/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-7Ii0f0']
-        ignore line: [Building C object CMakeFiles/cmTC_5d3e5.dir/CMakeCCompilerABI.c.o]
-        ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_5d3e5.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_2b56c/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_2b56c.dir/build.make CMakeFiles/cmTC_2b56c.dir/build]
+        ignore line: [make[1]: Entering directory '/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-2lowos']
+        ignore line: [Building C object CMakeFiles/cmTC_2b56c.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_2b56c.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/cc]
         ignore line: [Target: x86_64-pc-linux-gnu]
@@ -1087,8 +1141,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 15.2.1 20260209 (GCC) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5d3e5.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_5d3e5.dir/']
-        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_5d3e5.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/ccYgfJ3i.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2b56c.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_2b56c.dir/']
+        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_2b56c.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/ccdu48Kt.s]
         ignore line: [GNU C23 (GCC) version 15.2.1 20260209 (x86_64-pc-linux-gnu)]
         ignore line: [	compiled by GNU C version 15.2.1 20260209  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.3.1  isl version isl-0.27-GMP]
         ignore line: []
@@ -1102,14 +1156,14 @@ events:
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 4a3176b8a5098bb872007d0a1d5e5fb3]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5d3e5.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_5d3e5.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_5d3e5.dir/CMakeCCompilerABI.c.o /tmp/ccYgfJ3i.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2b56c.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_2b56c.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_2b56c.dir/CMakeCCompilerABI.c.o /tmp/ccdu48Kt.s]
         ignore line: [GNU assembler version 2.46 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.46]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5d3e5.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_5d3e5.dir/CMakeCCompilerABI.c.']
-        ignore line: [Linking C executable cmTC_5d3e5]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5d3e5.dir/link.txt --verbose=1]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_2b56c.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_2b56c.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_2b56c]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2b56c.dir/link.txt --verbose=1]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/cc]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper]
@@ -1120,13 +1174,13 @@ events:
         ignore line: [gcc version 15.2.1 20260209 (GCC) ]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_5d3e5' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_5d3e5.']
-        link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccWCmHfx.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_5d3e5 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_5d3e5.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_2b56c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_2b56c.']
+        link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccYz8lFb.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_2b56c /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_2b56c.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccWCmHfx.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccYz8lFb.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -1141,7 +1195,7 @@ events:
           arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
           arg [-pie] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_5d3e5] ==> ignore
+          arg [cmTC_2b56c] ==> ignore
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o]
@@ -1153,7 +1207,7 @@ events:
           arg [-L/lib] ==> dir [/lib]
           arg [-L/usr/lib] ==> dir [/usr/lib]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_5d3e5.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [CMakeFiles/cmTC_2b56c.dir/CMakeCCompilerABI.c.o] ==> ignore
           arg [-lgcc] ==> lib [gcc]
           arg [--push-state] ==> ignore
           arg [--as-needed] ==> ignore
@@ -1168,7 +1222,7 @@ events:
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
         ignore line: [collect2 version 15.2.1 20260209]
-        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccWCmHfx.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_5d3e5 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_5d3e5.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
+        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccYz8lFb.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_2b56c /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_2b56c.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
         linker tool for 'C': /usr/bin/ld
         collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o] ==> [/usr/lib/Scrt1.o]
         collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o] ==> [/usr/lib/crti.o]
@@ -1205,8 +1259,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-1npqNw"
-      binary: "/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-1npqNw"
+      source: "/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-2zFd14"
+      binary: "/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-2zFd14"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1216,13 +1270,13 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-1npqNw'
+        Change Dir: '/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-2zFd14'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_4691a/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_4691a.dir/build.make CMakeFiles/cmTC_4691a.dir/build
-        make[1]: Entering directory '/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-1npqNw'
-        Building CXX object CMakeFiles/cmTC_4691a.dir/CMakeCXXCompilerABI.cpp.o
-        /usr/bin/c++   -v -o CMakeFiles/cmTC_4691a.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_5f5d8/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_5f5d8.dir/build.make CMakeFiles/cmTC_5f5d8.dir/build
+        make[1]: Entering directory '/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-2zFd14'
+        Building CXX object CMakeFiles/cmTC_5f5d8.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -v -o CMakeFiles/cmTC_5f5d8.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         Target: x86_64-pc-linux-gnu
@@ -1230,8 +1284,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 15.2.1 20260209 (GCC) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4691a.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4691a.dir/'
-         /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_4691a.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/ccixeGEp.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5f5d8.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_5f5d8.dir/'
+         /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_5f5d8.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/cccHxmKw.s
         GNU C++17 (GCC) version 15.2.1 20260209 (x86_64-pc-linux-gnu)
         	compiled by GNU C version 15.2.1 20260209, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.3.1, isl version isl-0.27-GMP
         
@@ -1248,14 +1302,14 @@ events:
          /usr/include
         End of search list.
         Compiler executable checksum: 5e3969de92aa3c12a625237f01b15b2f
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4691a.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4691a.dir/'
-         as -v --64 -o CMakeFiles/cmTC_4691a.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccixeGEp.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5f5d8.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_5f5d8.dir/'
+         as -v --64 -o CMakeFiles/cmTC_5f5d8.dir/CMakeCXXCompilerABI.cpp.o /tmp/cccHxmKw.s
         GNU assembler version 2.46 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.46
         COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4691a.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4691a.dir/CMakeCXXCompilerABI.cpp.'
-        Linking CXX executable cmTC_4691a
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4691a.dir/link.txt --verbose=1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5f5d8.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_5f5d8.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_5f5d8
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5f5d8.dir/link.txt --verbose=1
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper
@@ -1266,14 +1320,14 @@ events:
         gcc version 15.2.1 20260209 (GCC) 
         COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4691a' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_4691a.'
-         /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccZ3SDVs.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_4691a /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_4691a.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_5f5d8' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_5f5d8.'
+         /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccdI1fpp.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_5f5d8 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_5f5d8.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
         collect2 version 15.2.1 20260209
-        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccZ3SDVs.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_4691a /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_4691a.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
+        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccdI1fpp.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_5f5d8 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_5f5d8.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o
         GNU ld (GNU Binutils) 2.46
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4691a' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_4691a.'
-        /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_4691a.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_4691a
-        make[1]: Leaving directory '/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-1npqNw'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_5f5d8' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_5f5d8.'
+        /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_5f5d8.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_5f5d8
+        make[1]: Leaving directory '/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-2zFd14'
         
       exitCode: 0
   -
@@ -1314,13 +1368,13 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-1npqNw']
+        ignore line: [Change Dir: '/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-2zFd14']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_4691a/fast]
-        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_4691a.dir/build.make CMakeFiles/cmTC_4691a.dir/build]
-        ignore line: [make[1]: Entering directory '/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-1npqNw']
-        ignore line: [Building CXX object CMakeFiles/cmTC_4691a.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_4691a.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_5f5d8/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_5f5d8.dir/build.make CMakeFiles/cmTC_5f5d8.dir/build]
+        ignore line: [make[1]: Entering directory '/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-2zFd14']
+        ignore line: [Building CXX object CMakeFiles/cmTC_5f5d8.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_5f5d8.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [Target: x86_64-pc-linux-gnu]
@@ -1328,8 +1382,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 15.2.1 20260209 (GCC) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4691a.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4691a.dir/']
-        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_4691a.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/ccixeGEp.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5f5d8.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_5f5d8.dir/']
+        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_5f5d8.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/cccHxmKw.s]
         ignore line: [GNU C++17 (GCC) version 15.2.1 20260209 (x86_64-pc-linux-gnu)]
         ignore line: [	compiled by GNU C version 15.2.1 20260209  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.3.1  isl version isl-0.27-GMP]
         ignore line: []
@@ -1346,14 +1400,14 @@ events:
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 5e3969de92aa3c12a625237f01b15b2f]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4691a.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4691a.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_4691a.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccixeGEp.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5f5d8.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_5f5d8.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_5f5d8.dir/CMakeCXXCompilerABI.cpp.o /tmp/cccHxmKw.s]
         ignore line: [GNU assembler version 2.46 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.46]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4691a.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4691a.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [Linking CXX executable cmTC_4691a]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4691a.dir/link.txt --verbose=1]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_5f5d8.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_5f5d8.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_5f5d8]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5f5d8.dir/link.txt --verbose=1]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper]
@@ -1364,13 +1418,13 @@ events:
         ignore line: [gcc version 15.2.1 20260209 (GCC) ]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4691a' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_4691a.']
-        link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccZ3SDVs.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_4691a /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_4691a.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_5f5d8' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_5f5d8.']
+        link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccdI1fpp.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_5f5d8 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_5f5d8.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccZ3SDVs.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccdI1fpp.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -1385,7 +1439,7 @@ events:
           arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
           arg [-pie] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_4691a] ==> ignore
+          arg [cmTC_5f5d8] ==> ignore
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o]
@@ -1397,7 +1451,7 @@ events:
           arg [-L/lib] ==> dir [/lib]
           arg [-L/usr/lib] ==> dir [/usr/lib]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_4691a.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_5f5d8.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]
           arg [-lgcc_s] ==> lib [gcc_s]
@@ -1408,7 +1462,7 @@ events:
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o]
           arg [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
         ignore line: [collect2 version 15.2.1 20260209]
-        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccZ3SDVs.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_4691a /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_4691a.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
+        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccdI1fpp.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_5f5d8 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_5f5d8.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crtn.o]
         linker tool for 'CXX': /usr/bin/ld
         collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/Scrt1.o] ==> [/usr/lib/Scrt1.o]
         collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o] ==> [/usr/lib/crti.o]
@@ -1448,12 +1502,12 @@ events:
       - "/usr/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:36 (find_dependency)"
       - "/usr/lib/cmake/Qt6/Qt6Dependencies.cmake:38 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:190 (include)"
-      - "CMakeLists.txt:6 (find_package)"
+      - "CMakeLists.txt:7 (find_package)"
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-P55GKi"
-      binary: "/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-P55GKi"
+      source: "/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-5pUUcB"
+      binary: "/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-5pUUcB"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -1463,18 +1517,18 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: '/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-P55GKi'
+        Change Dir: '/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-5pUUcB'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_9cf92/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_9cf92.dir/build.make CMakeFiles/cmTC_9cf92.dir/build
-        make[1]: Entrando no diretório '/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-P55GKi'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_4cfa6/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_4cfa6.dir/build.make CMakeFiles/cmTC_4cfa6.dir/build
+        make[1]: Entrando no diretório '/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-5pUUcB'
         
-        Building C object CMakeFiles/cmTC_9cf92.dir/src.c.o
-        /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_9cf92.dir/src.c.o -c /home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-P55GKi/src.c
-        Linking C executable cmTC_9cf92
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9cf92.dir/link.txt --verbose=1
-        /usr/bin/cc CMakeFiles/cmTC_9cf92.dir/src.c.o -o cmTC_9cf92
-        make[1]: Saindo do diretório '/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-P55GKi'
+        Building C object CMakeFiles/cmTC_4cfa6.dir/src.c.o
+        /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_4cfa6.dir/src.c.o -c /home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-5pUUcB/src.c
+        Linking C executable cmTC_4cfa6
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4cfa6.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_4cfa6.dir/src.c.o -o cmTC_4cfa6
+        make[1]: Saindo do diretório '/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-5pUUcB'
         
         
       exitCode: 0
@@ -1490,12 +1544,12 @@ events:
       - "/usr/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake:36 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/cmake/Qt6Core/Qt6CoreConfig.cmake:52 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:251 (find_package)"
-      - "CMakeLists.txt:6 (find_package)"
+      - "CMakeLists.txt:7 (find_package)"
     checks:
       - "Performing Test HAVE_STDATOMIC"
     directories:
-      source: "/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-ynqKh6"
-      binary: "/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-ynqKh6"
+      source: "/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-2sSfe1"
+      binary: "/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-2sSfe1"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1505,18 +1559,18 @@ events:
       variable: "HAVE_STDATOMIC"
       cached: true
       stdout: |
-        Change Dir: '/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-ynqKh6'
+        Change Dir: '/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-2sSfe1'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_15dba/fast
-        /usr/bin/make  -f CMakeFiles/cmTC_15dba.dir/build.make CMakeFiles/cmTC_15dba.dir/build
-        make[1]: Entrando no diretório '/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-ynqKh6'
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_682b9/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_682b9.dir/build.make CMakeFiles/cmTC_682b9.dir/build
+        make[1]: Entrando no diretório '/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-2sSfe1'
         
-        Building CXX object CMakeFiles/cmTC_15dba.dir/src.cxx.o
-        /usr/bin/c++ -DHAVE_STDATOMIC  -std=gnu++20 -o CMakeFiles/cmTC_15dba.dir/src.cxx.o -c /home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-ynqKh6/src.cxx
-        Linking CXX executable cmTC_15dba
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_15dba.dir/link.txt --verbose=1
-        /usr/bin/c++ CMakeFiles/cmTC_15dba.dir/src.cxx.o -o cmTC_15dba
-        make[1]: Saindo do diretório '/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-ynqKh6'
+        Building CXX object CMakeFiles/cmTC_682b9.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_STDATOMIC  -std=gnu++20 -o CMakeFiles/cmTC_682b9.dir/src.cxx.o -c /home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-2sSfe1/src.cxx
+        Linking CXX executable cmTC_682b9
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_682b9.dir/link.txt --verbose=1
+        /usr/bin/c++ CMakeFiles/cmTC_682b9.dir/src.cxx.o -o cmTC_682b9
+        make[1]: Saindo do diretório '/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/CMakeScratch/TryCompile-2sSfe1'
         
         
       exitCode: 0
@@ -1527,7 +1581,7 @@ events:
       - "/usr/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake:43 (_qt_internal_find_tool_dependencies)"
       - "/usr/lib/cmake/Qt6Core/Qt6CoreConfig.cmake:52 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:251 (find_package)"
-      - "CMakeLists.txt:6 (find_package)"
+      - "CMakeLists.txt:7 (find_package)"
     name: "Qt6CoreTools"
     configs:
       -
@@ -1597,6 +1651,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -1615,7 +1670,7 @@ events:
     kind: "find_package-v1"
     backtrace:
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:251 (find_package)"
-      - "CMakeLists.txt:6 (find_package)"
+      - "CMakeLists.txt:7 (find_package)"
     name: "Qt6Core"
     configs:
       -
@@ -1706,6 +1761,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -1731,7 +1787,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:37 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:251 (find_package)"
-      - "CMakeLists.txt:6 (find_package)"
+      - "CMakeLists.txt:7 (find_package)"
     mode: "path"
     variable: "OPENGL_INCLUDE_DIR"
     description: "Path to a file."
@@ -1749,6 +1805,7 @@ events:
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
@@ -1772,6 +1829,7 @@ events:
       - "/usr/local/sbin/GL/gl.h"
       - "/usr/local/bin/GL/gl.h"
       - "/usr/bin/GL/gl.h"
+      - "/var/lib/flatpak/exports/bin/GL/gl.h"
       - "/usr/lib/jvm/default/bin/GL/gl.h"
       - "/usr/bin/site_perl/GL/gl.h"
       - "/usr/bin/vendor_perl/GL/gl.h"
@@ -1784,6 +1842,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -1811,7 +1870,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:37 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:251 (find_package)"
-      - "CMakeLists.txt:6 (find_package)"
+      - "CMakeLists.txt:7 (find_package)"
     mode: "path"
     variable: "OPENGL_GLX_INCLUDE_DIR"
     description: "Path to a file."
@@ -1829,6 +1888,7 @@ events:
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
@@ -1849,6 +1909,7 @@ events:
       - "/usr/local/sbin/GL/glx.h"
       - "/usr/local/bin/GL/glx.h"
       - "/usr/bin/GL/glx.h"
+      - "/var/lib/flatpak/exports/bin/GL/glx.h"
       - "/usr/lib/jvm/default/bin/GL/glx.h"
       - "/usr/bin/site_perl/GL/glx.h"
       - "/usr/bin/vendor_perl/GL/glx.h"
@@ -1861,6 +1922,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -1888,7 +1950,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:37 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:251 (find_package)"
-      - "CMakeLists.txt:6 (find_package)"
+      - "CMakeLists.txt:7 (find_package)"
     mode: "path"
     variable: "OPENGL_EGL_INCLUDE_DIR"
     description: "Path to a file."
@@ -1906,6 +1968,7 @@ events:
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
@@ -1926,6 +1989,7 @@ events:
       - "/usr/local/sbin/EGL/egl.h"
       - "/usr/local/bin/EGL/egl.h"
       - "/usr/bin/EGL/egl.h"
+      - "/var/lib/flatpak/exports/bin/EGL/egl.h"
       - "/usr/lib/jvm/default/bin/EGL/egl.h"
       - "/usr/bin/site_perl/EGL/egl.h"
       - "/usr/bin/vendor_perl/EGL/egl.h"
@@ -1938,6 +2002,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -1965,7 +2030,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:37 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:251 (find_package)"
-      - "CMakeLists.txt:6 (find_package)"
+      - "CMakeLists.txt:7 (find_package)"
     mode: "path"
     variable: "OPENGL_GLES2_INCLUDE_DIR"
     description: "Path to a file."
@@ -1983,6 +2048,7 @@ events:
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
@@ -2003,6 +2069,7 @@ events:
       - "/usr/local/sbin/GLES2/gl2.h"
       - "/usr/local/bin/GLES2/gl2.h"
       - "/usr/bin/GLES2/gl2.h"
+      - "/var/lib/flatpak/exports/bin/GLES2/gl2.h"
       - "/usr/lib/jvm/default/bin/GLES2/gl2.h"
       - "/usr/bin/site_perl/GLES2/gl2.h"
       - "/usr/bin/vendor_perl/GLES2/gl2.h"
@@ -2015,6 +2082,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -2042,7 +2110,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:37 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:251 (find_package)"
-      - "CMakeLists.txt:6 (find_package)"
+      - "CMakeLists.txt:7 (find_package)"
     mode: "path"
     variable: "OPENGL_GLES3_INCLUDE_DIR"
     description: "Path to a file."
@@ -2060,6 +2128,7 @@ events:
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
@@ -2080,6 +2149,7 @@ events:
       - "/usr/local/sbin/GLES3/gl3.h"
       - "/usr/local/bin/GLES3/gl3.h"
       - "/usr/bin/GLES3/gl3.h"
+      - "/var/lib/flatpak/exports/bin/GLES3/gl3.h"
       - "/usr/lib/jvm/default/bin/GLES3/gl3.h"
       - "/usr/bin/site_perl/GLES3/gl3.h"
       - "/usr/bin/vendor_perl/GLES3/gl3.h"
@@ -2092,6 +2162,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -2119,7 +2190,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:37 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:251 (find_package)"
-      - "CMakeLists.txt:6 (find_package)"
+      - "CMakeLists.txt:7 (find_package)"
     mode: "path"
     variable: "OPENGL_xmesa_INCLUDE_DIR"
     description: "Path to a file."
@@ -2137,6 +2208,7 @@ events:
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
@@ -2160,6 +2232,7 @@ events:
       - "/usr/local/sbin/GL/xmesa.h"
       - "/usr/local/bin/GL/xmesa.h"
       - "/usr/bin/GL/xmesa.h"
+      - "/var/lib/flatpak/exports/bin/GL/xmesa.h"
       - "/usr/lib/jvm/default/bin/GL/xmesa.h"
       - "/usr/bin/site_perl/GL/xmesa.h"
       - "/usr/bin/vendor_perl/GL/xmesa.h"
@@ -2185,6 +2258,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -2212,7 +2286,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:37 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:251 (find_package)"
-      - "CMakeLists.txt:6 (find_package)"
+      - "CMakeLists.txt:7 (find_package)"
     mode: "path"
     variable: "OPENGL_GLU_INCLUDE_DIR"
     description: "Path to a file."
@@ -2230,6 +2304,7 @@ events:
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
@@ -2250,6 +2325,7 @@ events:
       - "/usr/local/sbin/GL/glu.h"
       - "/usr/local/bin/GL/glu.h"
       - "/usr/bin/GL/glu.h"
+      - "/var/lib/flatpak/exports/bin/GL/glu.h"
       - "/usr/lib/jvm/default/bin/GL/glu.h"
       - "/usr/bin/site_perl/GL/glu.h"
       - "/usr/bin/vendor_perl/GL/glu.h"
@@ -2262,6 +2338,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -2289,7 +2366,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:37 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:251 (find_package)"
-      - "CMakeLists.txt:6 (find_package)"
+      - "CMakeLists.txt:7 (find_package)"
     mode: "library"
     variable: "OPENGL_opengl_LIBRARY"
     description: "Path to a library."
@@ -2307,6 +2384,7 @@ events:
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
@@ -2327,6 +2405,7 @@ events:
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
@@ -2339,6 +2418,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -2366,7 +2446,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:37 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:251 (find_package)"
-      - "CMakeLists.txt:6 (find_package)"
+      - "CMakeLists.txt:7 (find_package)"
     mode: "library"
     variable: "OPENGL_glx_LIBRARY"
     description: "Path to a library."
@@ -2387,6 +2467,8 @@ events:
       - "/usr/local/bin/"
       - "/usr/bin/libglvnd/"
       - "/usr/bin/"
+      - "/var/lib/flatpak/exports/bin/libglvnd/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/libglvnd/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/libglvnd/"
@@ -2426,6 +2508,8 @@ events:
       - "/usr/local/bin/"
       - "/usr/bin/libglvnd/"
       - "/usr/bin/"
+      - "/var/lib/flatpak/exports/bin/libglvnd/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/libglvnd/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/libglvnd/"
@@ -2445,6 +2529,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -2472,7 +2557,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:37 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:251 (find_package)"
-      - "CMakeLists.txt:6 (find_package)"
+      - "CMakeLists.txt:7 (find_package)"
     mode: "library"
     variable: "OPENGL_egl_LIBRARY"
     description: "Path to a library."
@@ -2493,6 +2578,8 @@ events:
       - "/usr/local/bin/"
       - "/usr/bin/libglvnd/"
       - "/usr/bin/"
+      - "/var/lib/flatpak/exports/bin/libglvnd/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/libglvnd/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/libglvnd/"
@@ -2532,6 +2619,8 @@ events:
       - "/usr/local/bin/"
       - "/usr/bin/libglvnd/"
       - "/usr/bin/"
+      - "/var/lib/flatpak/exports/bin/libglvnd/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/libglvnd/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/libglvnd/"
@@ -2551,6 +2640,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -2578,7 +2668,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:37 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:251 (find_package)"
-      - "CMakeLists.txt:6 (find_package)"
+      - "CMakeLists.txt:7 (find_package)"
     mode: "library"
     variable: "OPENGL_gles2_LIBRARY"
     description: "Path to a library."
@@ -2596,6 +2686,7 @@ events:
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
@@ -2616,6 +2707,7 @@ events:
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
@@ -2628,6 +2720,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -2655,7 +2748,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:37 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:251 (find_package)"
-      - "CMakeLists.txt:6 (find_package)"
+      - "CMakeLists.txt:7 (find_package)"
     mode: "library"
     variable: "OPENGL_gles3_LIBRARY"
     description: "Path to a library."
@@ -2674,6 +2767,7 @@ events:
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
@@ -2694,6 +2788,7 @@ events:
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
@@ -2713,6 +2808,7 @@ events:
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
@@ -2725,6 +2821,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -2752,7 +2849,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:37 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:251 (find_package)"
-      - "CMakeLists.txt:6 (find_package)"
+      - "CMakeLists.txt:7 (find_package)"
     mode: "library"
     variable: "OPENGL_glu_LIBRARY"
     description: "Path to a library."
@@ -2771,6 +2868,7 @@ events:
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
@@ -2794,6 +2892,7 @@ events:
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
@@ -2806,6 +2905,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -2831,7 +2931,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:37 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:251 (find_package)"
-      - "CMakeLists.txt:6 (find_package)"
+      - "CMakeLists.txt:7 (find_package)"
     mode: "path"
     variable: "Vulkan_INCLUDE_DIR"
     description: "Path to a file."
@@ -2850,6 +2950,7 @@ events:
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
@@ -2871,6 +2972,7 @@ events:
       - "/usr/local/sbin/vulkan/vulkan.h"
       - "/usr/local/bin/vulkan/vulkan.h"
       - "/usr/bin/vulkan/vulkan.h"
+      - "/var/lib/flatpak/exports/bin/vulkan/vulkan.h"
       - "/usr/lib/jvm/default/bin/vulkan/vulkan.h"
       - "/usr/bin/site_perl/vulkan/vulkan.h"
       - "/usr/bin/vendor_perl/vulkan/vulkan.h"
@@ -2893,6 +2995,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -2918,7 +3021,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:37 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:251 (find_package)"
-      - "CMakeLists.txt:6 (find_package)"
+      - "CMakeLists.txt:7 (find_package)"
     mode: "library"
     variable: "Vulkan_LIBRARY"
     description: "Path to a library."
@@ -2937,6 +3040,7 @@ events:
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
@@ -2959,6 +3063,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -2984,7 +3089,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:37 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:251 (find_package)"
-      - "CMakeLists.txt:6 (find_package)"
+      - "CMakeLists.txt:7 (find_package)"
     mode: "program"
     variable: "Vulkan_GLSLC_EXECUTABLE"
     description: "Path to a program."
@@ -3003,6 +3108,7 @@ events:
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
@@ -3030,6 +3136,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -3053,7 +3160,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:37 (_qt_internal_find_third_party_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:251 (find_package)"
-      - "CMakeLists.txt:6 (find_package)"
+      - "CMakeLists.txt:7 (find_package)"
     mode: "program"
     variable: "Vulkan_GLSLANG_VALIDATOR_EXECUTABLE"
     description: "Path to a program."
@@ -3072,6 +3179,7 @@ events:
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
+      - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
       - "/usr/bin/site_perl/"
       - "/usr/bin/vendor_perl/"
@@ -3099,6 +3207,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -3120,7 +3229,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:44 (_qt_internal_find_tool_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:251 (find_package)"
-      - "CMakeLists.txt:6 (find_package)"
+      - "CMakeLists.txt:7 (find_package)"
     name: "Qt6GuiTools"
     configs:
       -
@@ -3190,6 +3299,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -3216,7 +3326,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:52 (_qt_internal_find_qt_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:251 (find_package)"
-      - "CMakeLists.txt:6 (find_package)"
+      - "CMakeLists.txt:7 (find_package)"
     name: "Qt6DBusTools"
     configs:
       -
@@ -3286,6 +3396,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -3309,7 +3420,7 @@ events:
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:52 (_qt_internal_find_qt_dependencies)"
       - "/usr/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:251 (find_package)"
-      - "CMakeLists.txt:6 (find_package)"
+      - "CMakeLists.txt:7 (find_package)"
     name: "Qt6DBus"
     configs:
       -
@@ -3387,6 +3498,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -3405,7 +3517,7 @@ events:
     kind: "find_package-v1"
     backtrace:
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:251 (find_package)"
-      - "CMakeLists.txt:6 (find_package)"
+      - "CMakeLists.txt:7 (find_package)"
     name: "Qt6Gui"
     configs:
       -
@@ -3480,6 +3592,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -3501,7 +3614,7 @@ events:
       - "/usr/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:42 (_qt_internal_find_tool_dependencies)"
       - "/usr/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:50 (include)"
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:251 (find_package)"
-      - "CMakeLists.txt:6 (find_package)"
+      - "CMakeLists.txt:7 (find_package)"
     name: "Qt6WidgetsTools"
     configs:
       -
@@ -3571,6 +3684,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -3589,7 +3703,7 @@ events:
     kind: "find_package-v1"
     backtrace:
       - "/usr/lib/cmake/Qt6/Qt6Config.cmake:251 (find_package)"
-      - "CMakeLists.txt:6 (find_package)"
+      - "CMakeLists.txt:7 (find_package)"
     name: "Qt6Widgets"
     configs:
       -
@@ -3664,6 +3778,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"
@@ -3681,7 +3796,7 @@ events:
   -
     kind: "find_package-v1"
     backtrace:
-      - "CMakeLists.txt:6 (find_package)"
+      - "CMakeLists.txt:7 (find_package)"
     name: "Qt6"
     components:
       -
@@ -5863,6 +5978,7 @@ events:
         - "/usr/local/sbin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
         - "/usr/bin/site_perl"
         - "/usr/bin/vendor_perl"

@@ -3,10 +3,13 @@
 
 CMakeFiles/reader.dir/reader_autogen/mocs_compilation.cpp.o: reader_autogen/mocs_compilation.cpp \
   /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/page-data.hpp \
-  /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/page-data.hpp \
   /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/reader.hpp \
   reader_autogen/3MWDP5BIZD/moc_page-data.cpp \
   reader_autogen/3MWDP5BIZD/moc_reader.cpp \
+  /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/page-data.hpp \
+  /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/reader.hpp \
+  /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/main.hpp \
+  reader_autogen/L3W4UJZWVR/moc_main.cpp \
   /usr/include/GL/gl.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
@@ -2239,8 +2242,10 @@ CMakeFiles/reader.dir/scripts/global-variables.cpp.o: /home/assuero/Documentos/c
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/xtestintrin.h
 
 CMakeFiles/reader.dir/scripts/main.cpp.o: /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/main.cpp \
-  /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/global-variables.hpp \
   /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/page-data.hpp \
+  /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/reader.hpp \
+  /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/global-variables.hpp \
+  /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/main.hpp \
   /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/reader.hpp \
   /usr/include/GL/gl.h \
   /usr/include/alloca.h \
@@ -3358,8 +3363,8 @@ CMakeFiles/reader.dir/scripts/main.cpp.o: /home/assuero/Documentos/computaria/cp
 
 CMakeFiles/reader.dir/scripts/reader/load-file.cpp.o: /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/load-file.cpp \
   /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/page-data.hpp \
-  /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/reader.hpp \
   /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/page-data.hpp \
+  /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/reader.hpp \
   /usr/include/GL/gl.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
@@ -7025,9 +7030,9 @@ CMakeFiles/reader.dir/scripts/global-variables.cpp.o:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/wbnoinvdintrin.h:
 
-/usr/include/qt6/QtCore/qforeach.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/waitpkgintrin.h:
 
-/usr/include/qt6/QtCore/qfloat16.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/vpclmulqdqintrin.h:
 
 /usr/include/qt6/QtCore/qfileinfo.h:
 
@@ -7277,8 +7282,6 @@ CMakeFiles/reader.dir/scripts/global-variables.cpp.o:
 
 /usr/include/mupdf/fitz/display-list.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/waitpkgintrin.h:
-
 /usr/include/mupdf/fitz/deskew.h:
 
 /usr/include/c++/15.2.1/bits/ranges_base.h:
@@ -7521,9 +7524,15 @@ CMakeFiles/reader.dir/scripts/global-variables.cpp.o:
 
 /usr/include/c++/15.2.1/experimental/source_location:
 
-/usr/include/c++/15.2.1/bits/allocated_ptr.h:
+/usr/include/inttypes.h:
 
-/usr/include/qt6/QtGui/qtgui-config.h:
+/usr/include/qt6/QtCore/qfuture.h:
+
+/usr/include/c++/15.2.1/cstring:
+
+/usr/lib/libc.so:
+
+/usr/include/qt6/QtGui/qpointingdevice.h:
 
 /usr/include/c++/15.2.1/bits/basic_ios.tcc:
 
@@ -7579,31 +7588,11 @@ CMakeFiles/reader.dir/scripts/global-variables.cpp.o:
 
 /usr/include/c++/15.2.1/bits/algorithmfwd.h:
 
-/usr/include/c++/15.2.1/bits/char_traits.h:
-
 /usr/include/bits/types/struct_tm.h:
 
 /usr/include/mupdf/fitz/heap.h:
 
 /usr/include/bits/types/struct_timespec.h:
-
-/usr/include/qt6/QtCore/qcborcommon.h:
-
-/usr/include/qt6/QtGui/qcolortransform.h:
-
-/usr/include/qt6/QtGui/qtransform.h:
-
-/usr/include/bits/waitflags.h:
-
-/usr/include/qt6/QtWidgets/qlabel.h:
-
-/usr/include/c++/15.2.1/bits/stl_pair.h:
-
-/usr/lib/libunistring.so.5:
-
-/usr/include/qt6/QtCore/qrefcount.h:
-
-/usr/include/qt6/QtCore/qscopedvaluerollback.h:
 
 /usr/include/qt6/QtCore/qconfig.h:
 
@@ -7633,6 +7622,12 @@ CMakeFiles/reader.dir/scripts/global-variables.cpp.o:
 
 /usr/include/c++/15.2.1/x86_64-pc-linux-gnu/bits/atomic_word.h:
 
+/usr/lib/libGLdispatch.so.0:
+
+/usr/include/qt6/QtWidgets/qtwidgetsexports.h:
+
+/usr/include/bits/types/__locale_t.h:
+
 /usr/include/qt6/QtGui/qvectornd.h:
 
 /usr/include/c++/15.2.1/cstddef:
@@ -7646,6 +7641,10 @@ CMakeFiles/reader.dir/scripts/global-variables.cpp.o:
 /usr/include/c++/15.2.1/bits/ranges_algobase.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/avx512vlintrin.h:
+
+/usr/include/qt6/QtGui/qtguiexports.h:
+
+/usr/include/bits/timex.h:
 
 /usr/include/bits/errno.h:
 
@@ -7695,22 +7694,6 @@ CMakeFiles/reader.dir/scripts/global-variables.cpp.o:
 
 /usr/include/qt6/QtWidgets/QScrollerProperties:
 
-/usr/include/c++/15.2.1/bits/exception.h:
-
-/usr/include/bits/posix_opt.h:
-
-/usr/include/qt6/QtCore/qsequentialiterable.h:
-
-/usr/include/bits/syscall.h:
-
-/usr/include/qt6/QtCore/qdatastream.h:
-
-/usr/include/qt6/QtCore/qcoreapplication.h:
-
-/usr/include/mupdf/fitz/filter.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/gfniintrin.h:
-
 /usr/include/linux/close_range.h:
 
 /usr/include/bits/uintn-identity.h:
@@ -7746,6 +7729,8 @@ CMakeFiles/reader.dir/scripts/global-variables.cpp.o:
 /usr/include/bits/mathcalls.h:
 
 /usr/include/bits/types/clock_t.h:
+
+/usr/include/c++/15.2.1/bits/char_traits.h:
 
 /usr/include/qt6/QtCore/qfuturesynchronizer.h:
 
@@ -7789,20 +7774,6 @@ CMakeFiles/reader.dir/scripts/global-variables.cpp.o:
 
 /usr/include/bits/posix2_lim.h:
 
-/usr/include/bits/wordsize.h:
-
-/usr/include/bits/posix1_lim.h:
-
-/usr/include/qt6/QtCore/qbitarray.h:
-
-/usr/include/qt6/QtGui/qmovie.h:
-
-/usr/include/c++/15.2.1/bits/locale_facets.tcc:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/xsaveintrin.h:
-
-/usr/include/c++/15.2.1/compare:
-
 /usr/include/math.h:
 
 /usr/include/setjmp.h:
@@ -7823,6 +7794,84 @@ CMakeFiles/reader.dir/scripts/global-variables.cpp.o:
 
 /usr/include/sys/select.h:
 
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/fmaintrin.h:
+
+/usr/include/c++/15.2.1/iterator:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/sha512intrin.h:
+
+/usr/include/c++/15.2.1/typeinfo:
+
+/usr/include/asm-generic/errno-base.h:
+
+/usr/include/bits/types/__sigset_t.h:
+
+/usr/include/c++/15.2.1/bits/stl_map.h:
+
+/usr/include/qt6/QtCore/qsavefile.h:
+
+/usr/include/asm-generic/posix_types.h:
+
+/usr/include/c++/15.2.1/unordered_map:
+
+/usr/include/qt6/QtCore/qtcoreversion.h:
+
+/usr/include/mupdf/fitz/buffer.h:
+
+/usr/include/qt6/QtCore/qtextstream.h:
+
+/usr/include/c++/15.2.1/bits/unique_lock.h:
+
+/usr/include/c++/15.2.1/bits/allocated_ptr.h:
+
+/usr/include/qt6/QtGui/qtgui-config.h:
+
+/usr/include/qt6/QtCore/QVariant:
+
+reader_autogen/mocs_compilation.cpp:
+
+/usr/include/qt6/QtCore/qcryptographichash.h:
+
+/usr/include/qt6/QtCore/qscopedpointer.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/bmi2intrin.h:
+
+/usr/include/qt6/QtWidgets/qactiongroup.h:
+
+/usr/include/bits/types/clockid_t.h:
+
+/usr/include/qt6/QtWidgets/qkeysequenceedit.h:
+
+/usr/include/c++/15.2.1/bits/exception.h:
+
+/usr/include/bits/posix_opt.h:
+
+/usr/include/qt6/QtCore/qsequentialiterable.h:
+
+/usr/include/bits/syscall.h:
+
+/usr/include/qt6/QtCore/qdatastream.h:
+
+/usr/include/qt6/QtCore/qcoreapplication.h:
+
+/usr/include/mupdf/fitz/filter.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/gfniintrin.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/bits/posix1_lim.h:
+
+/usr/include/qt6/QtCore/qbitarray.h:
+
+/usr/include/qt6/QtGui/qmovie.h:
+
+/usr/include/c++/15.2.1/bits/locale_facets.tcc:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/xsaveintrin.h:
+
+/usr/include/c++/15.2.1/compare:
+
 /usr/include/c++/15.2.1/iostream:
 
 /usr/include/qt6/QtGui/QtGui:
@@ -7839,25 +7888,23 @@ CMakeFiles/reader.dir/scripts/global-variables.cpp.o:
 
 /usr/include/qt6/QtWidgets/qaccessiblewidget.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/fmaintrin.h:
+/usr/include/qt6/QtCore/qcborcommon.h:
 
-/usr/include/c++/15.2.1/iterator:
+/usr/include/qt6/QtGui/qcolortransform.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/sha512intrin.h:
+/usr/include/qt6/QtGui/qtransform.h:
 
-/usr/include/c++/15.2.1/typeinfo:
+/usr/include/bits/waitflags.h:
 
-/usr/include/asm-generic/errno-base.h:
+/usr/include/qt6/QtWidgets/qlabel.h:
 
-/usr/include/bits/uio_lim.h:
+/usr/include/c++/15.2.1/bits/stl_pair.h:
 
-/usr/include/qt6/QtCore/QVariant:
+/usr/lib/libunistring.so.5:
 
-reader_autogen/mocs_compilation.cpp:
+/usr/include/qt6/QtCore/qrefcount.h:
 
-/usr/include/qt6/QtCore/qcryptographichash.h:
-
-/usr/include/qt6/QtCore/qscopedpointer.h:
+/usr/include/qt6/QtCore/qscopedvaluerollback.h:
 
 reader_autogen/3MWDP5BIZD/moc_page-data.cpp:
 
@@ -7866,6 +7913,10 @@ reader_autogen/3MWDP5BIZD/moc_page-data.cpp:
 /usr/lib/liblzma.so.5:
 
 /usr/include/qt6/QtGui/qbackingstore.h:
+
+/usr/include/c++/15.2.1/bits/ostream.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/avx10_2-512minmaxintrin.h:
 
 /usr/include/bits/struct_rwlock.h:
 
@@ -7894,24 +7945,6 @@ reader_autogen/3MWDP5BIZD/moc_page-data.cpp:
 /usr/include/c++/15.2.1/bits/stl_iterator_base_types.h:
 
 /usr/include/c++/15.2.1/ratio:
-
-/usr/include/bits/types/__sigset_t.h:
-
-/usr/include/c++/15.2.1/bits/stl_map.h:
-
-/usr/include/qt6/QtCore/qsavefile.h:
-
-/usr/include/asm-generic/posix_types.h:
-
-/usr/include/c++/15.2.1/unordered_map:
-
-/usr/include/qt6/QtCore/qtcoreversion.h:
-
-/usr/include/mupdf/fitz/buffer.h:
-
-/usr/include/qt6/QtCore/qtextstream.h:
-
-/usr/include/c++/15.2.1/bits/unique_lock.h:
 
 /usr/include/c++/15.2.1/atomic:
 
@@ -7945,11 +7978,13 @@ reader_autogen/3MWDP5BIZD/moc_page-data.cpp:
 
 /usr/include/qt6/QtCore/qtresource.h:
 
+/usr/include/qt6/QtCore/QList:
+
+/usr/include/c++/15.2.1/ctime:
+
+/usr/include/qt6/QtGui/qaccessible_base.h:
+
 /usr/include/qt6/QtWidgets/qrhiwidget.h:
-
-/usr/include/c++/15.2.1/bits/charconv.h:
-
-/usr/include/bits/mathcalls-helper-functions.h:
 
 /usr/lib32/libkeyutils.so.1:
 
@@ -7972,8 +8007,6 @@ reader_autogen/3MWDP5BIZD/moc_page-data.cpp:
 /usr/include/qt6/QtGui/qtexttable.h:
 
 /usr/include/asm-generic/bitsperlong.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/vpclmulqdqintrin.h:
 
 /usr/lib/crtn.o:
 
@@ -8021,17 +8054,9 @@ reader_autogen/3MWDP5BIZD/moc_page-data.cpp:
 
 /usr/include/c++/15.2.1/bits/stl_algobase.h:
 
-/usr/include/c++/15.2.1/bits/ostream.h:
+/usr/include/bits/mathcalls-helper-functions.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/avx10_2-512minmaxintrin.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/bmi2intrin.h:
-
-/usr/include/qt6/QtWidgets/qactiongroup.h:
-
-/usr/include/bits/types/clockid_t.h:
-
-/usr/include/qt6/QtWidgets/qkeysequenceedit.h:
+/usr/include/c++/15.2.1/bits/charconv.h:
 
 /usr/include/c++/15.2.1/bits/codecvt.h:
 
@@ -8130,6 +8155,14 @@ reader_autogen/3MWDP5BIZD/moc_page-data.cpp:
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/include/avx10_2minmaxintrin.h:
 
 /usr/include/bits/types/struct_itimerspec.h:
+
+reader_autogen/L3W4UJZWVR/moc_main.cpp:
+
+/usr/lib32/libbz2.so.1.0:
+
+/usr/include/c++/15.2.1/pstl/glue_memory_defs.h:
+
+/usr/include/qt6/QtCore/qthreadpool.h:
 
 /usr/include/c++/15.2.1/condition_variable:
 
@@ -8255,6 +8288,10 @@ reader_autogen/3MWDP5BIZD/moc_page-data.cpp:
 
 /usr/include/c++/15.2.1/clocale:
 
+/usr/include/bits/uio_lim.h:
+
+/home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/main.hpp:
+
 /usr/lib/libarchive.so.13:
 
 /usr/include/c++/15.2.1/bits/stl_multiset.h:
@@ -8331,9 +8368,9 @@ reader_autogen/3MWDP5BIZD/moc_page-data.cpp:
 
 /usr/include/qt6/QtCore/QObject:
 
-/usr/include/qt6/QtGui/qclipboard.h:
-
 /usr/include/c++/15.2.1/random:
+
+/usr/include/qt6/QtGui/qclipboard.h:
 
 /usr/include/linux/posix_types.h:
 
@@ -8361,31 +8398,9 @@ reader_autogen/3MWDP5BIZD/moc_page-data.cpp:
 
 /usr/include/c++/15.2.1/cstdint:
 
-/usr/include/inttypes.h:
+/usr/include/qt6/QtCore/qfloat16.h:
 
-/usr/include/qt6/QtCore/qfuture.h:
-
-/usr/lib/libGLdispatch.so.0:
-
-/usr/include/bits/types/__locale_t.h:
-
-/usr/include/qt6/QtWidgets/qtwidgetsexports.h:
-
-/usr/include/c++/15.2.1/cstring:
-
-/usr/lib/libc.so:
-
-/usr/include/qt6/QtGui/qpointingdevice.h:
-
-/usr/include/bits/timex.h:
-
-/usr/include/qt6/QtCore/QList:
-
-/usr/include/qt6/QtGui/qaccessible_base.h:
-
-/usr/include/c++/15.2.1/ctime:
-
-/usr/include/qt6/QtGui/qtguiexports.h:
+/usr/include/qt6/QtCore/qforeach.h:
 
 /usr/lib/libglib-2.0.so.0:
 
@@ -8710,12 +8725,6 @@ reader_autogen/3MWDP5BIZD/moc_page-data.cpp:
 /usr/include/qt6/QtCore/qtextboundaryfinder.h:
 
 /usr/include/qt6/QtCore/qtformat_impl.h:
-
-/usr/lib32/libbz2.so.1.0:
-
-/usr/include/c++/15.2.1/pstl/glue_memory_defs.h:
-
-/usr/include/qt6/QtCore/qthreadpool.h:
 
 /usr/include/qt6/QtCore/qtimer.h:
 

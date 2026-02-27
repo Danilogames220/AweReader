@@ -1,33 +1,47 @@
+#include <QtCore>
 #include <QtWidgets>
 #include <iostream>
-#include <qboxlayout.h>
-#include <qnamespace.h>
 
+#include "./main.hpp"
 #include "./global-variables.hpp"
 #include "./reader/reader.hpp"
 
-class main_window : public QWidget {
-	protected:
-		void showEvent(QShowEvent * event) override;
-		void resizeEvent(QResizeEvent * event) override;
-
-	public:
-		main_window();
-		QVBoxLayout * main_layout;
-
-		QSharedPointer<reader_component> rc;
-
-};
-
 void main_window::resizeEvent(QResizeEvent * event) {
 	QWidget::resizeEvent(event);
-	puts("window resized");
-	if (rc != nullptr)
-		main_layout->addWidget(rc.data());
+	
+	res_count++;
+	printf("%d\n", res_count);
+
+	if (res_count == 2) {
+		puts("run main");
+		emit start();
+		first_resize = true;
+	}
 }
 void main_window::showEvent(QShowEvent * event) {
 	QWidget::showEvent(event);
+};
 
+main_window::main_window() {
+	setWindowTitle("PDF Reader");
+	setWindowState(Qt::WindowMaximized);
+	
+	QObject::connect(this, &main_window::start, this, &main_window::main);
+	show();
+}
+
+
+int main(int argc, char * argv[]) {
+	QApplication app(argc, argv);
+	main_window window = main_window();
+	
+	main_dir = QDir(QCoreApplication::applicationDirPath());
+	
+	return app.exec();
+}
+
+void main_window::main(void) {
+	
 	main_layout = new QVBoxLayout(this);
 	main_layout->setContentsMargins(0, 0, 0, 0);
 	
@@ -40,47 +54,7 @@ void main_window::showEvent(QShowEvent * event) {
 		
 		rc = QSharedPointer<reader_component>(new reader_component(), &QWidget::deleteLater);
 		//main_layout->addWidget(rc);
+		if (rc != nullptr)
+			main_layout->addWidget(rc.data());
 	};
-
-};
-
-main_window::main_window() {
-	setWindowTitle("PDF Reader");
-	
-	setWindowState(Qt::WindowMaximized);
-	//showMaximized();
-	show();
-
-	//setWindowTitle("PDF Reader");
-	//showMaximized();
-	//setWindowState(Qt::WindowMaximized);
-	//show();
-	//showMaximized();
-}
-
-
-int main(int argc, char * argv[]) {
-	QApplication app(argc, argv);
-	main_window window = main_window();
-	
-	main_dir = QDir(QCoreApplication::applicationDirPath());
-	//QVBoxLayout main_layout(&window);
-
-	/*
-	if (QCoreApplication::arguments().size() > 1) {
-		puts("argument detected");
-		file_path = std::string(argv[1]);
-		
-		
-		window.setWindowTitle("PDF Reader");
-		window.showMaximized();
-		
-		reader_component rc = reader_component();
-		main_layout.addWidget(&rc);
-		return app.exec();
-	};
-	*/	
-
-
-	return app.exec();
 }

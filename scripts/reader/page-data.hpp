@@ -29,31 +29,30 @@ class page_data : public QObject {
 		page_data(thread_data * Data);
 		// renders Data
 		page_data(thread_data * Data, ON_RENDERED);
-		// renders Data size pixmap acording to size
 		page_data(QSize size, thread_data * Data, ON_RENDERED);
-
 		~page_data();
 
 		thread_data * data;
 
-		// qt stuff
 		QLabel * label;
 		QPixmap * label_pix;
 		QImage * label_img;
 
-		// gui stuff
+		QPoint position;
 		bool is_centered;
-		
-		float zoom;
-		float zoom2;
 
-		void resize(QSize size);
+		// zoom aplied from rendering with QSize
+		float internal_zoom;
+		// zoom from the reader itself
+		float extenal_zoom;
+
+		// --- METHODS --- //
+		//void resize(QSize size);
 
 		// re-render the page resizing acording to size, but in a seprate thread
-		void query_resize(QSize size);
 		void query_resize(QSize size, ON_RENDERED);
+		//void query_resize(QSize size);
 
-		// make it work like render_pages_thread()
 		//void render(thread_data * Data);
 		void render(QSize size, thread_data * Data);
 		//void render(QSize size,thread_data * Data);

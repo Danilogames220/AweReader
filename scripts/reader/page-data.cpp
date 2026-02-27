@@ -58,13 +58,10 @@ void page_data::render(QSize size, thread_data * Data) {
 
 	// check if size is empty
 	if (size.width() > 0 && size.height() > 0) {
-		puts("size is not 0");
+		//puts("size is not 0");
 		size_empty = false;
 		size_factor = get_resize_factors(size, QSizeF(bbox.x1, bbox.y1));
 	}
-
-	std::cout << "factor x: " << size_factor.width() << "\n"
-		  << "factor y: " << size_factor.height() << "\n";
 
 	fprintf(stderr, "thread at page %d loading!\n", pagenumber);
 
@@ -183,6 +180,11 @@ void reader_component::add_page_to_reader(page_data * page) {
 	int page_index = page->data->pagenumber - 1;
 
 	page->load_widget();
+
+	page->label->move(
+		(pages_container.width() - page->label_pix->width())/2,
+		(pages_container.height() - page->label_pix->height())/2
+	);
 	page->label->setParent(&pages_container);
 	
 	//std::cout << "page (" << page->data->pagenumber - 1 << "added\n";

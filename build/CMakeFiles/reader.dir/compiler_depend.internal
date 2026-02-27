@@ -4,10 +4,13 @@
 CMakeFiles/reader.dir/reader_autogen/mocs_compilation.cpp.o
  /home/assuero/Documentos/computaria/cpp/pdf-reader/build/reader_autogen/mocs_compilation.cpp
  /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/page-data.hpp
- /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/page-data.hpp
  /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/reader.hpp
  /home/assuero/Documentos/computaria/cpp/pdf-reader/build/reader_autogen/3MWDP5BIZD/moc_page-data.cpp
  /home/assuero/Documentos/computaria/cpp/pdf-reader/build/reader_autogen/3MWDP5BIZD/moc_reader.cpp
+ /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/page-data.hpp
+ /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/reader.hpp
+ /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/main.hpp
+ /home/assuero/Documentos/computaria/cpp/pdf-reader/build/reader_autogen/L3W4UJZWVR/moc_main.cpp
  /usr/include/GL/gl.h
  /usr/include/alloca.h
  /usr/include/asm-generic/bitsperlong.h
@@ -2242,8 +2245,10 @@ CMakeFiles/reader.dir/scripts/global-variables.cpp.o
 
 CMakeFiles/reader.dir/scripts/main.cpp.o
  /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/main.cpp
- /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/global-variables.hpp
  /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/page-data.hpp
+ /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/reader.hpp
+ /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/global-variables.hpp
+ /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/main.hpp
  /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/reader.hpp
  /usr/include/GL/gl.h
  /usr/include/alloca.h
@@ -3362,8 +3367,8 @@ CMakeFiles/reader.dir/scripts/main.cpp.o
 CMakeFiles/reader.dir/scripts/reader/load-file.cpp.o
  /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/load-file.cpp
  /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/page-data.hpp
- /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/reader.hpp
  /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/page-data.hpp
+ /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/reader.hpp
  /usr/include/GL/gl.h
  /usr/include/alloca.h
  /usr/include/asm-generic/bitsperlong.h

@@ -1,13 +1,11 @@
-// code "borrowed" from example:
+// code borrowed from example:
 // https://mupdf.readthedocs.io/en/1.27.0/cookbook/c/multi-threaded.html
 
 // TODO
-// - zoom page and resize acording to pages_container size;
-// 
 // - way to start rendering from any page
 
 #include "./reader.hpp"
-#include "page-data.hpp"
+#include "./page-data.hpp"
 
 #include <mupdf/fitz.h>
 #include <QtWidgets>

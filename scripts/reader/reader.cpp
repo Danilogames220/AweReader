@@ -15,7 +15,6 @@ void reader_component::showEvent(QShowEvent * event) {
 
 
 	// start variables before loading the file
-	//set_page(0);
 	current_page_index = 0;
 	can_resize = 0;
 
@@ -24,9 +23,7 @@ void reader_component::showEvent(QShowEvent * event) {
 	// load file	
 	QThread * t = QThread::create( [this](void) -> void{
 		load_file(pages_container.size(), file_path);
-		//load_file(QSize(0, 0), file_path);
 	});
-	//QObject::connect(this, &reader_component::page_rendered, this, &reader_component::create_page);
 	
 	// after load_file finished
 	QObject::connect(t, &QThread::finished, this, [this]{
@@ -45,15 +42,8 @@ void reader_component::showEvent(QShowEvent * event) {
 }
 void reader_component::resizeEvent(QResizeEvent * event) {
 	QWidget::resizeEvent(event);
-	
-	// resize current page in case of window resizing
-	// segmentation fault
-	//if (can_resize) pages[current_page_index]->resize(pages_container.geometry());
-	
-	std::cout << pages_container.height() << "\n";
 }
 
-// might be better to start variables inside showEvent than heve
 reader_component::reader_component() :
 	QWidget(),
 	reader_c_layout(this),
