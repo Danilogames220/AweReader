@@ -4,9 +4,12 @@
 #include <QtWidgets>
 #include <mupdf/fitz.h>
 
+#include <qevent.h>
 #include <vector>
 
 #include "./page-data.hpp"
+
+extern QSizeF get_resize_factors(QSizeF parent, QSizeF child);
 
 class reader_component : public QWidget {
 	Q_OBJECT
@@ -15,11 +18,11 @@ class reader_component : public QWidget {
 		// load_file() happens here
 		void showEvent(QShowEvent * event) override;
 		void resizeEvent(QResizeEvent * event) override;
-
+		void keyPressEvent(QKeyEvent * event) override;
 
 	// UI stuff
 	public: 
-		reader_component();
+		reader_component(QWidget *parent);
 		QVBoxLayout reader_c_layout;
 
 		// top panel
@@ -39,12 +42,15 @@ class reader_component : public QWidget {
 			QLabel current_page;
 			QPushButton next_button;
 
+		void do_showEvent(QKeyEvent *event);
+
 	// stuff related to processing the file
 	private: 
 		uint64_t current_page_index;
 		uint64_t page_count;
 
 		bool can_resize;
+		bool loaded;
 
 		void load_file(QSize size, std::string path);
 			
@@ -55,6 +61,7 @@ class reader_component : public QWidget {
 		void on_pages_loaded();
 
 		void set_page(int index);
+
 
 		// defined in page-data.cpp
 	public slots:

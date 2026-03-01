@@ -10,7 +10,7 @@
 #define ON_RENDERED std::function<void(page_data *)> on_rendered
 
 struct thread_data {
-	bool rendered;
+	//bool rendered;
 
 	fz_context *ctx;
 	int pagenumber;
@@ -18,6 +18,7 @@ struct thread_data {
 	fz_rect bbox;
 	fz_pixmap *pix;
 	int failed;
+	fz_matrix ctm;
 };
 
 // page_data cant be moved, like qt widgets
@@ -30,6 +31,7 @@ class page_data : public QObject {
 		// renders Data
 		page_data(thread_data * Data, ON_RENDERED);
 		page_data(QSize size, thread_data * Data, ON_RENDERED);
+		page_data(fz_document * doc, QSize size, thread_data * Data, ON_RENDERED);
 		~page_data();
 
 		thread_data * data;
@@ -55,6 +57,7 @@ class page_data : public QObject {
 
 		//void render(thread_data * Data);
 		void render(QSize size, thread_data * Data);
+		void render(fz_document * doc, QSize size, thread_data * Data);
 		//void render(QSize size,thread_data * Data);
 		
 		// loads the current data to widgets

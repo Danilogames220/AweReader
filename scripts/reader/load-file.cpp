@@ -7,9 +7,12 @@
 #include "./reader.hpp"
 #include "./page-data.hpp"
 
+#include <format>
 #include <mupdf/fitz.h>
 #include <QtWidgets>
 
+#include <mupdf/fitz/document.h>
+#include <mupdf/fitz/geometry.h>
 #include <stdlib.h>
 #include <pthread.h> // c++ mutex wont work with mupdf
 #include <string>
@@ -17,6 +20,12 @@
 #include <thread>
 #include <future>
 
+QSizeF get_resize_factors(QSizeF parent, QSizeF child) {
+	return QSizeF(
+		child.width()/parent.width(), 
+		child.height()/parent.height()	
+	);
+}
 
 void fail(const char *msg) {
 	fprintf(stderr, "%s\n", msg);
@@ -44,6 +53,15 @@ void reader_component::load_file(QSize size, std::string path) {
 	std::vector<std::future<page_data *>> thread;
 
 	pthread_mutex_t mtx[FZ_LOCK_MAX];	
+
+	// check if size is empty
+	bool size_empty = true;
+	//QSizeF size_factor;
+	if (size.width() > 0 && size.height() > 0) {
+		//puts("size is not 0");
+		size_empty = false;
+		//size_factor = get_resize_factors(size, QSizeF(bbox.x1, bbox.y1));
+	}
 
 	// Initialize FZ_LOCK_MAX number of non-recursive mutexes.
 	for (int i = 0; i < FZ_LOCK_MAX; i++)
@@ -79,17 +97,40 @@ void reader_component::load_file(QSize size, std::string path) {
 			fz_display_list *list;
 			fz_device *dev = NULL;
 			fz_pixmap *pix;
+			fz_matrix ctm = fz_identity;
 
 			struct thread_data *data;
+
+			QSizeF size_factor(0, 0);
 
 			fz_var(dev);
 
 			fz_try(ctx) {
 				page = fz_load_page(ctx, doc, i);
 				bbox = fz_bound_page(ctx, page);
+			
+				if (!size_empty) {
+					size_factor = get_resize_factors(size, QSizeF(bbox.x1, bbox.y1));
+					//size_factor /= 0.25;
+
+					std::cout << std::format("c width = {}\nc height = {}\n", size.width(), size.height());
+
+					if (size_factor.width() > size_factor.height()) {
+						//bbox.x1 *= 1/size_factor.width();
+						//bbox.y1 *= 1/size_factor.width();
+						//ctm = fz_transform_page(bbox, 1/size_factor.width(), 90);
+						//ctm = fz_scale(1/size_factor.width(), 1/size_factor.width());
+					} else {
+						//bbox.x1 *= 1/size_factor.height();
+						//bbox.y1 *= 1/size_factor.height();
+						//ctm = fz_transform_page(bbox, 1/size_factor.height(), 0);
+						//ctm = fz_scale(1/size_factor.height()*1.25, 1/size_factor.height()*1.25);
+					}; 
+
+				}
 				list = fz_new_display_list(ctx, bbox);
 				dev = fz_new_list_device(ctx, list);
-				fz_run_page(ctx, page, dev, fz_identity, NULL);
+				fz_run_page(ctx, page, dev, ctm, NULL);
 				fz_close_device(ctx, dev);
 			}
 			fz_always(ctx) {
@@ -109,12 +150,14 @@ void reader_component::load_file(QSize size, std::string path) {
 			data->list = list;
 			data->bbox = bbox;
 			data->pix = NULL;
+			data->ctm = ctm;
 			data->failed = 0;
 
 			thread.insert(
 				thread.begin() + i, 
-				std::async(std::launch::async, [this, data, size]() -> page_data* {
+				std::async(std::launch::async, [=, this]() -> page_data* {
 				page_data * buf = new page_data(
+					doc,
 					size, 
 					data, 
 					[this, buf](page_data * d)-> void {

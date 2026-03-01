@@ -7,9 +7,3 @@
 /home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/install/strip.dir
 /home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/reader_autogen_timestamp_deps.dir
 /home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles/reader_autogen.dir
-/home/assuero/Documentos/computaria/cpp/pdf-reader/build/scripts/CMakeFiles/edit_cache.dir
-/home/assuero/Documentos/computaria/cpp/pdf-reader/build/scripts/CMakeFiles/rebuild_cache.dir
-/home/assuero/Documentos/computaria/cpp/pdf-reader/build/scripts/CMakeFiles/list_install_components.dir
-/home/assuero/Documentos/computaria/cpp/pdf-reader/build/scripts/CMakeFiles/install.dir
-/home/assuero/Documentos/computaria/cpp/pdf-reader/build/scripts/CMakeFiles/install/local.dir
-/home/assuero/Documentos/computaria/cpp/pdf-reader/build/scripts/CMakeFiles/install/strip.dir

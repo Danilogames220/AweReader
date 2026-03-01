@@ -3,6 +3,7 @@
 
 #include <QtCore>
 #include <QtWidgets>
+#include <qevent.h>
 
 #include "./reader/reader.hpp"
 
@@ -12,7 +13,7 @@ class main_window : public QWidget {
 	protected:
 		void showEvent(QShowEvent * event) override;
 		void resizeEvent(QResizeEvent * event) override;
-
+		void keyPressEvent(QKeyEvent * event) override;
 	public:
 		main_window();
 		QVBoxLayout * main_layout;

@@ -11,7 +11,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/4.2.3/CMakeCCompiler.cmake"
   "CMakeFiles/4.2.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/4.2.3/CMakeSystem.cmake"
-  "/home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/CMakeLists.txt"
   "/usr/lib/cmake/Qt6/FindWrapAtomic.cmake"
   "/usr/lib/cmake/Qt6/FindWrapOpenGL.cmake"
   "/usr/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake"
@@ -348,7 +347,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
   ".qt/deploy_reader_1e8ab9f929.cmake"
   ".qt/QtDeployTargets.cmake"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
-  "scripts/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:

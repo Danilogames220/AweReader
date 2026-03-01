@@ -15,6 +15,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/reader.dir/scripts/reader/page-data.cpp.o.d"
   "CMakeFiles/reader.dir/scripts/reader/reader.cpp.o"
   "CMakeFiles/reader.dir/scripts/reader/reader.cpp.o.d"
+  "CMakeFiles/reader.dir/scripts/reader/ui.cpp.o"
+  "CMakeFiles/reader.dir/scripts/reader/ui.cpp.o.d"
   "reader"
   "reader.pdb"
 )

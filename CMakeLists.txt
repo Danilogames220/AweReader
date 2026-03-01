@@ -11,8 +11,17 @@ qt_standard_project_setup()
 install(DIRECTORY "resources/" DESTINATION "resources/")
 
 # executable
+file(GLOB cpp_files
+	"scripts/*.cpp"
+	"scripts/reader/*.cpp"
+)
+
 qt_add_executable(${PROJECT_NAME})
-add_subdirectory("scripts")
+target_sources ( ${PROJECT_NAME}
+	PRIVATE
+		${cpp_files}
+)
+#add_subdirectory("scripts")
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
 	WIN32_EXECUTABLE TRUE

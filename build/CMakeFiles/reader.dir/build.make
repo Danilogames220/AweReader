@@ -86,24 +86,10 @@ CMakeFiles/reader.dir/reader_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/reader.dir/reader_autogen/mocs_compilation.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/assuero/Documentos/computaria/cpp/pdf-reader/build/reader_autogen/mocs_compilation.cpp -o CMakeFiles/reader.dir/reader_autogen/mocs_compilation.cpp.s
 
-CMakeFiles/reader.dir/scripts/main.cpp.o: CMakeFiles/reader.dir/flags.make
-CMakeFiles/reader.dir/scripts/main.cpp.o: /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/main.cpp
-CMakeFiles/reader.dir/scripts/main.cpp.o: CMakeFiles/reader.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/reader.dir/scripts/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/reader.dir/scripts/main.cpp.o -MF CMakeFiles/reader.dir/scripts/main.cpp.o.d -o CMakeFiles/reader.dir/scripts/main.cpp.o -c /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/main.cpp
-
-CMakeFiles/reader.dir/scripts/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/reader.dir/scripts/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/main.cpp > CMakeFiles/reader.dir/scripts/main.cpp.i
-
-CMakeFiles/reader.dir/scripts/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/reader.dir/scripts/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/main.cpp -o CMakeFiles/reader.dir/scripts/main.cpp.s
-
 CMakeFiles/reader.dir/scripts/global-variables.cpp.o: CMakeFiles/reader.dir/flags.make
 CMakeFiles/reader.dir/scripts/global-variables.cpp.o: /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/global-variables.cpp
 CMakeFiles/reader.dir/scripts/global-variables.cpp.o: CMakeFiles/reader.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/reader.dir/scripts/global-variables.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/reader.dir/scripts/global-variables.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/reader.dir/scripts/global-variables.cpp.o -MF CMakeFiles/reader.dir/scripts/global-variables.cpp.o.d -o CMakeFiles/reader.dir/scripts/global-variables.cpp.o -c /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/global-variables.cpp
 
 CMakeFiles/reader.dir/scripts/global-variables.cpp.i: cmake_force
@@ -114,24 +100,24 @@ CMakeFiles/reader.dir/scripts/global-variables.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/reader.dir/scripts/global-variables.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/global-variables.cpp -o CMakeFiles/reader.dir/scripts/global-variables.cpp.s
 
-CMakeFiles/reader.dir/scripts/reader/reader.cpp.o: CMakeFiles/reader.dir/flags.make
-CMakeFiles/reader.dir/scripts/reader/reader.cpp.o: /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/reader.cpp
-CMakeFiles/reader.dir/scripts/reader/reader.cpp.o: CMakeFiles/reader.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/reader.dir/scripts/reader/reader.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/reader.dir/scripts/reader/reader.cpp.o -MF CMakeFiles/reader.dir/scripts/reader/reader.cpp.o.d -o CMakeFiles/reader.dir/scripts/reader/reader.cpp.o -c /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/reader.cpp
+CMakeFiles/reader.dir/scripts/main.cpp.o: CMakeFiles/reader.dir/flags.make
+CMakeFiles/reader.dir/scripts/main.cpp.o: /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/main.cpp
+CMakeFiles/reader.dir/scripts/main.cpp.o: CMakeFiles/reader.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/reader.dir/scripts/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/reader.dir/scripts/main.cpp.o -MF CMakeFiles/reader.dir/scripts/main.cpp.o.d -o CMakeFiles/reader.dir/scripts/main.cpp.o -c /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/main.cpp
 
-CMakeFiles/reader.dir/scripts/reader/reader.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/reader.dir/scripts/reader/reader.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/reader.cpp > CMakeFiles/reader.dir/scripts/reader/reader.cpp.i
+CMakeFiles/reader.dir/scripts/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/reader.dir/scripts/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/main.cpp > CMakeFiles/reader.dir/scripts/main.cpp.i
 
-CMakeFiles/reader.dir/scripts/reader/reader.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/reader.dir/scripts/reader/reader.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/reader.cpp -o CMakeFiles/reader.dir/scripts/reader/reader.cpp.s
+CMakeFiles/reader.dir/scripts/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/reader.dir/scripts/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/main.cpp -o CMakeFiles/reader.dir/scripts/main.cpp.s
 
 CMakeFiles/reader.dir/scripts/reader/load-file.cpp.o: CMakeFiles/reader.dir/flags.make
 CMakeFiles/reader.dir/scripts/reader/load-file.cpp.o: /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/load-file.cpp
 CMakeFiles/reader.dir/scripts/reader/load-file.cpp.o: CMakeFiles/reader.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/reader.dir/scripts/reader/load-file.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/reader.dir/scripts/reader/load-file.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/reader.dir/scripts/reader/load-file.cpp.o -MF CMakeFiles/reader.dir/scripts/reader/load-file.cpp.o.d -o CMakeFiles/reader.dir/scripts/reader/load-file.cpp.o -c /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/load-file.cpp
 
 CMakeFiles/reader.dir/scripts/reader/load-file.cpp.i: cmake_force
@@ -145,7 +131,7 @@ CMakeFiles/reader.dir/scripts/reader/load-file.cpp.s: cmake_force
 CMakeFiles/reader.dir/scripts/reader/page-data.cpp.o: CMakeFiles/reader.dir/flags.make
 CMakeFiles/reader.dir/scripts/reader/page-data.cpp.o: /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/page-data.cpp
 CMakeFiles/reader.dir/scripts/reader/page-data.cpp.o: CMakeFiles/reader.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/reader.dir/scripts/reader/page-data.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/reader.dir/scripts/reader/page-data.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/reader.dir/scripts/reader/page-data.cpp.o -MF CMakeFiles/reader.dir/scripts/reader/page-data.cpp.o.d -o CMakeFiles/reader.dir/scripts/reader/page-data.cpp.o -c /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/page-data.cpp
 
 CMakeFiles/reader.dir/scripts/reader/page-data.cpp.i: cmake_force
@@ -156,24 +142,54 @@ CMakeFiles/reader.dir/scripts/reader/page-data.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/reader.dir/scripts/reader/page-data.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/page-data.cpp -o CMakeFiles/reader.dir/scripts/reader/page-data.cpp.s
 
+CMakeFiles/reader.dir/scripts/reader/reader.cpp.o: CMakeFiles/reader.dir/flags.make
+CMakeFiles/reader.dir/scripts/reader/reader.cpp.o: /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/reader.cpp
+CMakeFiles/reader.dir/scripts/reader/reader.cpp.o: CMakeFiles/reader.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/reader.dir/scripts/reader/reader.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/reader.dir/scripts/reader/reader.cpp.o -MF CMakeFiles/reader.dir/scripts/reader/reader.cpp.o.d -o CMakeFiles/reader.dir/scripts/reader/reader.cpp.o -c /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/reader.cpp
+
+CMakeFiles/reader.dir/scripts/reader/reader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/reader.dir/scripts/reader/reader.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/reader.cpp > CMakeFiles/reader.dir/scripts/reader/reader.cpp.i
+
+CMakeFiles/reader.dir/scripts/reader/reader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/reader.dir/scripts/reader/reader.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/reader.cpp -o CMakeFiles/reader.dir/scripts/reader/reader.cpp.s
+
+CMakeFiles/reader.dir/scripts/reader/ui.cpp.o: CMakeFiles/reader.dir/flags.make
+CMakeFiles/reader.dir/scripts/reader/ui.cpp.o: /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/ui.cpp
+CMakeFiles/reader.dir/scripts/reader/ui.cpp.o: CMakeFiles/reader.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/reader.dir/scripts/reader/ui.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/reader.dir/scripts/reader/ui.cpp.o -MF CMakeFiles/reader.dir/scripts/reader/ui.cpp.o.d -o CMakeFiles/reader.dir/scripts/reader/ui.cpp.o -c /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/ui.cpp
+
+CMakeFiles/reader.dir/scripts/reader/ui.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/reader.dir/scripts/reader/ui.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/ui.cpp > CMakeFiles/reader.dir/scripts/reader/ui.cpp.i
+
+CMakeFiles/reader.dir/scripts/reader/ui.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/reader.dir/scripts/reader/ui.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/ui.cpp -o CMakeFiles/reader.dir/scripts/reader/ui.cpp.s
+
 # Object files for target reader
 reader_OBJECTS = \
 "CMakeFiles/reader.dir/reader_autogen/mocs_compilation.cpp.o" \
-"CMakeFiles/reader.dir/scripts/main.cpp.o" \
 "CMakeFiles/reader.dir/scripts/global-variables.cpp.o" \
-"CMakeFiles/reader.dir/scripts/reader/reader.cpp.o" \
+"CMakeFiles/reader.dir/scripts/main.cpp.o" \
 "CMakeFiles/reader.dir/scripts/reader/load-file.cpp.o" \
-"CMakeFiles/reader.dir/scripts/reader/page-data.cpp.o"
+"CMakeFiles/reader.dir/scripts/reader/page-data.cpp.o" \
+"CMakeFiles/reader.dir/scripts/reader/reader.cpp.o" \
+"CMakeFiles/reader.dir/scripts/reader/ui.cpp.o"
 
 # External object files for target reader
 reader_EXTERNAL_OBJECTS =
 
 reader: CMakeFiles/reader.dir/reader_autogen/mocs_compilation.cpp.o
-reader: CMakeFiles/reader.dir/scripts/main.cpp.o
 reader: CMakeFiles/reader.dir/scripts/global-variables.cpp.o
-reader: CMakeFiles/reader.dir/scripts/reader/reader.cpp.o
+reader: CMakeFiles/reader.dir/scripts/main.cpp.o
 reader: CMakeFiles/reader.dir/scripts/reader/load-file.cpp.o
 reader: CMakeFiles/reader.dir/scripts/reader/page-data.cpp.o
+reader: CMakeFiles/reader.dir/scripts/reader/reader.cpp.o
+reader: CMakeFiles/reader.dir/scripts/reader/ui.cpp.o
 reader: CMakeFiles/reader.dir/build.make
 reader: CMakeFiles/reader.dir/compiler_depend.ts
 reader: /usr/lib/libQt6Widgets.so.6.10.2
@@ -182,7 +198,7 @@ reader: /usr/lib/libGLX.so
 reader: /usr/lib/libOpenGL.so
 reader: /usr/lib/libQt6Core.so.6.10.2
 reader: CMakeFiles/reader.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable reader"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/assuero/Documentos/computaria/cpp/pdf-reader/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable reader"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/reader.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -3,11 +3,12 @@ reader: \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/crti.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o \
   CMakeFiles/reader.dir/reader_autogen/mocs_compilation.cpp.o \
-  CMakeFiles/reader.dir/scripts/main.cpp.o \
   CMakeFiles/reader.dir/scripts/global-variables.cpp.o \
-  CMakeFiles/reader.dir/scripts/reader/reader.cpp.o \
+  CMakeFiles/reader.dir/scripts/main.cpp.o \
   CMakeFiles/reader.dir/scripts/reader/load-file.cpp.o \
   CMakeFiles/reader.dir/scripts/reader/page-data.cpp.o \
+  CMakeFiles/reader.dir/scripts/reader/reader.cpp.o \
+  CMakeFiles/reader.dir/scripts/reader/ui.cpp.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libmupdf.so \
   /usr/lib/libQt6Widgets.so.6.10.2 \
   /usr/lib/libQt6Gui.so.6.10.2 \
@@ -152,15 +153,17 @@ reader: \
 
 CMakeFiles/reader.dir/reader_autogen/mocs_compilation.cpp.o:
 
-CMakeFiles/reader.dir/scripts/main.cpp.o:
-
 CMakeFiles/reader.dir/scripts/global-variables.cpp.o:
 
-CMakeFiles/reader.dir/scripts/reader/reader.cpp.o:
+CMakeFiles/reader.dir/scripts/main.cpp.o:
 
 CMakeFiles/reader.dir/scripts/reader/load-file.cpp.o:
 
 CMakeFiles/reader.dir/scripts/reader/page-data.cpp.o:
+
+CMakeFiles/reader.dir/scripts/reader/reader.cpp.o:
+
+CMakeFiles/reader.dir/scripts/reader/ui.cpp.o:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib/libmupdf.so:
 

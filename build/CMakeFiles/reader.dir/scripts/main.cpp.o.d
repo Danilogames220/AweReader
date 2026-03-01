@@ -1069,6 +1069,7 @@ CMakeFiles/reader.dir/scripts/main.cpp.o: \
  /usr/include/qt6/QtWidgets/qwidgetaction.h \
  /usr/include/qt6/QtWidgets/qwizard.h /usr/include/c++/15.2.1/iostream \
  /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/./main.hpp \
+ /usr/include/qt6/QtGui/qevent.h \
  /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/././reader/reader.hpp \
  /usr/include/mupdf/fitz.h /usr/include/mupdf/fitz/version.h \
  /usr/include/mupdf/fitz/config.h /usr/include/mupdf/fitz/system.h \

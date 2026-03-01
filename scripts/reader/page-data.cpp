@@ -5,19 +5,11 @@
 #include <QtCore>
 #include <QImage>
 
+#include <cmath>
 #include <iostream>
 #include <future>
 #include <mupdf/fitz/geometry.h>
-#include <qpixmap.h>
-#include <qsize.h>
-#include <qtmetamacros.h>
 
-QSizeF get_resize_factors(QSizeF parent, QSizeF child) {
-	return QSizeF(
-		child.width()/parent.width(), 
-		child.height()/parent.height()	
-	);
-}
 
 void page_data::load_widget() {
 	if (data == nullptr) {
@@ -43,7 +35,7 @@ void page_data::load_widget() {
 	label->hide();
 
 };
-void page_data::render(QSize size, thread_data * Data) {
+void page_data::render(fz_document * doc, QSize size, thread_data * Data) {
 	QSizeF size_factor(0, 0);
 	bool size_empty = true;
 
@@ -53,14 +45,16 @@ void page_data::render(QSize size, thread_data * Data) {
 	fz_display_list *list = dat->list;
 	fz_rect bbox = dat->bbox;
 	fz_device *dev = NULL;
+	fz_matrix ctm = dat->ctm;
 
-	fz_matrix ctm;
+	printf("x0= %f\n", bbox.x0);
+	printf("x1= %f\n", bbox.x1);
+	printf("difrence between x0 and x1 = %.02f\n", bbox.x0 - bbox.x1);
 
 	// check if size is empty
 	if (size.width() > 0 && size.height() > 0) {
 		//puts("size is not 0");
 		size_empty = false;
-		size_factor = get_resize_factors(size, QSizeF(bbox.x1, bbox.y1));
 	}
 
 	fprintf(stderr, "thread at page %d loading!\n", pagenumber);
@@ -74,13 +68,6 @@ void page_data::render(QSize size, thread_data * Data) {
 	// will render the request area of the page to the pixmap.
 
 	// resize page acording to size
-	if (!size_empty) {
-		if (size_factor.width() > size_factor.height()) {
-			ctm = fz_scale(1/size_factor.width(), 1/size_factor.width());
-		} else {
-			ctm = fz_scale(1/size_factor.height(), 1/size_factor.height());
-		}; 
-	}
 	
 
 	fz_var(dev);
@@ -88,26 +75,61 @@ void page_data::render(QSize size, thread_data * Data) {
 	// where the rendering actualy happens
 	fprintf(stderr, "thread at page %d rendering!\n", pagenumber);
 	fz_try(ctx) {
+		
+		if (!size_empty) {
+			//bbox = {.x0 = 0, .y0 = 0, .x1 = 100, .y1 = 100};
+			size_factor = 2.84 * get_resize_factors(size, QSizeF(bbox.x1, bbox.y1));
+
+			// works in doc.pdf
+			//#define N / (1.5 + .125)
+			// works in ball.pdf
+			//#define N * (3.125 + 0.0075) 
+			
+			if (size_factor.width() > size_factor.height()) {
+				fz_rect n = bbox;
+				
+				bbox.x1 *= 1/size_factor.width(); 
+				bbox.y1 *= 1/size_factor.width();	
+
+				//#define N * (3.125 + 0.0075) 
+						    
+				//ctm = fz_transform_page(n, 1/size_factor.height(), 0);
+				ctm = fz_scale((n.x1 / bbox.x1), (n.y1 / bbox.y1));
+
+				//dat->pix->w *= 1/size_factor.height();
+					//bbox.x1 *= 1/size_factor.width();
+					//bbox.y1 *= 1/size_factor.width();
+
+					//dat->pix->w *= 1/size_factor.width();
+					//dat->pix->h *= 1/size_factor.width();
+			} else {
+				puts("height is the biggest");
+
+				fz_rect n = bbox;
+				
+				bbox.x1 *= 1/size_factor.height(); 
+				bbox.y1 *= 1/size_factor.height();	
+
+				//#define N / (1.5 + .125)
+				//#define N * (3.125 + 0.0075) 
+						    
+				//ctm = fz_transform_page(n, 1/size_factor.height(), 0);
+				ctm = fz_scale((n.x1 / bbox.x1), (n.y1 / bbox.y1));
+
+				//dat->pix->w *= 1/size_factor.height();
+				//dat->pix->h *= 1/size_factor.height();
+			}; 
+		}
+		
+
 		// Create a white pixmap using the correct dimensions.
 		dat->pix = fz_new_pixmap_with_bbox(ctx, fz_device_rgb(ctx), fz_round_rect(bbox), NULL, 0);
 		fz_clear_pixmap_with_value(ctx, dat->pix, 0xff);
-
+	
 		// Do the actual rendering.
-		dev = fz_new_draw_device(ctx, fz_identity, dat->pix);
-		fz_run_display_list(ctx, list, dev, fz_identity, bbox, NULL);
-		if (!size_empty) {
-			if (size_factor.width() > size_factor.height()) {
-				dat->pix = fz_scale_pixmap(ctx, dat->pix, 0, 0,
-					bbox.x1 * 1/size_factor.width(), 
-					bbox.y1 * 1/size_factor.width(), 
-				NULL);
-			} else {
-				dat->pix = fz_scale_pixmap(ctx, dat->pix, 0, 0, 
-					bbox.x1 * 1/size_factor.height(), 
-					bbox.y1 * 1/size_factor.height(), 
-				NULL);
-			}; 
-		}
+		dev = fz_new_draw_device(ctx, ctm, dat->pix);
+		fz_run_display_list(ctx, list, dev, ctm, bbox, NULL);
+		
 		fz_close_device(ctx, dev);
 		
 	}
@@ -152,11 +174,11 @@ page_data::page_data(thread_data * Data) {
 */
 
 // NOTE on_rendered might trigger again in case of this object rendering again.
-page_data::page_data(QSize size, thread_data * Data, ON_RENDERED) {
+page_data::page_data(fz_document * doc, QSize size, thread_data * Data, ON_RENDERED) {
 	if (on_rendered != nullptr)
 		QObject::connect( this, &page_data::rendered, this, on_rendered);
 	
-	render(size, Data);	
+	render(doc, size, Data);
 	if (data->failed) {
 		std::cout << "page_data::page_data() : render():  " 
 			  << "page at (" << data->pagenumber << ") failed rendering"

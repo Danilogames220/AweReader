@@ -29,6 +29,12 @@ main_window::main_window() {
 	QObject::connect(this, &main_window::start, this, &main_window::main);
 	show();
 }
+void main_window::keyPressEvent(QKeyEvent * event) {
+	if (rc != nullptr) {
+		rc->do_showEvent(event);
+	}
+	puts("key pressed");
+};
 
 
 int main(int argc, char * argv[]) {
@@ -52,9 +58,9 @@ void main_window::main(void) {
 		//window.setWindowTitle("PDF Reader");
 		//window.showMaximized();
 		
-		rc = QSharedPointer<reader_component>(new reader_component(), &QWidget::deleteLater);
+		rc = QSharedPointer<reader_component>(new reader_component(nullptr), &QWidget::deleteLater);
+		//rc->show();
 		//main_layout->addWidget(rc);
-		if (rc != nullptr)
-			main_layout->addWidget(rc.data());
+		main_layout->addWidget(rc.data());
 	};
 }
