@@ -5,7 +5,7 @@
 
 #include <string>
 
-//extern std::string file_path;
+extern std::string file_path;
 
 extern QDir main_dir; // dir where the executable is in
 

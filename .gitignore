@@ -1,6 +1,6 @@
 build
 compile_commands.json
-doc.pdf
 .doc.pdf
+.ball.pdf
 .cache
 .qt
