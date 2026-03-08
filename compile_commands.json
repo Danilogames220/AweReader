@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/home/assuero/Documentos/computaria/cpp/pdf-reader",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/assuero/Documentos/computaria/cpp/pdf-reader/reader_autogen/include -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtWidgets -std=gnu++20 -mno-direct-extern-access -o CMakeFiles/reader.dir/reader_autogen/mocs_compilation.cpp.o -c /home/assuero/Documentos/computaria/cpp/pdf-reader/reader_autogen/mocs_compilation.cpp",
+  "file": "/home/assuero/Documentos/computaria/cpp/pdf-reader/reader_autogen/mocs_compilation.cpp",
+  "output": "CMakeFiles/reader.dir/reader_autogen/mocs_compilation.cpp.o"
+},
+{
+  "directory": "/home/assuero/Documentos/computaria/cpp/pdf-reader",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/assuero/Documentos/computaria/cpp/pdf-reader/reader_autogen/include -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtWidgets -std=gnu++20 -mno-direct-extern-access -o CMakeFiles/reader.dir/scripts/main.cpp.o -c /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/main.cpp",
+  "file": "/home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/main.cpp",
+  "output": "CMakeFiles/reader.dir/scripts/main.cpp.o"
+},
+{
+  "directory": "/home/assuero/Documentos/computaria/cpp/pdf-reader",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/assuero/Documentos/computaria/cpp/pdf-reader/reader_autogen/include -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtWidgets -std=gnu++20 -mno-direct-extern-access -o CMakeFiles/reader.dir/scripts/global-variables.cpp.o -c /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/global-variables.cpp",
+  "file": "/home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/global-variables.cpp",
+  "output": "CMakeFiles/reader.dir/scripts/global-variables.cpp.o"
+},
+{
+  "directory": "/home/assuero/Documentos/computaria/cpp/pdf-reader",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/assuero/Documentos/computaria/cpp/pdf-reader/reader_autogen/include -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtWidgets -std=gnu++20 -mno-direct-extern-access -o CMakeFiles/reader.dir/scripts/reader/reader.cpp.o -c /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/reader.cpp",
+  "file": "/home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/reader.cpp",
+  "output": "CMakeFiles/reader.dir/scripts/reader/reader.cpp.o"
+},
+{
+  "directory": "/home/assuero/Documentos/computaria/cpp/pdf-reader",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/assuero/Documentos/computaria/cpp/pdf-reader/reader_autogen/include -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtWidgets -std=gnu++20 -mno-direct-extern-access -o CMakeFiles/reader.dir/scripts/reader/load-file.cpp.o -c /home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/load-file.cpp",
+  "file": "/home/assuero/Documentos/computaria/cpp/pdf-reader/scripts/reader/load-file.cpp",
+  "output": "CMakeFiles/reader.dir/scripts/reader/load-file.cpp.o"
+}
+]
