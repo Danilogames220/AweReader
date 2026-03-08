@@ -1,1 +1,1 @@
-pdf/epub file reader made in c++ using gtkmm and mupdf
+pdf/epub file reader made in c++ using qt and mupdf
