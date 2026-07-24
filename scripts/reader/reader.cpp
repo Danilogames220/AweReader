@@ -5,7 +5,6 @@
 #include "mupdf/fitz.h"
 
 #include <iostream>
-#include <qnamespace.h>
 #include <string>
 #include <thread>
 #include <format>
@@ -16,6 +15,7 @@ void reader_component::showEvent(QShowEvent * event) {
 
 
 	// start variables before loading the file
+	//set_page(0);
 	current_page_index = 0;
 	can_resize = 0;
 
@@ -24,7 +24,9 @@ void reader_component::showEvent(QShowEvent * event) {
 	// load file	
 	QThread * t = QThread::create( [this](void) -> void{
 		load_file(pages_container.size(), file_path);
+		//load_file(QSize(0, 0), file_path);
 	});
+	//QObject::connect(this, &reader_component::page_rendered, this, &reader_component::create_page);
 	
 	// after load_file finished
 	QObject::connect(t, &QThread::finished, this, [this]{
@@ -43,15 +45,69 @@ void reader_component::showEvent(QShowEvent * event) {
 }
 void reader_component::resizeEvent(QResizeEvent * event) {
 	QWidget::resizeEvent(event);
+	
+	// resize current page in case of window resizing
+	// segmentation fault
+	//if (can_resize) pages[current_page_index]->resize(pages_container.geometry());
+	
+	std::cout << pages_container.height() << "\n";
 }
 
-void reader_component::do_showEvent(QKeyEvent * event) {
-	keyPressEvent(event);
-}
-void reader_component::keyPressEvent(QKeyEvent * event) {
-	puts("key pressed in reader");
-}
+// might be better to start variables inside showEvent than heve
+reader_component::reader_component() :
+	QWidget(),
+	reader_c_layout(this),
 
+	// top panel
+	top_panel(),
+	top_layout(&top_panel),
+
+
+	back_button("<"),
+	current_path_label(QString::fromStdString(file_path)),
+
+	// pages
+	pages_container(),
+
+	// options
+	bottom_buttons(),
+	bb_layout(&bottom_buttons),
+
+	prev_button("<-"),
+	next_button("->"),
+	current_page(QString::fromStdString(std::format("{} / {}", current_page_index + 1, page_count)))
+		
+{
+	// load ui
+	reader_c_layout.setContentsMargins(0, 0, 0, 0);
+	setLayout(&reader_c_layout);
+	reader_c_layout.addWidget(&top_panel);
+	reader_c_layout.addWidget(&pages_container);
+	reader_c_layout.addWidget(&bottom_buttons);
+	setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
+
+	// top panel
+	top_panel.show();
+
+	back_button.setFixedSize(30, 30);
+		
+	top_layout.addWidget(&back_button);
+	top_layout.addWidget(&current_path_label);
+
+	// pages
+	pages_container.setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
+	pages_container.show();
+
+	// bottom options
+	bb_layout.setContentsMargins(0, 0, 0, 0);
+	bottom_buttons.show();
+
+	current_page.setAlignment(Qt::AlignCenter);
+
+	bb_layout.addWidget(&prev_button);
+	bb_layout.addWidget(&current_page);
+	bb_layout.addWidget(&next_button);
+};
 
 
 void reader_component::set_page(int index) {

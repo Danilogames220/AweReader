@@ -10,7 +10,7 @@
 #define ON_RENDERED std::function<void(page_data *)> on_rendered
 
 struct thread_data {
-	//bool rendered;
+	bool rendered;
 
 	fz_context *ctx;
 	int pagenumber;
@@ -18,7 +18,6 @@ struct thread_data {
 	fz_rect bbox;
 	fz_pixmap *pix;
 	int failed;
-	fz_matrix ctm;
 };
 
 // page_data cant be moved, like qt widgets
@@ -30,34 +29,33 @@ class page_data : public QObject {
 		page_data(thread_data * Data);
 		// renders Data
 		page_data(thread_data * Data, ON_RENDERED);
+		// renders Data size pixmap acording to size
 		page_data(QSize size, thread_data * Data, ON_RENDERED);
-		page_data(fz_document * doc, QSize size, thread_data * Data, ON_RENDERED);
+
 		~page_data();
 
 		thread_data * data;
 
+		// qt stuff
 		QLabel * label;
 		QPixmap * label_pix;
 		QImage * label_img;
 
-		QPoint position;
+		// gui stuff
 		bool is_centered;
+		
+		float zoom;
+		float zoom2;
 
-		// zoom aplied from rendering with QSize
-		float internal_zoom;
-		// zoom from the reader itself
-		float extenal_zoom;
-
-		// --- METHODS --- //
-		//void resize(QSize size);
+		void resize(QSize size);
 
 		// re-render the page resizing acording to size, but in a seprate thread
+		void query_resize(QSize size);
 		void query_resize(QSize size, ON_RENDERED);
-		//void query_resize(QSize size);
 
+		// make it work like render_pages_thread()
 		//void render(thread_data * Data);
 		void render(QSize size, thread_data * Data);
-		void render(fz_document * doc, QSize size, thread_data * Data);
 		//void render(QSize size,thread_data * Data);
 		
 		// loads the current data to widgets
