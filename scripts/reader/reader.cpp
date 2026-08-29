@@ -1,73 +1,67 @@
-#include "./reader.hpp"
-#include "../global-variables.hpp"
-
+#include <QtCore>
 #include <QtWidgets>
-#include "mupdf/fitz.h"
 
 #include <iostream>
 #include <string>
-#include <thread>
-#include <format>
 
+#include "./reader.hpp"
+#include "./pdf-handler.hpp"
 
-void reader_component::showEvent(QShowEvent * event) {
-	QWidget::showEvent(event);	
+#include "../global-variables.hpp"
 
-
-	// start variables before loading the file
-	//set_page(0);
-	current_page_index = 0;
+void reader_component::init() {
+	//handler = pdf_handler(file_path.c_str());
+	// start variables before loading the file current_page_index = 0;
 	can_resize = 0;
+	pages.resize(handler.page_count);
 
-	QObject::connect(this, &reader_component::page_rendered, this, &reader_component::add_page_to_reader);
+	QObject::connect(&handler, &pdf_handler::page_rendered, this, &reader_component::add_page_to_reader);
 	
 	// load file	
 	QThread * t = QThread::create( [this](void) -> void{
-		load_file(pages_container.size(), file_path);
-		//load_file(QSize(0, 0), file_path);
+		for (int i = 0; i < handler.page_count; i++) {
+			handler.get_pixmap(i, pages_container.size());
+		}
+		//load_file(pages_container.size(), file_path);
 	});
-	//QObject::connect(this, &reader_component::page_rendered, this, &reader_component::create_page);
 	
 	// after load_file finished
+	// also where signals get connected
 	QObject::connect(t, &QThread::finished, this, [this]{
-		std::cout << "pages size: " << pages.size() << "\n";
+		// NOTE: pages.size() is from the vector
+		current_page.setText(QString::fromStdString(std::format("{} / {}", current_page_index + 1, handler.page_count)));
+		//puts("connecting signals");
 		
-
-		current_page.setText(QString::fromStdString(std::format("{} / {}", current_page_index + 1, page_count)));
 		QObject::connect(&prev_button, &QPushButton::clicked,
-				this, &reader_component::set_prev_page);
+			this, &reader_component::set_prev_page);
 
 		QObject::connect(&next_button, &QPushButton::clicked,
 			this, &reader_component::set_next_page);
 
+		QObject::connect(&page_viewer, &SceneImageViewer::zoom_factor,
+			this, &reader_component::zoom_page);
+
 	});
 	t->start();
 }
-void reader_component::resizeEvent(QResizeEvent * event) {
-	QWidget::resizeEvent(event);
-	
-	// resize current page in case of window resizing
-	// segmentation fault
-	//if (can_resize) pages[current_page_index]->resize(pages_container.geometry());
-	
-	std::cout << pages_container.height() << "\n";
-}
 
-// might be better to start variables inside showEvent than heve
+
 reader_component::reader_component() :
 	QWidget(),
+	handler(file_path.c_str()),
 	reader_c_layout(this),
-
+	
 	// top panel
 	top_panel(),
 	top_layout(&top_panel),
-
 
 	back_button("<"),
 	current_path_label(QString::fromStdString(file_path)),
 
 	// pages
 	pages_container(),
+	pages_layout(&pages_container),
+	page_viewer(),
 
 	// options
 	bottom_buttons(),
@@ -75,7 +69,7 @@ reader_component::reader_component() :
 
 	prev_button("<-"),
 	next_button("->"),
-	current_page(QString::fromStdString(std::format("{} / {}", current_page_index + 1, page_count)))
+	current_page(QString::fromStdString(std::format("{} / {}", current_page_index + 1, handler.page_count)))
 		
 {
 	// load ui
@@ -85,6 +79,10 @@ reader_component::reader_component() :
 	reader_c_layout.addWidget(&pages_container);
 	reader_c_layout.addWidget(&bottom_buttons);
 	setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
+
+	// bind widgetShow signal
+	QObject::connect(this, &reader_component::widgetShow,
+		this, &reader_component::init);
 
 	// top panel
 	top_panel.show();
@@ -97,6 +95,8 @@ reader_component::reader_component() :
 	// pages
 	pages_container.setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
 	pages_container.show();
+	pages_layout.setContentsMargins(0, 0, 0, 0);
+	pages_layout.addWidget(&page_viewer);
 
 	// bottom options
 	bb_layout.setContentsMargins(0, 0, 0, 0);
@@ -108,36 +108,66 @@ reader_component::reader_component() :
 	bb_layout.addWidget(&current_page);
 	bb_layout.addWidget(&next_button);
 };
-
+void reader_component::test_print(void) {
+	puts("test print from reader_component");
+}
 
 void reader_component::set_page(int index) {
-	if (index >= page_count || index < 0) {
-		return;
-	};
-	if (!pages[current_page_index]->label) {
-		return;
-	}
-		
 	// update current page
 	// nullptr check wont work and causes a segmentation fault
 	if (pages[current_page_index] != nullptr && 
 	    pages[index] != nullptr) {
-		pages[current_page_index]->label->hide();
+		//container_scroll.takeWidget();
+		//page_viewer.takePixmap();
 		current_page_index = index;
-		pages[current_page_index]->label->show();
+		
+		page_viewer.centerImage();
+		page_viewer.setPixmap(*pages[current_page_index]->label_pix);
 	}
 
-	// update page count thing
+	// update page index text 
 	current_page.setText(QString::fromStdString(
-		std::format("{} / {}", current_page_index + 1, page_count)
+		std::format("{} / {}", current_page_index + 1, handler.page_count)
 	));
 
 		
 };
-
 void reader_component::set_next_page() {
 	set_page(current_page_index + 1);
 };
 void reader_component::set_prev_page() {
 	set_page(current_page_index - 1);
 };
+
+/*
+// will be used later
+void reader_component::resizeEvent(QResizeEvent * event) {
+	QWidget::resizeEvent(event);
+	emit widgetResize();
+}
+*/
+void reader_component::showEvent(QShowEvent * event) {
+	QWidget::showEvent(event);
+	emit widgetShow();
+}
+
+// maybe will be used later
+void reader_component::zoom_page(float zoom_factor) {
+	printf("zoom factor: %.2f\n", zoom_factor);
+	//pages[current_page_index]->render(zoom_factor);
+}
+
+// show page on the reader
+void reader_component::add_page_to_reader(page_data * page) {
+	int page_index = page->index;
+
+	//page->load_widget();
+
+	if (page_index == current_page_index) {
+		page_viewer.setPixmap(*page->label_pix);
+		//container_scroll.setWidget(page->label);
+		//page->label->show();
+	}
+	pages[page_index] = page;
+}
+

@@ -5,10 +5,23 @@
 
 #include <string>
 
+// path of the pdf
 extern std::string file_path;
+// dir where the executable is in
+extern QDir main_dir; 
+// main dir where the app will pull the files from
+extern QDir homepage_dir; 
 
-extern QDir main_dir; // dir where the executable is in
+// Used in the reader
+class page_data {
+	public:
+		// the number that the page size was multiplied to be the size of the page
+		float zoom_factor;
+		// page number
+		int index;
+		QPixmap * label_pix;
 
-extern QDir homepage_dir; // main dir where the app will pull the files from
+
+};
 
 #endif

@@ -1,9 +1,11 @@
+# reader source files
+file(GLOB reader_SRC
+	"reader/*.cpp"
+)
+
 target_sources ( ${PROJECT_NAME}
 	PRIVATE
 		"main.cpp"
-		"global-variables.cpp"
-
-		"reader/reader.cpp"
-		"reader/load-file.cpp"
-		"reader/page-data.cpp"
+		
+		${reader_SRC}
 )

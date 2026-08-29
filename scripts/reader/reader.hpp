@@ -4,18 +4,19 @@
 #include <QtWidgets>
 #include <mupdf/fitz.h>
 
-#include <vector>
+#include <qscrollarea.h>
 
-#include "./page-data.hpp"
+#include "../global-variables.hpp"
+#include "./viewer.hpp"
+#include "./pdf-handler.hpp"
+
 
 class reader_component : public QWidget {
 	Q_OBJECT
 	
 	protected:
-		// load_file() happens here
 		void showEvent(QShowEvent * event) override;
-		void resizeEvent(QResizeEvent * event) override;
-
+		//void resizeEvent(QResizeEvent * event) override;
 
 	// UI stuff
 	public: 
@@ -30,6 +31,9 @@ class reader_component : public QWidget {
 		
 		// where the pages will get displayed in the window
 		QWidget pages_container;
+		QHBoxLayout pages_layout;
+			SceneImageViewer page_viewer;
+			//QScrollArea container_scroll;
 			std::vector<page_data *> pages;
 		
 		// bottom buttons
@@ -41,31 +45,26 @@ class reader_component : public QWidget {
 
 	// stuff related to processing the file
 	private: 
+		pdf_handler handler;
+
 		uint64_t current_page_index;
-		uint64_t page_count;
 
 		bool can_resize;
 
-		void load_file(QSize size, std::string path);
-			
-		// used to load each page by itself in a specific thread
-		//void * page_render_thread(void *data_);
-		
-		// ui related functions
-		void on_pages_loaded();
-
 		void set_page(int index);
-
-		// defined in page-data.cpp
 	public slots:
+		void zoom_page(float zoom_factor);
+		
 		void add_page_to_reader(page_data * page);
 		
 		void set_next_page();
 		void set_prev_page();
-
+		
+		void test_print();
+		void init();
 	signals:
-		void page_rendered(page_data * page);	
+		//void page_rendered(page_data * page);	
+		void widgetShow();	
 };
-
 
 #endif // READER_HPP
