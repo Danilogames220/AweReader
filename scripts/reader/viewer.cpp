@@ -19,9 +19,19 @@ SceneImageViewer::SceneImageViewer() {
 	setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 	setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 	setResizeAnchor(QGraphicsView::AnchorViewCenter);
+	//setResizeAnchor(QGraphicsView::NoAnchor);
+	
 }
 
 void SceneImageViewer::setPixmap(const QPixmap &Pixmap) {
+	//setResizeAnchor(QGraphicsView::AnchorViewCenter);
+	//setResizeAnchor(QGraphicsView::NoAnchor);
+	
+	horizontalScrollBar()->setMaximum(100000);
+	horizontalScrollBar()->setMinimum(-100000);
+	verticalScrollBar()->setMaximum(100000);
+	verticalScrollBar()->setMinimum(-100000);
+	
 	pixmap = Pixmap;
 	m_item.setPixmap(pixmap);
 
@@ -45,6 +55,7 @@ void SceneImageViewer::scale(qreal s) {
 
 void SceneImageViewer::wheelEvent(QWheelEvent * event)
 {
+	
 	// actualy scroll if cntl key pressed
 	if (event->modifiers() & Qt::ControlModifier) {
 	    QGraphicsView::wheelEvent(event);
@@ -56,13 +67,11 @@ void SceneImageViewer::wheelEvent(QWheelEvent * event)
 		*/
 		if (event->angleDelta().y() > 0) {
 			current_zoom *= ZOOM_FACTOR;
-			scale(ZOOM_FACTOR);
-			//emit zoom(ZOOM_FACTOR)
+			//scale(ZOOM_FACTOR);
 		} 
 		else if (event->angleDelta().y() < 0){
 			current_zoom /= ZOOM_FACTOR;
-			scale(1./ZOOM_FACTOR);
-			//emit zoom(ZOOM_FACTOR)
+			//scale(1./ZOOM_FACTOR);
 		}
 		emit zoom_factor(current_zoom);
 	}

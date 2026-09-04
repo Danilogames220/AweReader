@@ -113,6 +113,9 @@ void reader_component::test_print(void) {
 }
 
 void reader_component::set_page(int index) {
+	if (index < 0 || index >= handler.page_count)
+		return;
+
 	// update current page
 	// nullptr check wont work and causes a segmentation fault
 	if (pages[current_page_index] != nullptr && 
@@ -151,8 +154,12 @@ void reader_component::showEvent(QShowEvent * event) {
 	emit widgetShow();
 }
 
-// maybe will be used later
 void reader_component::zoom_page(float zoom_factor) {
+	//auto p = handler.get_pixmap(current_page_index, pages_container.size()*zoom_factor);
+	handler.get_pixmap(current_page_index, pages_container.size()*zoom_factor);
+	//printf("zoom page: %d\n", p->index);
+	
+	//page_viewer.setPixmap(*p->label_pix);
 	printf("zoom factor: %.2f\n", zoom_factor);
 	//pages[current_page_index]->render(zoom_factor);
 }

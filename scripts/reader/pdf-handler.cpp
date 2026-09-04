@@ -163,6 +163,7 @@ struct thread_data * pdf_handler::get_data(pdf_handler &self, int index) {
 }
 
 page_data * pdf_handler::get_pixmap(int index, QSize space) {
+
 	pthread_t thread;
 	
 	// do the zoom thing before rendering
