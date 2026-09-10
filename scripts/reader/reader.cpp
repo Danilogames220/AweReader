@@ -124,7 +124,7 @@ void reader_component::set_page(int index) {
 		//page_viewer.takePixmap();
 		current_page_index = index;
 		
-		page_viewer.centerImage();
+		//page_viewer.centerImage();
 		page_viewer.setPixmap(*pages[current_page_index]->label_pix);
 	}
 
