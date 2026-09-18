@@ -4,6 +4,7 @@
 #include "./viewer.hpp"
 
 #include <iostream>
+#include <qevent.h>
 #include <qnamespace.h>
 
 #define ZOOM_FACTOR 1.5
@@ -21,9 +22,8 @@ SceneImageViewer::SceneImageViewer() {
 	setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 	setResizeAnchor(QGraphicsView::AnchorViewCenter);
 	
-	setAlignment(Qt::AlignCenter);
+	//setAlignment(Qt::AlignCenter);
 	//setResizeAnchor(QGraphicsView::NoAnchor);
-	
 }
 
 void SceneImageViewer::setPixmap(const QPixmap &Pixmap) {
@@ -37,7 +37,8 @@ void SceneImageViewer::setPixmap(const QPixmap &Pixmap) {
 	verticalScrollBar()->setMinimum(-100000);
 	*/
 	//m_item.setOffset(0,0);
-
+	
+	
 	printf("\nhori.s: min: %d max: %d val: %d\n", 
 		horizontalScrollBar()->minimum(),
 		horizontalScrollBar()->maximum(),
@@ -62,21 +63,35 @@ void SceneImageViewer::setPixmap(const QPixmap &Pixmap) {
 		m_item.offset().y()
 	);
 
-	m_item.setOffset(0,0);
 	//m_item.setOffset(0,0);
-	horizontalScrollBar()->setMaximum(10000);
+	//horizontalScrollBar()->setMaximum(10000);
 	horizontalScrollBar()->setMinimum(0);
-	verticalScrollBar()->setMaximum(10000);
+	//verticalScrollBar()->setMaximum(10000);
 	verticalScrollBar()->setMinimum(0);
+
+	
+	horizontalScrollBar()->setMaximum(Pixmap.width() + 1);
+	verticalScrollBar()->setMaximum(Pixmap.height() + 1);
 
 	horizontalScrollBar()->setValue(0);
 	verticalScrollBar()->setValue(0);
+	
 
+	//horizontalScrollBar()->setValue(-100);
+	//horizontalScrollBar()->setValue(-100);
+	//fitInView(m_item);
+	//m_item.set
+	
+	//m_item.setOffset(0,0);
+	//setSceneRect(0,0,0,0);
 	pixmap = Pixmap;
 	m_item.setPixmap(pixmap);
+	//setSceneRect(m_item.sceneBoundingRect());
 	
-	;
-
+	horizontalScrollBar()->setValue(100);
+	//centerImage();
+	
+	/*
 	if (default_x == -1 || default_y == -1) {
 		auto offset = -QRectF(pixmap.rect()).center();
 		m_item.setOffset(offset);
@@ -85,11 +100,16 @@ void SceneImageViewer::setPixmap(const QPixmap &Pixmap) {
 		default_x = horizontalScrollBar()->value();
 		default_y = verticalScrollBar()->value();
 	}
+	*/
 }
 
 void SceneImageViewer::centerImage() {
+	horizontalScrollBar()->setValue(100);
+
+	/*
 	verticalScrollBar()->setValue(default_y);
 	horizontalScrollBar()->setValue(default_x);
+	*/
 }
 void SceneImageViewer::scale(qreal s) { 
 	QGraphicsView::scale(s, s); 
@@ -118,3 +138,15 @@ void SceneImageViewer::wheelEvent(QWheelEvent * event)
 		emit zoom_factor(current_zoom);
 	}
 }
+
+void SceneImageViewer::mouseMoveEvent(QMouseEvent * event) {
+	puts("image dragged");
+	
+	// sort of does nothing
+	//m_item.setOffset(horizontalScrollBar()->value(), verticalScrollBar()->value());
+	//horizontalScrollBar()->setValue(0);
+	//verticalScrollBar()->setValue(0);
+
+	QGraphicsView::mouseMoveEvent(event);
+}
+

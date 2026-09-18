@@ -124,8 +124,8 @@ void reader_component::set_page(int index) {
 		//page_viewer.takePixmap();
 		current_page_index = index;
 		
-		//page_viewer.centerImage();
 		page_viewer.setPixmap(*pages[current_page_index]->label_pix);
+		//page_viewer.centerImage();
 	}
 
 	// update page index text 
@@ -172,6 +172,7 @@ void reader_component::add_page_to_reader(page_data * page) {
 
 	if (page_index == current_page_index) {
 		page_viewer.setPixmap(*page->label_pix);
+		//page_viewer.centerImage();
 		//container_scroll.setWidget(page->label);
 		//page->label->show();
 	}

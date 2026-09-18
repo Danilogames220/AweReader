@@ -6,6 +6,7 @@
 #include <QtCore>
 #include <QtWidgets>
 #include <QGraphicsView>
+#include <qevent.h>
 #include <qpixmap.h>
 
 class SceneImageViewer : public QGraphicsView {
@@ -16,11 +17,13 @@ class SceneImageViewer : public QGraphicsView {
 	QPixmap pixmap;	
 
 	int default_x, default_y;
+	int pos_x, pos_y;
 
 	float current_zoom;
 
 	protected:
 		virtual void wheelEvent(QWheelEvent * event);
+		virtual void mouseMoveEvent(QMouseEvent * event);
 	public:
 		SceneImageViewer();
 		
