@@ -6,30 +6,31 @@
 #include <QtCore>
 #include <QtWidgets>
 #include <QGraphicsView>
+#include <qevent.h>
 #include <qpixmap.h>
 
-class SceneImageViewer : public QGraphicsView {
+class SceneImageViewer : public QWidget {
 	Q_OBJECT
 
-	QGraphicsScene m_scene;
-	QGraphicsPixmapItem m_item;
-	QPixmap pixmap;	
-
-	int default_x, default_y;
-
+	QPixmap m_pixmap;
+	QRectF m_rect;
+	QPointF m_reference;
+	QPointF m_delta;
+	qreal m_scale;
+		      
 	float current_zoom;
-
 	protected:
-		virtual void wheelEvent(QWheelEvent * event);
-	public:
-		SceneImageViewer();
-		
-		void setPixmap(const QPixmap &Pixmap);
-		void centerImage();
-		
-		void scale(qreal s);
+		void paintEvent(QPaintEvent *) override;
+		void mousePressEvent(QMouseEvent *event) override;
+		void mouseMoveEvent(QMouseEvent *event) override;
+		void mouseReleaseEvent(QMouseEvent *) override;
+		void wheelEvent(QWheelEvent * event) override;
 	
-	//public slots:
+	public:
+		SceneImageViewer();	
+
+		void setPixmap(const QPixmap &pix);
+		void scale(qreal s);
 	signals:
 		void zoom_factor(float factor);
 };

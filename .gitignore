@@ -1,0 +1,13 @@
+# pdfs for testing
+docs/
+
+# stuff from cmake
+compile_commands.json
+cmake_install.cmake
+CMakeCache.txt
+Makefile
+.qt/
+.cache/
+CMakeFiles/
+build/
+reader_autogen/
