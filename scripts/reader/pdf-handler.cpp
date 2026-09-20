@@ -217,8 +217,8 @@ page_data * pdf_handler::get_pixmap(int index, QSize space) {
 		(data->pix->alpha) ? QImage::Format_RGBA8888 : QImage::Format_RGB888
 	);
 	
-	p_dat->label_pix = new QPixmap();
-	*p_dat->label_pix = QPixmap::fromImage(*label_img);
+	p_dat->pixmap = new QPixmap();
+	*p_dat->pixmap = QPixmap::fromImage(*label_img);
 
 	
 	// free mupdf stuff

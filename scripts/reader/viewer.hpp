@@ -9,7 +9,7 @@
 #include <qevent.h>
 #include <qpixmap.h>
 
-class SceneImageViewer : public QWidget {
+class ImageViewer : public QWidget {
 	Q_OBJECT
 
 	QPixmap m_pixmap;
@@ -27,7 +27,7 @@ class SceneImageViewer : public QWidget {
 		void wheelEvent(QWheelEvent * event) override;
 	
 	public:
-		SceneImageViewer();	
+		ImageViewer();	
 
 		void setPixmap(const QPixmap &pix);
 		void scale(qreal s);

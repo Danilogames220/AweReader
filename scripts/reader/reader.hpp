@@ -32,7 +32,7 @@ class reader_component : public QWidget {
 		// where the pages will get displayed in the window
 		QWidget pages_container;
 		QHBoxLayout pages_layout;
-			SceneImageViewer page_viewer;
+			ImageViewer page_viewer;
 			//QScrollArea container_scroll;
 			std::vector<page_data *> pages;
 		

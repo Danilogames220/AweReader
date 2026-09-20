@@ -9,34 +9,34 @@
 
 #define ZOOM_FACTOR 1.5
 
-SceneImageViewer::SceneImageViewer() {
+ImageViewer::ImageViewer() {
 	m_scale = 1.;
 	current_zoom = 1.;
 };
 
-void SceneImageViewer::paintEvent(QPaintEvent *) {
+void ImageViewer::paintEvent(QPaintEvent *) {
         QPainter p{this};
 
         p.translate(rect().center());
         p.translate(m_delta*current_zoom);
         p.drawPixmap(m_rect.topLeft(), m_pixmap);
 }
-void SceneImageViewer::mousePressEvent(QMouseEvent *event) {
+void ImageViewer::mousePressEvent(QMouseEvent *event) {
         m_reference = event->pos();
         qApp->setOverrideCursor(Qt::ClosedHandCursor);
         setMouseTracking(true);
 }
-void SceneImageViewer::mouseMoveEvent(QMouseEvent *event) {
+void ImageViewer::mouseMoveEvent(QMouseEvent *event) {
         m_delta += (event->pos() - m_reference) * 1.0/current_zoom;
         m_reference = event->pos();
         update();
 }
-void SceneImageViewer::mouseReleaseEvent(QMouseEvent *) {
+void ImageViewer::mouseReleaseEvent(QMouseEvent *) {
 	qApp->restoreOverrideCursor();
         setMouseTracking(false);
 }
 
-void SceneImageViewer::setPixmap(const QPixmap &pix) {
+void ImageViewer::setPixmap(const QPixmap &pix) {
         m_pixmap = pix;
         m_rect = m_pixmap.rect();
        
@@ -44,13 +44,13 @@ void SceneImageViewer::setPixmap(const QPixmap &pix) {
         update();
 }
 /*
-void SceneImageViewer::scale(qreal s) {
+void ImageViewer::scale(qreal s) {
         m_scale *= s;
         update();
 }
 */
 
-void SceneImageViewer::wheelEvent(QWheelEvent * event) {
+void ImageViewer::wheelEvent(QWheelEvent * event) {
 	
 	// actualy scroll if cntl key pressed
 	if (event->modifiers() & Qt::ControlModifier) {

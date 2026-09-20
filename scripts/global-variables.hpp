@@ -19,7 +19,7 @@ class page_data {
 		float zoom_factor;
 		// page number
 		int index;
-		QPixmap * label_pix;
+		QPixmap * pixmap;
 
 
 };

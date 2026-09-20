@@ -38,7 +38,7 @@ void reader_component::init() {
 		QObject::connect(&next_button, &QPushButton::clicked,
 			this, &reader_component::set_next_page);
 
-		QObject::connect(&page_viewer, &SceneImageViewer::zoom_factor,
+		QObject::connect(&page_viewer, &ImageViewer::zoom_factor,
 			this, &reader_component::zoom_page);
 
 	});
@@ -124,7 +124,7 @@ void reader_component::set_page(int index) {
 		//page_viewer.takePixmap();
 		current_page_index = index;
 		
-		page_viewer.setPixmap(*pages[current_page_index]->label_pix);
+		page_viewer.setPixmap(*pages[current_page_index]->pixmap);
 		//page_viewer.centerImage();
 	}
 
@@ -159,7 +159,7 @@ void reader_component::zoom_page(float zoom_factor) {
 	handler.get_pixmap(current_page_index, pages_container.size()*zoom_factor);
 	//printf("zoom page: %d\n", p->index);
 	
-	//page_viewer.setPixmap(*p->label_pix);
+	//page_viewer.setPixmap(*p->pixmap);
 	printf("zoom factor: %.2f\n", zoom_factor);
 	//pages[current_page_index]->render(zoom_factor);
 }
@@ -171,7 +171,7 @@ void reader_component::add_page_to_reader(page_data * page) {
 	//page->load_widget();
 
 	if (page_index == current_page_index) {
-		page_viewer.setPixmap(*page->label_pix);
+		page_viewer.setPixmap(*page->pixmap);
 		//page_viewer.centerImage();
 		//container_scroll.setWidget(page->label);
 		//page->label->show();
