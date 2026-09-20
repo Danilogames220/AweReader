@@ -16,7 +16,7 @@ class SceneImageViewer : public QWidget {
 	QRectF m_rect;
 	QPointF m_reference;
 	QPointF m_delta;
-	qreal m_scale;// = 1.0;
+	qreal m_scale;
 		      
 	float current_zoom;
 	protected:
@@ -31,40 +31,9 @@ class SceneImageViewer : public QWidget {
 
 		void setPixmap(const QPixmap &pix);
 		void scale(qreal s);
-	//QSize sizeHint() const override { return {400, 400}; }
 	signals:
 		void zoom_factor(float factor);
 };
 
-
-/*
-class SceneImageViewer : public QGraphicsView {
-	Q_OBJECT
-
-	QGraphicsScene m_scene;
-	QGraphicsPixmapItem m_item;
-	QPixmap pixmap;	
-
-	int default_x, default_y;
-	int pos_x, pos_y;
-
-	float current_zoom;
-
-	protected:
-		virtual void wheelEvent(QWheelEvent * event);
-		virtual void mouseMoveEvent(QMouseEvent * event);
-	public:
-		SceneImageViewer();
-		
-		void setPixmap(const QPixmap &Pixmap);
-		void centerImage();
-		
-		void scale(qreal s);
-	
-	//public slots:
-	signals:
-		void zoom_factor(float factor);
-};
-*/
 
 #endif
