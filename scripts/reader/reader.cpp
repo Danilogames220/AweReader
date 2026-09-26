@@ -9,6 +9,13 @@
 
 #include "../global-variables.hpp"
 
+page_data::page_data() 
+{
+	position = QPointF(0,0);
+	index = -1;
+}
+
+// TODO: update this mess
 void reader_component::init() {
 	//handler = pdf_handler(file_path.c_str());
 	// start variables before loading the file current_page_index = 0;
@@ -69,7 +76,8 @@ reader_component::reader_component() :
 
 	prev_button("<-"),
 	next_button("->"),
-	current_page(QString::fromStdString(std::format("{} / {}", current_page_index + 1, handler.page_count)))
+	current_page("Loading...")
+	//current_page(QString::fromStdString(std::format("{} / {}", current_page_index + 1, handler.page_count)))
 		
 {
 	// load ui
@@ -108,13 +116,15 @@ reader_component::reader_component() :
 	bb_layout.addWidget(&current_page);
 	bb_layout.addWidget(&next_button);
 };
-void reader_component::test_print(void) {
+// useful when testing signals
+void reader_component::test_print() {
 	puts("test print from reader_component");
 }
 
 void reader_component::set_page(int index) {
 	if (index < 0 || index >= handler.page_count)
 		return;
+
 
 	// update current page
 	// nullptr check wont work and causes a segmentation fault
@@ -124,8 +134,9 @@ void reader_component::set_page(int index) {
 		//page_viewer.takePixmap();
 		current_page_index = index;
 		
-		page_viewer.setPixmap(*pages[current_page_index]->pixmap);
-		//page_viewer.centerImage();
+		//printf("page pos: (%f; %f)\n", pages[index]->position.x(), pages[index]->position.y());
+		
+		page_viewer.setPage(pages[index]);
 	}
 
 	// update page index text 
@@ -155,13 +166,12 @@ void reader_component::showEvent(QShowEvent * event) {
 }
 
 void reader_component::zoom_page(float zoom_factor) {
-	//auto p = handler.get_pixmap(current_page_index, pages_container.size()*zoom_factor);
 	handler.get_pixmap(current_page_index, pages_container.size()*zoom_factor);
-	//printf("zoom page: %d\n", p->index);
 	
-	//page_viewer.setPixmap(*p->pixmap);
+	// currently there's no reason to store the zoom individualy in each page :/
+	//page_viewer.current_page->zoom_factor = zoom_factor;
+	
 	printf("zoom factor: %.2f\n", zoom_factor);
-	//pages[current_page_index]->render(zoom_factor);
 }
 
 // show page on the reader
@@ -171,7 +181,9 @@ void reader_component::add_page_to_reader(page_data * page) {
 	//page->load_widget();
 
 	if (page_index == current_page_index) {
-		page_viewer.setPixmap(*page->pixmap);
+		page_viewer.setPage(page);
+		//page_viewer.setPixmap(*page->pixmap);
+		
 		//page_viewer.centerImage();
 		//container_scroll.setWidget(page->label);
 		//page->label->show();

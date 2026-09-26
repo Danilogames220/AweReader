@@ -10,8 +10,8 @@
 #define ZOOM_FACTOR 1.5
 
 ImageViewer::ImageViewer() {
-	m_scale = 1.;
 	current_zoom = 1.;
+	current_page = nullptr;
 };
 
 void ImageViewer::paintEvent(QPaintEvent *) {
@@ -19,7 +19,7 @@ void ImageViewer::paintEvent(QPaintEvent *) {
 
         p.translate(rect().center());
         p.translate(m_delta*current_zoom);
-        p.drawPixmap(m_rect.topLeft(), m_pixmap);
+	p.drawPixmap(m_rect.topLeft(), m_pixmap);
 }
 void ImageViewer::mousePressEvent(QMouseEvent *event) {
         m_reference = event->pos();
@@ -27,6 +27,7 @@ void ImageViewer::mousePressEvent(QMouseEvent *event) {
         setMouseTracking(true);
 }
 void ImageViewer::mouseMoveEvent(QMouseEvent *event) {
+        //current_page->position += (event->pos() - m_reference) * 1.0/current_zoom;
         m_delta += (event->pos() - m_reference) * 1.0/current_zoom;
         m_reference = event->pos();
         update();
@@ -34,6 +35,18 @@ void ImageViewer::mouseMoveEvent(QMouseEvent *event) {
 void ImageViewer::mouseReleaseEvent(QMouseEvent *) {
 	qApp->restoreOverrideCursor();
         setMouseTracking(false);
+}
+
+
+void ImageViewer::setPage(page_data *page) {
+	if (current_page != nullptr) {
+		current_page->position = m_delta;
+	}	
+
+	current_page = page;
+	m_delta = current_page->position;
+
+	setPixmap(*current_page->pixmap);
 }
 
 void ImageViewer::setPixmap(const QPixmap &pix) {

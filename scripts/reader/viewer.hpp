@@ -6,17 +6,19 @@
 #include <QtCore>
 #include <QtWidgets>
 #include <QGraphicsView>
-#include <qevent.h>
-#include <qpixmap.h>
+
+#include "../global-variables.hpp"
 
 class ImageViewer : public QWidget {
 	Q_OBJECT
+	
+	QPointF * current_pos;
 
 	QPixmap m_pixmap;
 	QRectF m_rect;
 	QPointF m_reference;
+	// current offset of the reader
 	QPointF m_delta;
-	qreal m_scale;
 		      
 	float current_zoom;
 	protected:
@@ -27,8 +29,11 @@ class ImageViewer : public QWidget {
 		void wheelEvent(QWheelEvent * event) override;
 	
 	public:
+		page_data * current_page;
+		
 		ImageViewer();	
 
+		void setPage(page_data *page);
 		void setPixmap(const QPixmap &pix);
 		void scale(qreal s);
 	signals:

@@ -14,6 +14,8 @@
 class reader_component : public QWidget {
 	Q_OBJECT
 	
+
+	// TODO: Update the layout of the reader
 	protected:
 		void showEvent(QShowEvent * event) override;
 		//void resizeEvent(QResizeEvent * event) override;

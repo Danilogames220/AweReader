@@ -43,8 +43,6 @@ pdf_handler::pdf_handler(const char * doc_name) {
 
 		page_count = fz_count_pages(ctx, doc);
 		printf("total document pages: %d\n", page_count);
-		// the main part of the program
-		//loop(ctx, doc);
 	}
 	fz_catch(ctx)
 	{
@@ -206,7 +204,7 @@ page_data * pdf_handler::get_pixmap(int index, QSize space) {
 	}
 
 
-	page_data * p_dat = new page_data;
+	page_data * p_dat = new page_data();
 	p_dat->index=index;
 
 	QImage *label_img = new QImage(
