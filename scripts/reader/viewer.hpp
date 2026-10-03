@@ -20,7 +20,6 @@ class ImageViewer : public QWidget {
 	// current offset of the reader
 	QPointF m_delta;
 		      
-	float current_zoom;
 	protected:
 		void paintEvent(QPaintEvent *) override;
 		void mousePressEvent(QMouseEvent *event) override;
@@ -29,6 +28,7 @@ class ImageViewer : public QWidget {
 		void wheelEvent(QWheelEvent * event) override;
 	
 	public:
+		float current_zoom;
 		page_data * current_page;
 		
 		ImageViewer();	
@@ -37,6 +37,9 @@ class ImageViewer : public QWidget {
 		void setPixmap(const QPixmap &pix);
 		void scale(qreal s);
 	signals:
+		void page_changed();
+		void query_zoom(float factor);
+
 		void zoom_factor(float factor);
 };
 

@@ -197,6 +197,7 @@ page_data * pdf_handler::get_pixmap(int index, QSize space) {
 		fail("pthread_create()");
 	if (pthread_join(thread, (void **)&dat) != 0)
 		fail("pthread_join");
+	
 	if (dat->failed) 
 	{
 		//fprintf(stderr, "\tRendering for page %d failed\n", index + 1);

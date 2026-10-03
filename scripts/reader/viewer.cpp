@@ -27,7 +27,10 @@ void ImageViewer::mousePressEvent(QMouseEvent *event) {
         setMouseTracking(true);
 }
 void ImageViewer::mouseMoveEvent(QMouseEvent *event) {
-        //current_page->position += (event->pos() - m_reference) * 1.0/current_zoom;
+        //printf("page pos: (%f; %f)\n", m_delta.x(), m_delta.y());
+
+
+	//current_page->position += (event->pos() - m_reference) * 1.0/current_zoom;
         m_delta += (event->pos() - m_reference) * 1.0/current_zoom;
         m_reference = event->pos();
         update();
@@ -39,12 +42,22 @@ void ImageViewer::mouseReleaseEvent(QMouseEvent *) {
 
 
 void ImageViewer::setPage(page_data *page) {
+	puts("set page called");
+
 	if (current_page != nullptr) {
+		//if (page->index == current_page->index) {
+		//	return;		
+		//}
 		current_page->position = m_delta;
+		current_page->zoom_factor = current_zoom;
 	}	
 
 	current_page = page;
-	m_delta = current_page->position;
+
+	printf("current x before: %f\n", m_delta.x());
+	m_delta = page->position;
+	printf("current x after: %f\n", m_delta.x());
+	current_zoom = page->zoom_factor;
 
 	setPixmap(*current_page->pixmap);
 }

@@ -10,7 +10,7 @@
 #include "./viewer.hpp"
 #include "./pdf-handler.hpp"
 
-
+// TODO: rethink about how to save the position of the pages
 class reader_component : public QWidget {
 	Q_OBJECT
 	
@@ -65,7 +65,6 @@ class reader_component : public QWidget {
 		void test_print();
 		void init();
 	signals:
-		//void page_rendered(page_data * page);	
 		void widgetShow();	
 };
 

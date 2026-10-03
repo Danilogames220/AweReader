@@ -3,11 +3,11 @@
 
 #include <mupdf/fitz.h>
 #include <mupdf/fitz/context.h>
-#include <qsize.h>
 #include <stdlib.h>
 #include <pthread.h>
 #include <QtCore>
 #include <QtWidgets>
+#include <vector>
 
 #include "../global-variables.hpp"
 //#include "./reader.hpp"
@@ -25,6 +25,14 @@ struct thread_data {
 	int failed;
 };
 
+
+struct pix_request {
+	page_data * p_data;
+	pthread_t thread;
+	char ongoing;
+};
+
+
 class pdf_handler : public QObject {
 	Q_OBJECT
 
@@ -40,9 +48,15 @@ class pdf_handler : public QObject {
 		page_data * get_pixmap(int index, QSize space);
 
 	private:
+		//where all render threads go
+		std::vector<pix_request> pix_queries;
+
 		pthread_mutex_t mutex[FZ_LOCK_MAX];
 		static void * renderer(void *data_);
 		static struct thread_data * get_data(pdf_handler &self, int index);
+	
+	//public slots:
+	//	void new_zoom_query(float factor);
 
 	signals:
 		void page_rendered(page_data * page);

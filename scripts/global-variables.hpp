@@ -17,7 +17,7 @@ class page_data {
 	public:
 		// the number that the page size was multiplied to be the size of the page
 		// for now the program dosent need to store the current zoom
-		//float zoom_factor;
+		float zoom_factor;
 		// page number
 		int index;
 		QPixmap * pixmap;

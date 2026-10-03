@@ -11,6 +11,7 @@
 
 page_data::page_data() 
 {
+	zoom_factor = 1;
 	position = QPointF(0,0);
 	index = -1;
 }
@@ -124,7 +125,8 @@ void reader_component::test_print() {
 void reader_component::set_page(int index) {
 	if (index < 0 || index >= handler.page_count)
 		return;
-
+	
+	//puts("reader set_page called");
 
 	// update current page
 	// nullptr check wont work and causes a segmentation fault
@@ -166,28 +168,50 @@ void reader_component::showEvent(QShowEvent * event) {
 }
 
 void reader_component::zoom_page(float zoom_factor) {
-	handler.get_pixmap(current_page_index, pages_container.size()*zoom_factor);
+	/*
+	handler.get_pixmap(
+		current_page_index, 
+		pages_container.size()*page_viewer.current_zoom
+	);
+	*/
+	handler.get_pixmap(
+		current_page_index, 
+		pages_container.size()*zoom_factor
+	);
+
+	//handler.get_pixmap(current_page_index, pages_container.size()*zoom_factor);
 	
 	// currently there's no reason to store the zoom individualy in each page :/
 	//page_viewer.current_page->zoom_factor = zoom_factor;
 	
 	printf("zoom factor: %.2f\n", zoom_factor);
+	//printf("zoom factor: %.2f\n", page_viewer.current_zoom);
 }
 
 // show page on the reader
+// TODO: rethink about this function
+// - have this one only for the first batch
+// - have one for only changing when resize
 void reader_component::add_page_to_reader(page_data * page) {
-	int page_index = page->index;
+	int p_index = page->index;
 
 	//page->load_widget();
 
-	if (page_index == current_page_index) {
-		page_viewer.setPage(page);
-		//page_viewer.setPixmap(*page->pixmap);
-		
+	if (p_index == current_page_index) {
+		if (page_viewer.current_page == nullptr)
+			page_viewer.setPage(page);
+		else {
+			// without this, the position gets wiped after a resize
+			// update: it still gets wiped :/
+			page->position = page_viewer.current_page->position;
+			page->zoom_factor = page_viewer.current_page->zoom_factor;
+			
+			page_viewer.setPixmap(*page->pixmap);
+		}
 		//page_viewer.centerImage();
 		//container_scroll.setWidget(page->label);
 		//page->label->show();
 	}
-	pages[page_index] = page;
+	pages[p_index] = page;
 }
 
