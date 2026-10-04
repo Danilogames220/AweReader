@@ -48,16 +48,16 @@ void ImageViewer::setPage(page_data *page) {
 		//if (page->index == current_page->index) {
 		//	return;		
 		//}
+		printf("page zoom before: %f\n", current_page->zoom_factor);
 		current_page->position = m_delta;
 		current_page->zoom_factor = current_zoom;
 	}	
 
 	current_page = page;
 
-	printf("current x before: %f\n", m_delta.x());
 	m_delta = page->position;
-	printf("current x after: %f\n", m_delta.x());
 	current_zoom = page->zoom_factor;
+	printf("page zoom after: %f\n", current_page->zoom_factor);
 
 	setPixmap(*current_page->pixmap);
 }
@@ -91,6 +91,7 @@ void ImageViewer::wheelEvent(QWheelEvent * event) {
 		else if (event->angleDelta().y() < 0){
 			current_zoom /= ZOOM_FACTOR;
 		}
+		current_page->zoom_factor = current_zoom;
 		emit zoom_factor(current_zoom);
 	}
 }
