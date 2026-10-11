@@ -42,13 +42,9 @@ void ImageViewer::mouseReleaseEvent(QMouseEvent *) {
 
 
 void ImageViewer::setPage(page_data *page) {
-	puts("set page called");
+	//puts("set page called");
 
 	if (current_page != nullptr) {
-		//if (page->index == current_page->index) {
-		//	return;		
-		//}
-		printf("page zoom before: %f\n", current_page->zoom_factor);
 		current_page->position = m_delta;
 		current_page->zoom_factor = current_zoom;
 	}	
@@ -57,7 +53,6 @@ void ImageViewer::setPage(page_data *page) {
 
 	m_delta = page->position;
 	current_zoom = page->zoom_factor;
-	printf("page zoom after: %f\n", current_page->zoom_factor);
 
 	setPixmap(*current_page->pixmap);
 }
@@ -69,6 +64,7 @@ void ImageViewer::setPixmap(const QPixmap &pix) {
 	m_rect.translate(-m_rect.center());
         update();
 }
+
 /*
 void ImageViewer::scale(qreal s) {
         m_scale *= s;

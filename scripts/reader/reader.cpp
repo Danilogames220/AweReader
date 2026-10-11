@@ -18,14 +18,14 @@ page_data::page_data()
 
 // TODO: update this mess
 void reader_component::init() {
-	//handler = pdf_handler(file_path.c_str());
 	// start variables before loading the file current_page_index = 0;
 	can_resize = 0;
-	pages.resize(handler.page_count);
-
-	QObject::connect(&handler, &pdf_handler::page_rendered, this, &reader_component::add_page_to_reader);
 	
-	// load file	
+	// start pages with empty pointers
+	pages = std::vector<page_data*>(handler.page_count, nullptr);
+	
+	// load pages
+	QObject::connect(&handler, &pdf_handler::page_rendered, this, &reader_component::add_page_to_reader);
 	QThread * t = QThread::create( [this](void) -> void{
 		for (int i = 0; i < handler.page_count; i++) {
 			handler.get_pixmap(i, pages_container.size());
@@ -155,63 +155,36 @@ void reader_component::set_prev_page() {
 	set_page(current_page_index - 1);
 };
 
-/*
-// will be used later
-void reader_component::resizeEvent(QResizeEvent * event) {
-	QWidget::resizeEvent(event);
-	emit widgetResize();
-}
-*/
+
 void reader_component::showEvent(QShowEvent * event) {
 	QWidget::showEvent(event);
 	emit widgetShow();
 }
 
 void reader_component::zoom_page(float zoom_factor) {
-	/*
-	handler.get_pixmap(
-		current_page_index, 
-		pages_container.size()*page_viewer.current_zoom
-	);
-	*/
 	handler.get_pixmap(
 		current_page_index, 
 		pages_container.size()*zoom_factor
 	);
-
-	//handler.get_pixmap(current_page_index, pages_container.size()*zoom_factor);
 	
-	// currently there's no reason to store the zoom individualy in each page :/
-	//page_viewer.current_page->zoom_factor = zoom_factor;
-	
-	printf("zoom factor: %.2f\n", zoom_factor);
-	//printf("zoom factor: %.2f\n", page_viewer.current_zoom);
+	//printf("zoom factor: %.2f\n", zoom_factor);
 }
 
-// show page on the reader
-// TODO: rethink about this function
-// - have this one only for the first batch
-// - have one for only changing when resize
 void reader_component::add_page_to_reader(page_data * page) {
 	int p_index = page->index;
-
-	//page->load_widget();
-
-	if (p_index == current_page_index) {
-		if (page_viewer.current_page == nullptr)
+	
+	if (pages[p_index] == nullptr) {
+		pages[p_index] = page;
+		
+		// set this to be the current page for the viewer
+		if (p_index == current_page_index)
 			page_viewer.setPage(page);
-		else {
-			// without this, the position gets wiped after a resize
-			// update: it still gets wiped :/
-			page->position = page_viewer.current_page->position;
-			page->zoom_factor = page_viewer.current_page->zoom_factor;
-			
+	} else {
+		pages[p_index]->pixmap = page->pixmap;
+		
+		// update pixmap if this is the one being shown
+		if (p_index == current_page_index)
 			page_viewer.setPixmap(*page->pixmap);
-		}
-		//page_viewer.centerImage();
-		//container_scroll.setWidget(page->label);
-		//page->label->show();
 	}
-	pages[p_index] = page;
+	
 }
-
