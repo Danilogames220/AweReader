@@ -22,6 +22,9 @@ class page_data {
 		int index;
 		QPixmap * pixmap;
 		QPointF position;
+		
+		// thread for rendering a new pixmap for the page
+		QThread pixmap_render_thread;
 
 		page_data();
 

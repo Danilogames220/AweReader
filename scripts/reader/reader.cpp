@@ -135,9 +135,6 @@ void reader_component::set_page(int index) {
 		//container_scroll.takeWidget();
 		//page_viewer.takePixmap();
 		current_page_index = index;
-		
-		//printf("page pos: (%f; %f)\n", pages[index]->position.x(), pages[index]->position.y());
-		
 		page_viewer.setPage(pages[index]);
 	}
 

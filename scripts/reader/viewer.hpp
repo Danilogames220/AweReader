@@ -28,7 +28,9 @@ class ImageViewer : public QWidget {
 		void wheelEvent(QWheelEvent * event) override;
 	
 	public:
+		// pseudo zoom for when the page is loading
 		float current_zoom;
+
 		page_data * current_page;
 		
 		ImageViewer();	

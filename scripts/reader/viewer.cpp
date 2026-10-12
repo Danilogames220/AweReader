@@ -18,7 +18,11 @@ void ImageViewer::paintEvent(QPaintEvent *) {
         QPainter p{this};
 
         p.translate(rect().center());
-        p.translate(m_delta*current_zoom);
+	p.scale(current_zoom, current_zoom);
+
+	if (current_page != nullptr)
+		p.translate(m_delta*current_page->zoom_factor);
+	//p.translate(m_delta*current_zoom);
 	p.drawPixmap(m_rect.topLeft(), m_pixmap);
 }
 void ImageViewer::mousePressEvent(QMouseEvent *event) {
@@ -27,11 +31,9 @@ void ImageViewer::mousePressEvent(QMouseEvent *event) {
         setMouseTracking(true);
 }
 void ImageViewer::mouseMoveEvent(QMouseEvent *event) {
-        //printf("page pos: (%f; %f)\n", m_delta.x(), m_delta.y());
-
-
 	//current_page->position += (event->pos() - m_reference) * 1.0/current_zoom;
-        m_delta += (event->pos() - m_reference) * 1.0/current_zoom;
+        m_delta += (event->pos() - m_reference) * 1.0/current_page->zoom_factor;
+        //m_delta += (event->pos() - m_reference) * 1.0/current_zoom;
         m_reference = event->pos();
         update();
 }
@@ -42,35 +44,30 @@ void ImageViewer::mouseReleaseEvent(QMouseEvent *) {
 
 
 void ImageViewer::setPage(page_data *page) {
-	//puts("set page called");
-
-	if (current_page != nullptr) {
-		current_page->position = m_delta;
-		current_page->zoom_factor = current_zoom;
-	}	
-
 	current_page = page;
 
 	m_delta = page->position;
-	current_zoom = page->zoom_factor;
+	//current_zoom = page->zoom_factor;
 
 	setPixmap(*current_page->pixmap);
+	//update();
 }
 
 void ImageViewer::setPixmap(const QPixmap &pix) {
-        m_pixmap = pix;
+	m_pixmap = pix;
         m_rect = m_pixmap.rect();
        
 	m_rect.translate(-m_rect.center());
+	
+	current_zoom = 1;
         update();
 }
 
-/*
+// TODO: rethink this
 void ImageViewer::scale(qreal s) {
-        m_scale *= s;
+        current_zoom = s;
         update();
 }
-*/
 
 void ImageViewer::wheelEvent(QWheelEvent * event) {
 	
@@ -78,17 +75,22 @@ void ImageViewer::wheelEvent(QWheelEvent * event) {
 	if (event->modifiers() & Qt::ControlModifier) {
 	    QWidget::wheelEvent(event);
 	} else {
-		//std::cout << "scroll event: "
-		//     << event->angleDelta().y()
-		//     << "\n";
 		if (event->angleDelta().y() > 0) {
-			current_zoom *= ZOOM_FACTOR;
+			current_page->zoom_factor *= ZOOM_FACTOR;
+			//current_zoom *= ZOOM_FACTOR;
 		} 
 		else if (event->angleDelta().y() < 0){
-			current_zoom /= ZOOM_FACTOR;
+			current_page->zoom_factor /= ZOOM_FACTOR;
+			//current_zoom /= ZOOM_FACTOR;
 		}
-		current_page->zoom_factor = current_zoom;
-		emit zoom_factor(current_zoom);
+
+		if (current_page != nullptr) {
+			current_zoom = current_page->zoom_factor;
+			update();
+			emit zoom_factor(current_zoom);
+		}
 	}
+
+	update();
 }
 
