@@ -2,6 +2,7 @@
 #define GLOBAL_VARIABLES_HPP
 
 #include <QtWidgets>
+#include <pthread.h>
 
 #include <string>
 
@@ -24,7 +25,8 @@ class page_data {
 		QPointF position;
 		
 		// thread for rendering a new pixmap for the page
-		QThread pixmap_render_thread;
+		QThread * pixmap_thread;
+		//pthread_t * pixmap_thread;
 
 		page_data();
 

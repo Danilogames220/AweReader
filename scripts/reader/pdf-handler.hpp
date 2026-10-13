@@ -25,13 +25,14 @@ struct thread_data {
 	int failed;
 };
 
-
+// UNUSED
+/*
 struct pix_request {
 	page_data * p_data;
 	pthread_t thread;
 	char ongoing;
 };
-
+*/
 
 class pdf_handler : public QObject {
 	Q_OBJECT
@@ -46,10 +47,13 @@ class pdf_handler : public QObject {
 		~pdf_handler();
 		
 		page_data * get_pixmap(int index, QSize space);
+		
+		void query_pixmap(page_data * page, QSize space);
 
 	private:
 		//where all render threads go
-		std::vector<pix_request> pix_queries;
+		// UNUSED
+		//std::vector<pix_request> pix_queries;
 
 		pthread_mutex_t mutex[FZ_LOCK_MAX];
 		static void * renderer(void *data_);

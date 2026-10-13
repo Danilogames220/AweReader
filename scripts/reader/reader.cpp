@@ -14,27 +14,62 @@ page_data::page_data()
 	zoom_factor = 1;
 	position = QPointF(0,0);
 	index = -1;
+
+	pixmap_thread = nullptr;
 }
 
 // TODO: update this mess
 void reader_component::init() {
-	// start variables before loading the file current_page_index = 0;
+	// start variables before loading the file 
+	current_page_index = 0;
 	can_resize = 0;
 	
 	// start pages with empty pointers
 	pages = std::vector<page_data*>(handler.page_count, nullptr);
 	
 	// load pages
+	// TODO get this like it was before
 	QObject::connect(&handler, &pdf_handler::page_rendered, this, &reader_component::add_page_to_reader);
+	///*
 	QThread * t = QThread::create( [this](void) -> void{
+		std::vector<QThread *> vt(handler.page_count);
+
 		for (int i = 0; i < handler.page_count; i++) {
-			handler.get_pixmap(i, pages_container.size());
+			vt[i] = QThread::create([this, i](void) -> void{
+				handler.get_pixmap(i, pages_container.size());
+			});
+			vt[i]->start();
+			vt[i]->wait();
 		}
-		//load_file(pages_container.size(), file_path);
+			
+		//for (int i = 0; i < handler.page_count; i++)
 	});
+	//*/
 	
+	/*
+	for (int i = 0; i < handler.page_count; i++) {
+		handler.get_pixmap(i, pages_container.size());
+	}
+	*/
+	
+	/*
 	// after load_file finished
+	// NOTE: pages.size() is from the vector
+	current_page.setText(QString::fromStdString(std::format("{} / {}", current_page_index + 1, handler.page_count)));
+	//puts("connecting signals");
+	
+	QObject::connect(&prev_button, &QPushButton::clicked,
+		this, &reader_component::set_prev_page);
+
+	QObject::connect(&next_button, &QPushButton::clicked,
+		this, &reader_component::set_next_page);
+
+	QObject::connect(&page_viewer, &ImageViewer::zoom_factor,
+		this, &reader_component::zoom_page);
 	// also where signals get connected
+	*/
+
+	///*
 	QObject::connect(t, &QThread::finished, this, [this]{
 		// NOTE: pages.size() is from the vector
 		current_page.setText(QString::fromStdString(std::format("{} / {}", current_page_index + 1, handler.page_count)));
@@ -50,6 +85,7 @@ void reader_component::init() {
 			this, &reader_component::zoom_page);
 
 	});
+	//*/
 	t->start();
 }
 
@@ -159,10 +195,17 @@ void reader_component::showEvent(QShowEvent * event) {
 }
 
 void reader_component::zoom_page(float zoom_factor) {
-	handler.get_pixmap(
-		current_page_index, 
-		pages_container.size()*zoom_factor
-	);
+
+	pages[current_page_index]->pixmap_thread = QThread::create([this, zoom_factor]() {
+		handler.get_pixmap(
+			current_page_index, 
+			pages_container.size()*zoom_factor
+		);
+	});
+
+	pages[current_page_index]->pixmap_thread->start();
+	//pages[current_page_index]->pixmap_thread->wait();
+	
 	
 	//printf("zoom factor: %.2f\n", zoom_factor);
 }
@@ -179,6 +222,7 @@ void reader_component::add_page_to_reader(page_data * page) {
 	} else {
 		pages[p_index]->pixmap = page->pixmap;
 		
+		page->pixmap_thread = nullptr;
 		// update pixmap if this is the one being shown
 		if (p_index == current_page_index)
 			page_viewer.setPixmap(*page->pixmap);

@@ -50,6 +50,8 @@ pdf_handler::pdf_handler(const char * doc_name) {
 		fz_drop_document(ctx, doc);
 		fail("error");
 	}
+
+	//pix_queries = std::vector<pix_request>(page_count);//std::vector<pix_queries>(page_count, nullptr);
 }
 pdf_handler::~pdf_handler() {
 	//puts("# start destructor");
@@ -63,7 +65,7 @@ pdf_handler::~pdf_handler() {
 
 
 void fail(const char *msg) {
-	fprintf(stderr, "%s\n", msg);
+	fprintf(stderr, "Mupdf Fail: %s\n", msg);
 	abort();
 }
 void * pdf_handler::renderer(void *data_) {
@@ -161,7 +163,7 @@ struct thread_data * pdf_handler::get_data(pdf_handler &self, int index) {
 }
 
 page_data * pdf_handler::get_pixmap(int index, QSize space) {
-
+	page_data * p_dat = new page_data();
 	pthread_t thread;
 	
 	// do the zoom thing before rendering
@@ -185,9 +187,9 @@ page_data * pdf_handler::get_pixmap(int index, QSize space) {
 	data->bbox = fz_transform_rect(data->bbox, mult_matrix);
 	data->matrix_factor = factor;
 
-	struct thread_data * dat;	
+	struct thread_data * dat = (struct thread_data *)renderer((void *)data);	
 	
-	
+	/*
 	if (pthread_create(&thread, NULL, [](void * _data)-> void* {
 		struct thread_data * dat = (struct thread_data *)renderer(_data);
 		// do something after it finishes
@@ -197,15 +199,14 @@ page_data * pdf_handler::get_pixmap(int index, QSize space) {
 		fail("pthread_create()");
 	if (pthread_join(thread, (void **)&dat) != 0)
 		fail("pthread_join");
-	
 	if (dat->failed) 
 	{
 		//fprintf(stderr, "\tRendering for page %d failed\n", index + 1);
 		printf("failed to get pixmap of page %d\n", index);
 	}
+	*/
 
 
-	page_data * p_dat = new page_data();
 	p_dat->index=index;
 
 	QImage *label_img = new QImage(
