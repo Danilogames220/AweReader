@@ -50,17 +50,14 @@ pdf_handler::pdf_handler(const char * doc_name) {
 		fz_drop_document(ctx, doc);
 		fail("error");
 	}
-
-	//pix_queries = std::vector<pix_request>(page_count);//std::vector<pix_queries>(page_count, nullptr);
+	
+	threads = (pthread_t*)malloc(page_count*sizeof(pthread_t));
 }
 pdf_handler::~pdf_handler() {
-	//puts("# start destructor");
+	free(threads);
 	fz_drop_document(ctx, doc);
-	//puts("# drop doc");
 	fz_drop_context(ctx);
-	//puts("# drop context");
 	fflush(NULL);
-	//puts("# fflush");
 }
 
 
@@ -162,6 +159,7 @@ struct thread_data * pdf_handler::get_data(pdf_handler &self, int index) {
 	return data;
 }
 
+// TODO double-check this
 page_data * pdf_handler::get_pixmap(int index, QSize space) {
 	page_data * p_dat = new page_data();
 	pthread_t thread;
@@ -186,7 +184,7 @@ page_data * pdf_handler::get_pixmap(int index, QSize space) {
 	fz_matrix mult_matrix = (fz_matrix){factor, 0, 0, factor, 0, 0};
 	data->bbox = fz_transform_rect(data->bbox, mult_matrix);
 	data->matrix_factor = factor;
-
+	
 	struct thread_data * dat = (struct thread_data *)renderer((void *)data);	
 	
 	/*
@@ -230,4 +228,85 @@ page_data * pdf_handler::get_pixmap(int index, QSize space) {
 	
 	emit page_rendered(p_dat);
 	return p_dat;
+}
+
+page_data ** pdf_handler::get_all_pixmap(QSize space) { 
+	page_data ** data_v = (page_data**)malloc(page_count*sizeof(page_data*));
+	for (int i = 0; i < page_count; i++)
+		data_v[i] = new page_data();
+	//pthread_t thread;
+	
+	// do the zoom thing before rendering
+	
+	for (int i = 0; i < page_count; i++) {
+		struct thread_data * data = get_data(*this, i);
+		fz_context *ctx_t = data->ctx;
+		
+		// get zoom factor;
+		float factor;
+		int by = data->bbox.y1;
+		int bx = data->bbox.x1;
+		if (space.height() < space.width()) {
+			//puts("factor height");
+			factor = space.height()/(float)by;
+		} else {
+			//puts("factor width");
+			factor = space.width()/(float)bx;
+		}
+		printf("factor of page %d: %f\n", data->pagenumber, factor);
+        
+		fz_matrix mult_matrix = (fz_matrix){factor, 0, 0, factor, 0, 0};
+		data->bbox = fz_transform_rect(data->bbox, mult_matrix);
+		data->matrix_factor = factor;
+		
+		if (pthread_create(&threads[i], NULL, renderer, data) != 0)
+			fail("pthread_create");
+		//struct thread_data * dat = (struct thread_data *)renderer((void *)data);	
+	}
+	for (int i = 0; i < page_count; i++) {
+		struct thread_data * dat;
+		
+		if (pthread_join(threads[i], (void **)&dat) != 0)
+			fail("pthread_join");
+		else
+		{
+			//dat = dv_t[i];
+			/*
+			char buff[16];
+			sprintf(buff, "img%04d.png", i+1);
+
+			fprintf(stderr, "\tSaving %s...\n", buff);
+			fz_save_pixmap_as_png(ctx, dat->pix, buff);
+			*/
+			page_data * p_dat = data_v[i];
+
+			//printf("i: %d\n", dat->pagenumber);
+			//thread_data * data = data_v[i]->data;
+			p_dat->index=i;
+                
+			QImage *label_img = new QImage(
+				dat->pix->samples,
+				dat->pix->w,
+				dat->pix->h,
+				dat->pix->stride,
+				(dat->pix->alpha) ? QImage::Format_RGBA8888 : QImage::Format_RGB888
+			);
+			
+			p_dat->pixmap = new QPixmap();
+			*p_dat->pixmap = QPixmap::fromImage(*label_img);
+			emit page_rendered(p_dat);
+
+
+		}
+		
+		fz_context *ctx_t = dat->ctx;
+		fz_drop_pixmap(ctx_t, dat->pix);
+		fz_drop_display_list(ctx_t, dat->list);
+		fz_drop_context(ctx_t);
+		
+		//free(dat);
+	}
+	
+
+	return data_v;
 }

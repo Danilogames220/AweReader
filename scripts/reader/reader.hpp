@@ -23,6 +23,7 @@ class reader_component : public QWidget {
 	// UI stuff
 	public: 
 		reader_component();
+		~reader_component();
 		QVBoxLayout reader_c_layout;
 
 		// top panel
@@ -36,7 +37,8 @@ class reader_component : public QWidget {
 		QHBoxLayout pages_layout;
 			ImageViewer page_viewer;
 			//QScrollArea container_scroll;
-			std::vector<page_data *> pages;
+			//std::vector<page_data *> pages;
+			page_data **pages;
 		
 		// bottom buttons
 		QWidget bottom_buttons;

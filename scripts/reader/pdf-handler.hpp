@@ -46,7 +46,12 @@ class pdf_handler : public QObject {
 		pdf_handler(const char * doc_name);
 		~pdf_handler();
 		
+		// used for getting one single pixmap
 		page_data * get_pixmap(int index, QSize space);
+		// TODO: function that gets pages across an interval (all pages from x to y)
+		// gets all pixmaps in the document
+		// NOTE: since the reader will only open a single doc, this dosent need to return any way of a dynamic list 
+		page_data ** get_all_pixmap(QSize space);
 		
 		void query_pixmap(page_data * page, QSize space);
 
@@ -56,6 +61,8 @@ class pdf_handler : public QObject {
 		//std::vector<pix_request> pix_queries;
 
 		pthread_mutex_t mutex[FZ_LOCK_MAX];
+		pthread_t *threads;
+
 		static void * renderer(void *data_);
 		static struct thread_data * get_data(pdf_handler &self, int index);
 	

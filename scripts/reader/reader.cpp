@@ -25,49 +25,23 @@ void reader_component::init() {
 	can_resize = 0;
 	
 	// start pages with empty pointers
-	pages = std::vector<page_data*>(handler.page_count, nullptr);
-	
+	//pages = std::vector<page_data*>(handler.page_count, nullptr);
+	pages = (page_data**)malloc((handler.page_count)*sizeof(page_data*));
+	for (int i = 0; i < handler.page_count; i++)
+		pages[i] = nullptr;
+
 	// load pages
 	// TODO get this like it was before
 	QObject::connect(&handler, &pdf_handler::page_rendered, this, &reader_component::add_page_to_reader);
 	///*
 	QThread * t = QThread::create( [this](void) -> void{
-		std::vector<QThread *> vt(handler.page_count);
-
+		handler.get_all_pixmap(pages_container.size());
+		/*
 		for (int i = 0; i < handler.page_count; i++) {
-			vt[i] = QThread::create([this, i](void) -> void{
-				handler.get_pixmap(i, pages_container.size());
-			});
-			vt[i]->start();
-			vt[i]->wait();
+			handler.get_pixmap(i, pages_container.size());
 		}
-			
-		//for (int i = 0; i < handler.page_count; i++)
+		*/
 	});
-	//*/
-	
-	/*
-	for (int i = 0; i < handler.page_count; i++) {
-		handler.get_pixmap(i, pages_container.size());
-	}
-	*/
-	
-	/*
-	// after load_file finished
-	// NOTE: pages.size() is from the vector
-	current_page.setText(QString::fromStdString(std::format("{} / {}", current_page_index + 1, handler.page_count)));
-	//puts("connecting signals");
-	
-	QObject::connect(&prev_button, &QPushButton::clicked,
-		this, &reader_component::set_prev_page);
-
-	QObject::connect(&next_button, &QPushButton::clicked,
-		this, &reader_component::set_next_page);
-
-	QObject::connect(&page_viewer, &ImageViewer::zoom_factor,
-		this, &reader_component::zoom_page);
-	// also where signals get connected
-	*/
 
 	///*
 	QObject::connect(t, &QThread::finished, this, [this]{
@@ -153,6 +127,9 @@ reader_component::reader_component() :
 	bb_layout.addWidget(&current_page);
 	bb_layout.addWidget(&next_button);
 };
+reader_component::~reader_component() {
+	free(pages);
+}
 // useful when testing signals
 void reader_component::test_print() {
 	puts("test print from reader_component");
