@@ -25,7 +25,6 @@ void reader_component::init() {
 	can_resize = 0;
 	
 	// start pages with empty pointers
-	//pages = std::vector<page_data*>(handler.page_count, nullptr);
 	pages = (page_data**)malloc((handler.page_count)*sizeof(page_data*));
 	for (int i = 0; i < handler.page_count; i++)
 		pages[i] = nullptr;
@@ -36,18 +35,12 @@ void reader_component::init() {
 	///*
 	QThread * t = QThread::create( [this](void) -> void{
 		handler.get_all_pixmap(pages_container.size());
-		/*
-		for (int i = 0; i < handler.page_count; i++) {
-			handler.get_pixmap(i, pages_container.size());
-		}
-		*/
 	});
 
 	///*
 	QObject::connect(t, &QThread::finished, this, [this]{
 		// NOTE: pages.size() is from the vector
 		current_page.setText(QString::fromStdString(std::format("{} / {}", current_page_index + 1, handler.page_count)));
-		//puts("connecting signals");
 		
 		QObject::connect(&prev_button, &QPushButton::clicked,
 			this, &reader_component::set_prev_page);
@@ -88,7 +81,6 @@ reader_component::reader_component() :
 	prev_button("<-"),
 	next_button("->"),
 	current_page("Loading...")
-	//current_page(QString::fromStdString(std::format("{} / {}", current_page_index + 1, handler.page_count)))
 		
 {
 	// load ui
@@ -142,7 +134,6 @@ void reader_component::set_page(int index) {
 	//puts("reader set_page called");
 
 	// update current page
-	// nullptr check wont work and causes a segmentation fault
 	if (pages[current_page_index] != nullptr && 
 	    pages[index] != nullptr) {
 		//container_scroll.takeWidget();
@@ -172,7 +163,7 @@ void reader_component::showEvent(QShowEvent * event) {
 }
 
 void reader_component::zoom_page(float zoom_factor) {
-
+	///*
 	pages[current_page_index]->pixmap_thread = QThread::create([this, zoom_factor]() {
 		handler.get_pixmap(
 			current_page_index, 
@@ -183,8 +174,8 @@ void reader_component::zoom_page(float zoom_factor) {
 	pages[current_page_index]->pixmap_thread->start();
 	//pages[current_page_index]->pixmap_thread->wait();
 	
-	
 	//printf("zoom factor: %.2f\n", zoom_factor);
+	//*/
 }
 
 void reader_component::add_page_to_reader(page_data * page) {

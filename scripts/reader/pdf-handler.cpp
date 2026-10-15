@@ -16,7 +16,6 @@ pdf_handler::pdf_handler(const char * doc_name) {
 	page_count = 0;
 	doc = NULL;
 	
-	//pthread_t *thread = NULL;
 	fz_locks_context locks;
 
 	// Initialize FZ_LOCK_MAX number of non-recursive mutexes.
@@ -32,7 +31,6 @@ pdf_handler::pdf_handler(const char * doc_name) {
 
 	ctx = fz_new_context(NULL, &locks, FZ_STORE_UNLIMITED);
 
-	//fz_var(thread);
 	fz_var(doc);
 
 	fz_try(ctx)
@@ -185,25 +183,8 @@ page_data * pdf_handler::get_pixmap(int index, QSize space) {
 	data->bbox = fz_transform_rect(data->bbox, mult_matrix);
 	data->matrix_factor = factor;
 	
+	// depending on the way this function gets implemented, the pthread is not needed
 	struct thread_data * dat = (struct thread_data *)renderer((void *)data);	
-	
-	/*
-	if (pthread_create(&thread, NULL, [](void * _data)-> void* {
-		struct thread_data * dat = (struct thread_data *)renderer(_data);
-		// do something after it finishes
-		// (cant do much)
-		return (void*)dat;
-	}, data) != 0)
-		fail("pthread_create()");
-	if (pthread_join(thread, (void **)&dat) != 0)
-		fail("pthread_join");
-	if (dat->failed) 
-	{
-		//fprintf(stderr, "\tRendering for page %d failed\n", index + 1);
-		printf("failed to get pixmap of page %d\n", index);
-	}
-	*/
-
 
 	p_dat->index=index;
 
@@ -234,10 +215,8 @@ page_data ** pdf_handler::get_all_pixmap(QSize space) {
 	page_data ** data_v = (page_data**)malloc(page_count*sizeof(page_data*));
 	for (int i = 0; i < page_count; i++)
 		data_v[i] = new page_data();
-	//pthread_t thread;
 	
 	// do the zoom thing before rendering
-	
 	for (int i = 0; i < page_count; i++) {
 		struct thread_data * data = get_data(*this, i);
 		fz_context *ctx_t = data->ctx;
@@ -261,7 +240,6 @@ page_data ** pdf_handler::get_all_pixmap(QSize space) {
 		
 		if (pthread_create(&threads[i], NULL, renderer, data) != 0)
 			fail("pthread_create");
-		//struct thread_data * dat = (struct thread_data *)renderer((void *)data);	
 	}
 	for (int i = 0; i < page_count; i++) {
 		struct thread_data * dat;
@@ -270,14 +248,7 @@ page_data ** pdf_handler::get_all_pixmap(QSize space) {
 			fail("pthread_join");
 		else
 		{
-			//dat = dv_t[i];
-			/*
-			char buff[16];
-			sprintf(buff, "img%04d.png", i+1);
 
-			fprintf(stderr, "\tSaving %s...\n", buff);
-			fz_save_pixmap_as_png(ctx, dat->pix, buff);
-			*/
 			page_data * p_dat = data_v[i];
 
 			//printf("i: %d\n", dat->pagenumber);
@@ -304,9 +275,10 @@ page_data ** pdf_handler::get_all_pixmap(QSize space) {
 		fz_drop_display_list(ctx_t, dat->list);
 		fz_drop_context(ctx_t);
 		
-		//free(dat);
+		free(dat);
 	}
 	
-
+	// Not sure right now but maybe this function dosent need this vector
+	free(data_v);
 	return data_v;
 }

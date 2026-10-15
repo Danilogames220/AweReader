@@ -18,7 +18,6 @@ class reader_component : public QWidget {
 	// TODO: Update the layout of the reader
 	protected:
 		void showEvent(QShowEvent * event) override;
-		//void resizeEvent(QResizeEvent * event) override;
 
 	// UI stuff
 	public: 
@@ -36,8 +35,6 @@ class reader_component : public QWidget {
 		QWidget pages_container;
 		QHBoxLayout pages_layout;
 			ImageViewer page_viewer;
-			//QScrollArea container_scroll;
-			//std::vector<page_data *> pages;
 			page_data **pages;
 		
 		// bottom buttons

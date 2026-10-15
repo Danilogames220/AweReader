@@ -10,18 +10,27 @@
 #define ZOOM_FACTOR 1.5
 
 ImageViewer::ImageViewer() {
-	current_zoom = 1.;
+	dzoom = 1.;
+
 	current_page = nullptr;
+	waiting_pixmap = 0;
 };
 
 void ImageViewer::paintEvent(QPaintEvent *) {
         QPainter p{this};
 
         p.translate(rect().center());
-	p.scale(current_zoom, current_zoom);
-
+	
 	if (current_page != nullptr)
-		p.translate(m_delta*current_page->zoom_factor);
+		p.scale(dzoom, dzoom);
+		//p.scale(current_page->zoom_factor, current_page->zoom_factor);
+
+	if (current_page != nullptr) {
+		if (waiting_pixmap)
+			p.translate(m_delta);
+		else
+			p.translate(m_delta*current_page->zoom_factor);
+	}
 	//p.translate(m_delta*current_zoom);
 	p.drawPixmap(m_rect.topLeft(), m_pixmap);
 }
@@ -31,9 +40,8 @@ void ImageViewer::mousePressEvent(QMouseEvent *event) {
         setMouseTracking(true);
 }
 void ImageViewer::mouseMoveEvent(QMouseEvent *event) {
-	//current_page->position += (event->pos() - m_reference) * 1.0/current_zoom;
         m_delta += (event->pos() - m_reference) * 1.0/current_page->zoom_factor;
-        //m_delta += (event->pos() - m_reference) * 1.0/current_zoom;
+        //m_delta += (event->pos() - m_reference) * current_page->zoom_factor;
         m_reference = event->pos();
         update();
 }
@@ -54,24 +62,27 @@ void ImageViewer::setPage(page_data *page) {
 }
 
 void ImageViewer::setPixmap(const QPixmap &pix) {
+	waiting_pixmap = 0;
+	dzoom = 1;
+
 	m_pixmap = pix;
         m_rect = m_pixmap.rect();
        
 	m_rect.translate(-m_rect.center());
 	
-	current_zoom = 1;
+	//current_zoom = 1;
         update();
 }
 
 // TODO: rethink this
 void ImageViewer::scale(qreal s) {
-        current_zoom = s;
+        //current_zoom = s;
         update();
 }
 
 void ImageViewer::wheelEvent(QWheelEvent * event) {
 	
-	// actualy scroll if cntl key pressed
+	// actualy scroll if ctrl key pressed
 	if (event->modifiers() & Qt::ControlModifier) {
 	    QWidget::wheelEvent(event);
 	} else {
@@ -85,9 +96,10 @@ void ImageViewer::wheelEvent(QWheelEvent * event) {
 		}
 
 		if (current_page != nullptr) {
-			current_zoom = current_page->zoom_factor;
-			update();
-			emit zoom_factor(current_zoom);
+			dzoom = current_page->zoom_factor;
+			//update();
+			waiting_pixmap = 1;
+			emit zoom_factor(current_page->zoom_factor);
 		}
 	}
 
